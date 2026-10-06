@@ -73,6 +73,8 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
   font-size:16.5px;line-height:1.62;letter-spacing:-.006em;-webkit-font-smoothing:antialiased;
   overflow-x:clip;transition:background-color .5s var(--ease),color .5s var(--ease)}
 body.lock{overflow:hidden}
+body{caret-color:transparent}
+input,textarea,select,[contenteditable]{caret-color:auto}
 img,svg,video,iframe{max-width:100%;display:block}
 img{height:auto}
 a{color:inherit;text-decoration:none}
@@ -374,10 +376,9 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-600) var(--bg-2)}
 .tpr{display:grid;grid-template-columns:54px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 16px;border-radius:16px;
   border:1px solid var(--line-soft);background:var(--panel);scroll-margin-top:180px;transition:border-color .4s,box-shadow .4s}
 .tpr.hl{border-color:var(--gold-400);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold-400) 18%,transparent)}
-.tpr__s{width:54px;height:58px;border-radius:10px;border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr;padding:4px 7px;
-  font-family:var(--display)}
-.tpr__s small{font-family:var(--mono);font-size:.58rem;color:var(--muted)}
-.tpr__s b{font-size:1.45rem;font-weight:500;color:var(--gold-300);align-self:center;line-height:1}
+.tpr__s{width:54px;height:58px;border-radius:10px;border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr;justify-items:center;padding:4px 6px;color:var(--gold-300)}
+.tpr__s small{font-family:var(--mono);font-size:.58rem;color:var(--muted);justify-self:start}
+.tpr__s .tic{width:28px;height:28px;align-self:center}
 .tpr__t b{display:block;font-size:1rem}
 .tpr__t span{font-size:.84rem;color:var(--muted)}
 .tpr__a{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
@@ -837,19 +838,37 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-600) var(--bg-2)}
 <script>
 /* the twelve Cambridge 5070 / 0620 topics — names from the 2026–2028 syllabus */
 window.UK_TOPICS = [
-  { n: 1, s: 'St', t: 'States of matter', k: 2 },
-  { n: 2, s: 'At', t: 'Atoms, elements and compounds', k: 7 },
-  { n: 3, s: 'Mo', t: 'Stoichiometry', k: 3 },
-  { n: 4, s: 'Ec', t: 'Electrochemistry', k: 2 },
-  { n: 5, s: 'En', t: 'Chemical energetics', k: 1 },
-  { n: 6, s: 'Rx', t: 'Chemical reactions', k: 4 },
-  { n: 7, s: 'Ab', t: 'Acids, bases and salts', k: 3 },
-  { n: 8, s: 'Pt', t: 'The Periodic Table', k: 5 },
-  { n: 9, s: 'Mt', t: 'Metals', k: 6 },
-  { n: 10, s: 'Ev', t: 'Chemistry of the environment', k: 3 },
-  { n: 11, s: 'Or', t: 'Organic chemistry', k: 8 },
-  { n: 12, s: 'Xa', t: 'Experimental techniques and chemical analysis', k: 5 }
+  { n: 1, t: 'States of matter', k: 2 },
+  { n: 2, t: 'Atoms, elements and compounds', k: 7 },
+  { n: 3, t: 'Stoichiometry', k: 3 },
+  { n: 4, t: 'Electrochemistry', k: 2 },
+  { n: 5, t: 'Chemical energetics', k: 1 },
+  { n: 6, t: 'Chemical reactions', k: 4 },
+  { n: 7, t: 'Acids, bases and salts', k: 3 },
+  { n: 8, t: 'The Periodic Table', k: 5 },
+  { n: 9, t: 'Metals', k: 6 },
+  { n: 10, t: 'Chemistry of the environment', k: 3 },
+  { n: 11, t: 'Organic chemistry', k: 8 },
+  { n: 12, t: 'Experimental techniques and chemical analysis', k: 5 }
 ];
+/* one line drawing per topic — 48 × 48, stroke = currentColor */
+window.UK_ICONS = {
+  1: '<rect x="4" y="13" width="17" height="22" rx="3"/><circle cx="9.5" cy="19" r="2.2"/><circle cx="15.5" cy="19" r="2.2"/><circle cx="9.5" cy="25" r="2.2"/><circle cx="15.5" cy="25" r="2.2"/><circle cx="9.5" cy="31" r="2.2"/><circle cx="15.5" cy="31" r="2.2"/><rect x="27" y="13" width="17" height="22" rx="3"/><circle cx="31.5" cy="18" r="2.2"/><circle cx="39.5" cy="23" r="2.2"/><circle cx="33" cy="30.5" r="2.2"/><path d="M36 17.5h4M28.5 27h-2" opacity=".55"/>',
+  2: '<circle cx="24" cy="24" r="3.6" fill="currentColor"/><ellipse cx="24" cy="24" rx="19" ry="7.5"/><ellipse cx="24" cy="24" rx="19" ry="7.5" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="19" ry="7.5" transform="rotate(120 24 24)"/>',
+  3: '<path d="M24 7v33M14 41h20M7 14h34"/><circle cx="24" cy="7" r="2"/><path d="M7 14 2.5 25h9zM41 14l-4.5 11h9z"/><path d="M2.5 25a4.5 3 0 0 0 9 0M36.5 25a4.5 3 0 0 0 9 0"/>',
+  4: '<path d="M8 16v22a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16"/><path d="M8 27h32" opacity=".45"/><path d="M17 6v28M31 6v28"/><path d="M13 3.5h8M27 3.5h8M17 1v5" /><circle cx="22" cy="33" r="1.4" fill="currentColor"/><circle cx="27" cy="36" r="1.4" fill="currentColor"/>',
+  5: '<path d="M6 4v38h38"/><path d="M8 32h7c5 0 7-20 13-20s8 23 13 23h3"/><path d="M28 13v19M28 13l-2.5 4M28 13l2.5 4" opacity=".55"/><path d="M10 32h6M36 35h6" stroke-dasharray="2 2"/>',
+  6: '<path d="M6 17h34M34 11l6 6"/><path d="M42 31H8M14 37l-6-6"/>',
+  7: '<path d="M24 5c6 9 13 16 13 24a13 13 0 0 1-26 0c0-8 7-15 13-24z"/><path d="M17 32a7 7 0 0 0 7 6"/>',
+  8: '<path d="M5 9h6v30H5zM11 15h6v24h-6zM17 23h20v16H17zM37 15h6v24h-6zM37 9h6v6h-6z"/><path d="M23 23v16M29 23v16M17 31h20" opacity=".45"/>',
+  9: '<path d="M6 40 10 31h12l4 9zM22 40l4-9h12l4 9zM14 31l4-9h12l4 9z"/><path d="M18 22l3-6h6l3 6" opacity=".55"/>',
+  10: '<circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c5.5 5 5.5 29 0 34M24 7c-5.5 5-5.5 29 0 34" opacity=".7"/><path d="M12 13.5c3.5 2 20.5 2 24 0M12 34.5c3.5-2 20.5-2 24 0" opacity=".45"/>',
+  11: '<path d="M20 9.5 29 4.3l9 5.2v10.4l-9 5.2-9-5.2z"/><circle cx="29" cy="14.7" r="4.3" opacity=".7"/><path d="M20 19.9 11 25v10.4M11 35.4l-7 4M11 35.4l9 5.2M20 40.6l9-5.2"/>',
+  12: '<path d="M19 4h10M21 4v14L9 38a3.2 3.2 0 0 0 2.8 4.8h24.4A3.2 3.2 0 0 0 39 38L27 18V4"/><path d="M13 31h22"/><circle cx="20" cy="36" r="1.5" fill="currentColor"/><circle cx="27" cy="34" r="1.2" fill="currentColor"/>'
+};
+window.UK_ICON = function (n, cls) {
+  return '<svg class="' + (cls || 'tic') + '" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (window.UK_ICONS[n] || '') + '</svg>';
+};
 
 (function () {
   'use strict';
@@ -962,7 +981,7 @@ window.UK_TOPICS = [
       if (x.book && x.ms) acts += '<a class="btn btn--line btn--sm" href="' + esc(url(x.ms)) + '" target="_blank" rel="noopener">Mark scheme</a>';
       if (!x.book) acts = '<span class="chip chip--dim">Topical book being compiled</span><a class="btn btn--line btn--sm" data-ask="' + esc('Please send me the ' + st.syl + ' Chemistry topical past papers for Topic ' + t.n + ' (' + t.t + ').') + '" target="_blank" rel="noopener" href="#">Ask for it</a>';
       var examined = t.n === 12 ? where + ', and the practical paper' : where;
-      return '<div class="tpr" id="t' + t.n + '"><span class="tpr__s"><small>' + t.n + '</small><b>' + t.s + '</b></span>' +
+      return '<div class="tpr" id="t' + t.n + '"><span class="tpr__s"><small>' + (t.n < 10 ? '0' : '') + t.n + '</small>' + window.UK_ICON(t.n) + '</span>' +
         '<div class="tpr__t"><b>' + esc(t.t) + '</b><span>' + t.k + ' sub-topic' + (t.k > 1 ? 's' : '') + ' · examined in ' + examined + '</span></div><div class="tpr__a">' + acts + '</div></div>';
     }).join('');
     $$('[data-ask]', box).forEach(function (a) { a.href = C.contactUrl(a.getAttribute('data-ask')); });

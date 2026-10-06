@@ -73,6 +73,8 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
   font-size:16.5px;line-height:1.62;letter-spacing:-.006em;-webkit-font-smoothing:antialiased;
   overflow-x:clip;transition:background-color .5s var(--ease),color .5s var(--ease)}
 body.lock{overflow:hidden}
+body{caret-color:transparent}
+input,textarea,select,[contenteditable]{caret-color:auto}
 img,svg,video,iframe{max-width:100%;display:block}
 img{height:auto}
 a{color:inherit;text-decoration:none}
@@ -382,10 +384,10 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-600) var(--bg-2)}
 .tick:hover .tick__track{animation-play-state:paused}
 @keyframes tick{to{transform:translateX(-50%)}}
 .tk{display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border:1px solid var(--line-soft);border-radius:10px;background:var(--panel);white-space:nowrap}
-.tk b{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-size:1.15rem;font-weight:500;
-  border:1px solid var(--line);color:var(--gold-300);position:relative}
-.tk b small{position:absolute;top:2px;left:4px;font-family:var(--mono);font-size:.5rem;color:var(--muted)}
-.tk span{font-size:.86rem;font-weight:500}
+.tk b{width:40px;height:40px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line);color:var(--fam);background:color-mix(in srgb,var(--fam) 8%,transparent)}
+.tk b .tic{width:24px;height:24px}
+.tk > span{font-size:.86rem;font-weight:500;display:grid;line-height:1.2}
+.tk > span small{font-family:var(--mono);font-size:.58rem;color:var(--muted);font-weight:400}
 
 /* ================= meet — the teacher card ================= */
 .meet{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(28px,5vw,70px);align-items:center;
@@ -482,52 +484,110 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-600) var(--bg-2)}
 .strip span{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:10px;display:block}
 @media (max-width:780px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-/* ================= periodic syllabus ================= */
+/* ================= syllabus — tiles, readiness, outcome checklist ================= */
+.rdy{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:22px;align-items:center;padding:16px 20px;margin-bottom:16px;
+  border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(110deg,color-mix(in srgb,var(--gold-500) 8%,var(--card)),var(--card) 60%)}
+.rdy__t{display:flex;align-items:center;gap:14px}
+.rdy__t .mono{display:block;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400)}
+.rdy__t b{display:block;font-size:1rem}
+.rdy__t .muted{font-size:.8rem}
+.rdy__ring{position:relative;width:58px;height:58px;flex:none}
+.rdy__ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.rdy__bg{fill:none;stroke:var(--line-soft);stroke-width:5}
+.rdy__fg{fill:none;stroke:var(--gold-400);stroke-width:5;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .8s var(--ease)}
+.rdy__ring > b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:.72rem;color:var(--gold-300)}
+.rdy__bar{display:flex;gap:3px;height:12px;min-width:0}
+.rdy__bar span{position:relative;border-radius:3px;background:color-mix(in srgb,var(--fam) 16%,var(--panel-2));overflow:hidden}
+.rdy__bar i{position:absolute;inset:0 auto 0 0;background:var(--fam);transition:width .6s var(--ease)}
+.rdy__a{display:grid;justify-items:end;gap:2px}
+.rdy__a .mono{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.rdy{grid-template-columns:minmax(0,1fr)}.rdy__a{justify-items:start;grid-auto-flow:column;align-items:center;justify-content:space-between}}
+
 .pt{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-.el{position:relative;aspect-ratio:1/1.02;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel);
-  padding:12px 13px;text-align:left;display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden;
+.el{position:relative;min-height:176px;border-radius:16px;border:1px solid var(--line-soft);background:var(--panel);padding:13px 14px 14px;text-align:left;
+  display:grid;grid-template-rows:auto 1fr auto auto auto;gap:4px;overflow:hidden;
   transition:transform .35s var(--spring),border-color .3s,background-color .3s,box-shadow .35s}
 .el::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--fam)}
-.el:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--fam) 60%,transparent)}
-.el[aria-selected="true"]{background:linear-gradient(150deg,color-mix(in srgb,var(--fam) 26%,var(--card)),var(--card));
+.el::after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--fam) 22%,transparent),transparent);opacity:0;transition:opacity .4s}
+.el:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--fam) 55%,transparent)}
+.el:hover::after,.el[aria-selected="true"]::after{opacity:1}
+.el[aria-selected="true"]{background:linear-gradient(155deg,color-mix(in srgb,var(--fam) 20%,var(--card)),var(--card) 75%);
   border-color:var(--fam);box-shadow:0 18px 40px rgba(0,0,0,.28);transform:translateY(-4px)}
+.el__top{display:flex;justify-content:space-between;align-items:center}
 .el__n{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
-.el__s{font-family:var(--display);font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1;align-self:center;color:var(--fam);font-weight:500}
-.el__t{font-size:.8rem;font-weight:600;line-height:1.25}
-.el__m{font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-top:4px}
+.el__p{font-family:var(--mono);font-size:.68rem;color:var(--fam)}
+.el__i{display:block;align-self:center;color:var(--fam);padding:6px 0 8px}
+.el__i .tic{width:clamp(38px,3.4vw,48px);height:auto;transition:transform .5s var(--spring)}
+.el:hover .el__i .tic,.el[aria-selected="true"] .el__i .tic{transform:rotate(-6deg) scale(1.08)}
+.el__t{font-size:.84rem;font-weight:600;line-height:1.25;position:relative;z-index:1}
+.el__m{font-family:var(--mono);font-size:.62rem;color:var(--muted);position:relative;z-index:1}
+.el__bar{display:block;height:3px;border-radius:2px;background:var(--line-soft);margin-top:6px;overflow:hidden;position:relative;z-index:1}
+.el__bar i{display:block;height:100%;background:var(--fam);transition:width .5s var(--ease)}
+.el--done .el__p::before{content:"✓ "}
 .legend{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0;font-size:.8rem;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .legend i{width:12px;height:12px;border-radius:3px;background:var(--fam)}
+
 .ptd{margin-top:22px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);overflow:hidden;
-  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
-.ptd__l{padding:clamp(22px,3vw,36px);background:linear-gradient(150deg,color-mix(in srgb,var(--fam) 16%,transparent),transparent 70%);
-  border-right:1px solid var(--line-soft)}
-.ptd__big{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
-.ptd__big b{font-family:var(--display);font-size:4.4rem;line-height:.9;color:var(--fam);font-weight:500}
-.ptd__big span{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
-.ptd h3{font-size:clamp(1.4rem,2.4vw,1.9rem)}
-.ptd__l p{color:var(--muted);font-size:.95rem}
-.ptd__a{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.ptd__r{padding:clamp(18px,2.6vw,30px)}
-.ptd__r ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
-.ptd__r li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:baseline;padding:11px 12px;border-radius:10px;
-  transition:background-color .25s}
-.ptd__r li:hover{background:var(--panel-2)}
-.ptd__r li b{font-family:var(--mono);font-size:.78rem;color:var(--gold-300);font-weight:500}
-.ptd__r li span{font-size:.95rem}
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);box-shadow:var(--shadow)}
+.ptd__l{padding:clamp(22px,3vw,34px);border-right:1px solid var(--line-soft);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--fam) 14%,transparent),transparent 60%)}
+.ptd__id{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.ptd__ic{width:64px;height:64px;flex:none;border-radius:16px;display:grid;place-items:center;color:var(--fam);
+  border:1px solid color-mix(in srgb,var(--fam) 45%,transparent);background:color-mix(in srgb,var(--fam) 10%,var(--bg))}
+.ptd__ic .tic{width:40px;height:40px}
+.ptd__id .mono{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fam)}
+.ptd__id h3{font-size:clamp(1.45rem,2.4vw,1.95rem);margin:4px 0 0}
+.ptd__sum{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.ptd__k{margin-bottom:18px}
+.ptd__k .mono,.ptd__w .mono{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400);margin-bottom:8px}
+.ptd__k div{display:flex;flex-wrap:wrap;gap:6px}
+.fact{font-family:var(--mono);font-size:.74rem;padding:7px 10px;border-radius:8px;color:var(--text);
+  border:1px solid color-mix(in srgb,var(--fam) 40%,transparent);background:color-mix(in srgb,var(--fam) 8%,transparent)}
+.ptd__s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:0 0 16px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden}
+.ptd__s div{background:var(--card);padding:10px 12px}
+.ptd__s dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ptd__s dd{margin:2px 0 0;font-family:var(--display);font-size:1.5rem;line-height:1.1;color:var(--fam)}
+.ptd__w{font-size:.86rem;margin-bottom:18px}
+.ptd__a{display:flex;gap:10px;flex-wrap:wrap}
+.ptd__nav{display:flex;justify-content:space-between;gap:8px;margin-top:18px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.ptd__nav .btn{white-space:normal;text-align:left;font-size:.76rem;padding-inline:0;max-width:48%}
+.ptd__nav .btn:last-child{text-align:right}
+.ptd__r{padding:clamp(16px,2.4vw,26px);display:grid;gap:8px;align-content:start}
+.sub{border:1px solid var(--line-soft);border-radius:14px;background:var(--panel);transition:border-color .3s}
+.sub[open]{border-color:color-mix(in srgb,var(--fam) 45%,transparent)}
+.sub summary{list-style:none;display:flex;align-items:center;gap:12px;padding:13px 14px;cursor:pointer;min-height:54px}
+.sub summary::-webkit-details-marker{display:none}
+.sub summary > b{font-family:var(--mono);font-size:.76rem;color:var(--fam);font-weight:500;min-width:34px}
+.sub__t{flex:1;font-weight:600;font-size:.94rem}
+.sub__c{font-family:var(--mono);font-size:.68rem;padding:4px 8px;border-radius:7px;border:1px solid var(--line-soft);color:var(--muted);white-space:nowrap}
+.sub__c--ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
+.sub summary::after{content:"";width:8px;height:8px;flex:none;border-right:1.6px solid var(--muted);border-bottom:1.6px solid var(--muted);
+  transform:rotate(45deg) translateY(-2px);transition:transform .3s var(--ease)}
+.sub[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.sub ul{list-style:none;margin:0;padding:0 10px 10px;display:grid;gap:2px}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:9px 8px;border-radius:9px;cursor:pointer;transition:background .2s}
+.ck:hover{background:var(--panel-2)}
+.ck input{position:absolute;opacity:0;width:1px;height:1px}
+.ck__b{flex:none;width:20px;height:20px;margin-top:1px;border-radius:6px;border:1.5px solid color-mix(in srgb,var(--fam) 60%,var(--line-soft));
+  display:grid;place-items:center;transition:background .25s,border-color .25s}
+.ck__b::after{content:"";width:9px;height:5px;border-left:2px solid var(--on-gold);border-bottom:2px solid var(--on-gold);transform:rotate(-45deg) translate(1px,-1px) scale(0);transition:transform .25s var(--spring)}
+.ck input:checked + .ck__b{background:var(--fam);border-color:var(--fam)}
+.ck input:checked + .ck__b::after{transform:rotate(-45deg) translate(1px,-1px) scale(1)}
+.ck input:focus-visible + .ck__b{outline:2px solid var(--gold-300);outline-offset:2px}
+.ck__t{font-size:.9rem;line-height:1.5}
+.ck input:checked ~ .ck__t{color:var(--muted)}
 .ptd.swap .ptd__l,.ptd.swap .ptd__r{animation:swap .5s var(--ease)}
 @keyframes swap{from{opacity:0;transform:translateY(10px)}}
-.src{font-size:.8rem;color:var(--muted);margin-top:16px;max-width:80ch}
-@media (max-width:980px){.pt{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:760px){
-  .ptd{grid-template-columns:minmax(0,1fr)}
-  .ptd__l{border-right:0;border-bottom:1px solid var(--line-soft)}
-}
+.src{font-size:.8rem;color:var(--muted);margin-top:16px;max-width:86ch}
+@media (max-width:1100px){.pt{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:820px){.ptd{grid-template-columns:minmax(0,1fr)}.ptd__l{border-right:0;border-bottom:1px solid var(--line-soft)}}
 @media (max-width:560px){
-  .pt{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-  .el{padding:9px 9px 10px;aspect-ratio:1/1.12}
-  .el__t{font-size:.7rem}
-  .el__m{display:none}
+  .pt{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .el{min-height:150px;padding:11px 11px 12px}
+  .el__t{font-size:.78rem}
+  .ptd__s dd{font-size:1.25rem}
 }
 
 /* ================= method — benzene honeycomb ================= */
@@ -568,32 +628,79 @@ button.hx[aria-selected="true"]::before{background:linear-gradient(160deg,var(--
 /* ================= the bench ================= */
 .bench{padding:6px clamp(14px,2.4vw,28px) clamp(18px,2.6vw,30px);background:var(--card);border-color:var(--line)}
 .bench__p{padding-top:clamp(20px,2.6vw,30px)}
-.bench__p[data-bp="flame"]{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,50px);align-items:center}
+.bench__p[data-bp="flame"]{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(18px,3.4vw,44px);align-items:start}
 .bench__p[hidden]{display:none!important}
-.burner{display:grid;place-items:center;border-radius:18px;padding:20px 0 10px;
-  background:radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--flc,#7FA8E8) 14%,transparent),transparent 65%),var(--bg-2);
-  border:1px solid var(--line-soft);transition:background .6s}
-.burner__svg{width:min(240px,62vw);height:auto;overflow:visible}
-.fl{transform-origin:100px 200px;animation:flick 1.6s ease-in-out infinite}
-.fl__i{transform-origin:100px 190px;animation:flick 1.1s ease-in-out infinite reverse}
-@keyframes flick{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(.97,1.04) skewX(1.5deg)}50%{transform:scale(1.02,.97) skewX(-1deg)}75%{transform:scale(.99,1.03) skewX(.8deg)}}
-.fl__glow{filter:blur(20px);transition:fill .6s}
-.burner__svg stop{transition:stop-color .6s}
-.wire{opacity:0;transform:translate(30px,-30px);transition:opacity .4s,transform .5s var(--ease)}
-.burner.on .wire{opacity:1;transform:none}
+.lab{border-radius:18px;border:1px solid var(--line-soft);overflow:hidden;position:relative;
+  background:radial-gradient(ellipse 70% 55% at 50% 34%,color-mix(in srgb,var(--flc,#7FA8E8) 16%,transparent),transparent 70%),
+    linear-gradient(#060a14,#0b1224 70%,#121a2e);transition:background .6s}
+[data-theme="light"] .lab{background:radial-gradient(ellipse 70% 55% at 50% 34%,color-mix(in srgb,var(--flc,#7FA8E8) 18%,transparent),transparent 70%),linear-gradient(#1a2338,#25304a)}
+.lab::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:26px 26px}
+.lab__stage{display:grid;place-items:center;padding:18px 10px 0;position:relative}
+.burner{width:min(300px,74vw);height:auto;overflow:visible}
+.lab__ctl{position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;
+  border-top:1px solid rgba(255,255,255,.08);background:rgba(5,11,24,.55)}
+.lab__ctl .seg{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)}
+.lab__ctl .seg button{color:#98A2B8}
+.lab__ctl .seg button[aria-pressed="true"]{color:var(--on-gold)}
+.lab__ctl .btn--line{color:#F3EEE3;border-color:rgba(224,169,76,.3);background:rgba(255,255,255,.04)}
+.b__glow{fill:var(--flc,#7FA8E8);opacity:.2;transition:fill .6s}
+.lab.air-closed .b__glow{fill:#FFB23A}
+.b__roar,.b__lum,.b__note{transition:opacity .5s var(--ease)}
+.b__lum{opacity:0}
+.lab.air-closed .b__roar,.lab.air-closed .b__note{opacity:0}
+.lab.air-closed .b__lum{opacity:1}
+.b__out{transform-origin:130px 158px;animation:flick 1.5s ease-in-out infinite}
+.b__in{transform-origin:130px 158px;animation:flick 1.05s ease-in-out infinite reverse}
+.b__lum > path:first-child{transform-origin:130px 158px;animation:wave 2.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(.97,1.04) skewX(1.4deg)}50%{transform:scale(1.02,.97) skewX(-1deg)}75%{transform:scale(.99,1.03) skewX(.7deg)}}
+@keyframes wave{0%,100%{transform:skewX(0) scaleY(1)}30%{transform:skewX(3.5deg) scaleY(1.04)}60%{transform:skewX(-3deg) scaleY(.97)}}
+.burner stop{transition:stop-color .6s}
+.ahole{transition:fill .4s}
+.lab.air-closed .ahole{fill:#B07A2C}
+.b__sparks circle{fill:var(--fl,#fff);opacity:0}
+.lab.lit .b__sparks circle{animation:spark 1.9s linear infinite}
+.b__sparks circle:nth-child(2){animation-delay:-.4s!important}.b__sparks circle:nth-child(3){animation-delay:-.8s!important}
+.b__sparks circle:nth-child(4){animation-delay:-1.1s!important}.b__sparks circle:nth-child(5){animation-delay:-1.4s!important}.b__sparks circle:nth-child(6){animation-delay:-1.7s!important}
+@keyframes spark{0%{opacity:0;transform:translate(0,0)}20%{opacity:.95}100%{opacity:0;transform:translate(4px,-70px)}}
+.b__txt{font-family:var(--mono);font-size:9px;fill:#E0A94C;letter-spacing:.04em}
+.b__txt--s{fill:#98A2B8;font-size:7.6px}
+.wire{transform:translate(34px,-34px);transition:transform .7s var(--spring)}
+.wire.on{transform:none}
+.wire__loop{stroke:#cfd4dc;transition:stroke .5s}
+.lab.lit .wire__loop{stroke:var(--fl);filter:drop-shadow(0 0 4px var(--fl))}
 .ions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.ion{display:grid;gap:2px;padding:12px 14px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel);text-align:left;
-  transition:border-color .3s,background .3s,transform .3s var(--spring);min-height:64px}
+.ion{position:relative;display:grid;gap:2px;padding:12px 14px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel);text-align:left;
+  transition:border-color .3s,background .3s,transform .3s var(--spring);min-height:66px}
+.ion i{position:absolute;top:13px;right:13px;width:9px;height:9px;border-radius:3px;background:var(--c);box-shadow:0 0 10px var(--c);opacity:.8}
 .ion:hover{border-color:var(--line);transform:translateY(-2px)}
 .ion b{font-family:var(--display);font-size:1.3rem;font-weight:500;line-height:1.1}
 .ion b sup{font-size:.6em}
 .ion span{font-size:.76rem;color:var(--muted)}
 .ion[aria-checked="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--panel))}
 .ion[aria-checked="true"] b{color:var(--c)}
-.readout{margin-top:18px;padding:18px 20px;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel)}
-.readout .mono{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400)}
-.readout b{display:block;font-family:var(--display);font-size:1.7rem;font-weight:500;margin:4px 0 6px;transition:color .5s}
-.readout p{margin:0;color:var(--muted);font-size:.92rem}
+.readout{margin-top:14px;padding:18px 20px;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel)}
+.readout > .mono{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400)}
+.readout > b{display:block;font-family:var(--display);font-size:1.75rem;font-weight:500;margin:4px 0 6px;transition:color .5s}
+.readout > p{margin:0;color:var(--muted);font-size:.92rem}
+.spec{margin-top:16px;opacity:.55;transition:opacity .4s}
+.spec.on{opacity:1}
+.spec__h{display:flex;justify-content:space-between;gap:10px;margin-bottom:7px}
+.spec__h .mono{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.spec__h .mono + .mono{color:var(--text);letter-spacing:.04em;text-transform:none;font-size:.7rem}
+.spec__bar{position:relative;height:30px;border-radius:7px;overflow:hidden;background:#03050a;border:1px solid rgba(255,255,255,.08)}
+.spec__bar::before{content:"";position:absolute;inset:0;opacity:.2;
+  background:linear-gradient(90deg,#3a0060 0%,#5b00c8 5%,#2a1bff 12%,#006cff 25%,#00b7ff 32%,#00e070 42%,#7fff00 50%,#ffef00 55%,#ff9a00 62%,#ff3000 72%,#c80000 85%,#300000 100%)}
+.spec__lines i{position:absolute;top:0;bottom:0;width:3px;translate:-50% 0;background:var(--lc,#fff);box-shadow:0 0 10px var(--lc,#fff),0 0 3px #fff;
+  animation:lineIn .6s var(--ease) both}
+@keyframes lineIn{from{transform:scaleY(0)}}
+.spec__ax{position:relative;height:18px;margin-top:4px}
+.spec__ax span{position:absolute;top:0;translate:-50% 0;font-family:var(--mono);font-size:.6rem;color:var(--muted);white-space:nowrap}
+.steps2{list-style:none;counter-reset:s;margin:14px 0 0;padding:0;display:grid;gap:6px}
+.steps2 li{counter-increment:s;position:relative;padding:10px 12px 10px 44px;border-radius:11px;border:1px dashed var(--line-soft);font-size:.86rem;color:var(--muted)}
+.steps2 li::before{content:counter(s);position:absolute;left:12px;top:9px;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;
+  font-family:var(--mono);font-size:.7rem;color:var(--gold-300);border:1px solid var(--line)}
+.steps2 b{color:var(--text)}
 @media (max-width:820px){.bench__p[data-bp="flame"]{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:420px){.ions{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .bench__bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
@@ -637,25 +744,49 @@ button.hx[aria-selected="true"]::before{background:linear-gradient(160deg,var(--
 .ar > span{font-size:.88rem;color:var(--muted)}
 @media (max-width:720px){.ar{grid-template-columns:minmax(0,1fr);gap:6px}}
 
-/* ================= record ================= */
-.rec{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,6vw,90px);align-items:center}
-.rec__ring{position:relative;width:min(340px,80vw);aspect-ratio:1;justify-self:center}
-.rec__ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+/* ================= record — twenty-year dial ================= */
+.rec{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,6vw,90px);align-items:center}
+.dial{position:relative;width:min(400px,84vw);aspect-ratio:1;margin-inline:auto}
+.dial svg{width:100%;height:100%;overflow:visible}
+.dial__ticks line{stroke:var(--line-soft);stroke-width:1.4;stroke-linecap:round;transition:stroke .5s calc(var(--i) * 70ms)}
+.dial__ticks line.mj{stroke-width:2.6}
+.rec__l.in .dial__ticks line{stroke:color-mix(in srgb,var(--gold-400) 60%,transparent)}
+.dial__labs text{font-family:var(--mono);font-size:10px;fill:var(--muted);letter-spacing:.06em}
 .rr__bg{fill:none;stroke:var(--line-soft);stroke-width:2}
-.rr__fg{fill:none;stroke:var(--gold-400);stroke-width:3;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;
-  transition:stroke-dashoffset 2.2s cubic-bezier(.6,.1,.2,1) .2s}
-.rec__ring.in .rr__fg{stroke-dashoffset:0}
-.rr__n circle{fill:var(--bg);stroke:var(--gold-400);stroke-width:2;transition:fill .4s}
-.rec__ring.in .rr__n circle{fill:var(--gold-300)}
-.rec__ring.in .rr__n circle:nth-child(1){transition-delay:.6s}
-.rec__ring.in .rr__n circle:nth-child(2){transition-delay:1.3s}
-.rec__ring.in .rr__n circle:nth-child(3){transition-delay:2s}
-.rec__c{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center}
-.rec__c b{font-family:var(--display);font-size:clamp(4.5rem,9vw,6.5rem);line-height:1;color:var(--gold-300);font-weight:500}
-.rec__c span{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.rec__card{margin-top:26px;padding:22px 24px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--card)}
+.rr__fg{fill:none;stroke:var(--gold-400);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;
+  transition:stroke-dashoffset 2.2s cubic-bezier(.6,.1,.2,1) .2s;filter:drop-shadow(0 0 6px color-mix(in srgb,var(--gold-400) 50%,transparent))}
+.rec__l.in .rr__fg{stroke-dashoffset:0}
+.dial__orb{transform-origin:160px 160px;animation:orbit 22s linear infinite}
+.dial__orb ellipse{fill:none;stroke:color-mix(in srgb,var(--ice) 32%,transparent);stroke-width:1}
+.dial__e{fill:var(--ice);filter:drop-shadow(0 0 5px var(--ice))}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.nd__h{fill:color-mix(in srgb,var(--gold-400) 22%,transparent);opacity:0;transform-box:fill-box;transform-origin:center}
+.nd__c{fill:var(--bg);stroke:var(--gold-400);stroke-width:2;transition:fill .5s calc(.6s + var(--k) * .6s)}
+.rec__l.in .nd__c{fill:var(--gold-300)}
+.rec__l.in .nd__h{opacity:1;animation:pulse 2.8s ease-in-out calc(1s + var(--k) * .6s) infinite}
+@keyframes pulse{0%,100%{transform:scale(.8);opacity:.25}50%{transform:scale(1.35);opacity:.8}}
+.rec__c{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center;gap:2px}
+.rec__c b{font-family:var(--display);font-size:clamp(4.6rem,9vw,6.6rem);line-height:.95;color:var(--gold-300);font-weight:500}
+.rec__c span{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text)}
+.rec__c em{font-style:normal;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dial__key{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin:14px auto 0;font-size:.78rem;color:var(--muted);max-width:none}
+.dial__key span{display:inline-flex;align-items:center;gap:8px}
+.dial__key i{flex:none}
+.k1{width:14px;height:2px;background:var(--gold-400)}
+.k2{width:9px;height:9px;border-radius:50%;background:var(--gold-300);box-shadow:0 0 8px var(--gold-400)}
+.rec__nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;margin-top:22px}
+.rec__nums div{background:var(--bg);padding:16px 18px}
+.rec__nums b{display:block;font-family:var(--display);font-weight:500;font-size:2.5rem;line-height:1;color:var(--gold-300)}
+.rec__nums span{display:block;font-size:.84rem;color:var(--muted);margin-top:6px}
+.rec__card{margin-top:14px;padding:22px 24px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--card)}
 .rec__card h3{margin:14px 0 8px}
-.rec__card p{color:var(--muted);margin:0;font-size:.95rem}
+.rec__card > p{color:var(--muted);margin:0;font-size:.95rem}
+.aw{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:0}
+.aw li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line-soft)}
+.aw__i{flex:none;min-width:52px;height:30px;padding:0 8px;border-radius:8px;display:grid;place-items:center;font-family:var(--mono);font-size:.64rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--on-gold);background:linear-gradient(135deg,var(--gold-600),#E0A94C)}
+.aw b{font-size:.94rem}
+.aw p{margin:2px 0 0;font-size:.86rem;color:var(--muted)}
 .res{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:14px}
 .res div{padding:16px;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel)}
 .res b{font-family:var(--display);font-size:2rem;color:var(--gold-300);display:block;line-height:1}
@@ -1071,12 +1202,23 @@ button.lec:hover{border-color:var(--gold-400)}
 <section class="sec" id="syllabus">
   <div class="wrap">
     <div class="head head--split" data-rv>
-      <div><span class="eyebrow">Syllabus</span><h2>Twelve topics, laid out like the table they end with.</h2></div>
-      <p class="lede">The same twelve topics run through 5070 and 0620. Open any one to see every sub-topic Cambridge lists for it, and the papers that test it.</p>
+      <div><span class="eyebrow">Syllabus</span><h2>Twelve topics. Every outcome Cambridge can ask for.</h2></div>
+      <p class="lede">5070 and 0620 share these twelve topics. Open one to see each sub-topic and exactly what you must be able to do — then tick off what you can already do without your notes.</p>
     </div>
+
+    <div class="rdy" data-rv>
+      <div class="rdy__t">
+        <div class="rdy__ring"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" class="rdy__bg"/><circle cx="32" cy="32" r="27" class="rdy__fg" pathLength="100"/></svg><b data-rdy-pct>0%</b></div>
+        <div><span class="mono">Your readiness</span><b data-rdy-n>0 of 0 outcomes ticked</b><span class="muted" data-rdy-tip>Tick an outcome once you can do it without looking.</span></div>
+      </div>
+      <div class="rdy__bar" data-rdy-bar aria-hidden="true"></div>
+      <div class="rdy__a"><span class="mono">Saved on this device</span><button type="button" class="btn btn--ghost btn--sm" data-rdy-reset>Clear all ticks</button></div>
+    </div>
+
     <div class="pt" role="tablist" aria-label="Syllabus topics"></div>
+    <div class="legend" data-legend></div>
     <div class="ptd" id="ptd" role="tabpanel" aria-live="polite"></div>
-    <p class="src">Topic and sub-topic names are taken from the Cambridge O Level Chemistry 5070 syllabus for 2026–2028. IGCSE 0620 covers the same twelve topics, with extra Supplement content for Extended candidates.</p>
+    <p class="src">Topics, sub-topics and outcomes follow the Cambridge O Level Chemistry 5070 syllabus for 2026–2028, written here in shorter form. IGCSE 0620 covers the same twelve topics; Extended candidates also study the Supplement content.</p>
   </div>
 </section>
 
@@ -1121,31 +1263,90 @@ button.lec:hover{border-color:var(--gold-400)}
         <button role="tab" aria-selected="false" data-b="anion">Anions</button>
       </div>
       <div class="bench__p" data-bp="flame">
-        <div class="burner">
-          <svg viewBox="0 0 200 300" class="burner__svg" aria-hidden="true">
-            <defs>
-              <radialGradient id="fCore" cx="50%" cy="75%" r="60%"><stop offset="0" stop-color="#E8F1FF"/><stop offset=".55" stop-color="#8FB4FF" stop-opacity=".9"/><stop offset="1" stop-color="#3D6FE0" stop-opacity="0"/></radialGradient>
-              <radialGradient id="fOut" cx="50%" cy="80%" r="70%"><stop offset="0" stop-color="var(--fl,#7FA8E8)" stop-opacity=".95"/><stop offset=".7" stop-color="var(--fl,#7FA8E8)" stop-opacity=".55"/><stop offset="1" stop-color="var(--fl,#7FA8E8)" stop-opacity="0"/></radialGradient>
-              <linearGradient id="fBrass" x1="0" x2="1"><stop offset="0" stop-color="#7C5A22"/><stop offset=".45" stop-color="#E0A94C"/><stop offset="1" stop-color="#6E4E1C"/></linearGradient>
-            </defs>
-            <g class="fl">
-              <path class="fl__o" d="M100 30C72 80 66 120 70 160c3 26 15 40 30 40s27-14 30-40c4-40-2-80-30-130z" fill="url(#fOut)"/>
-              <path class="fl__i" d="M100 110c-12 22-15 40-13 56 2 14 7 22 13 22s11-8 13-22c2-16-1-34-13-56z" fill="url(#fCore)"/>
-            </g>
-            <circle class="fl__glow" cx="100" cy="150" r="80" fill="var(--fl,#7FA8E8)" opacity=".14"/>
-            <path d="M74 200h52l-6 54H80z" fill="url(#fBrass)"/>
-            <rect x="86" y="214" width="28" height="9" rx="2" fill="#2A1C08" opacity=".55"/>
-            <path d="M46 258h108a8 8 0 0 1 8 8v10H38v-10a8 8 0 0 1 8-8z" fill="url(#fBrass)"/>
-            <g class="wire"><path d="M168 64 112 132" stroke="#C9CED8" stroke-width="2.4" stroke-linecap="round"/><circle cx="111" cy="133" r="3.4" fill="none" stroke="#C9CED8" stroke-width="2"/></g>
-          </svg>
+        <div class="lab">
+          <div class="lab__stage">
+            <svg viewBox="0 0 260 360" class="burner" aria-hidden="true">
+              <defs>
+                <linearGradient id="gChrome" x1="0" x2="1"><stop offset="0" stop-color="#3b414d"/><stop offset=".22" stop-color="#aeb6c3"/><stop offset=".42" stop-color="#eef1f5"/><stop offset=".62" stop-color="#8c94a2"/><stop offset="1" stop-color="#2b3039"/></linearGradient>
+                <linearGradient id="gBrass" x1="0" x2="1"><stop offset="0" stop-color="#6c4b18"/><stop offset=".35" stop-color="#E0A94C"/><stop offset=".55" stop-color="#F6D598"/><stop offset="1" stop-color="#5d3f12"/></linearGradient>
+                <linearGradient id="gIron" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5262"/><stop offset="1" stop-color="#1c2028"/></linearGradient>
+                <linearGradient id="gMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9d3c7"/><stop offset="1" stop-color="#9f988a"/></linearGradient>
+                <radialGradient id="gOuter" cx="50%" cy="78%" r="72%"><stop offset="0" style="stop-color:var(--fl,#8FA6FF)" stop-opacity=".95"/><stop offset=".55" style="stop-color:var(--fl,#7B8CF0)" stop-opacity=".55"/><stop offset="1" style="stop-color:var(--fl,#6B5BD6)" stop-opacity="0"/></radialGradient>
+                <radialGradient id="gInner" cx="50%" cy="80%" r="70%"><stop offset="0" stop-color="#F2F7FF"/><stop offset=".45" stop-color="#9CC2FF"/><stop offset="1" stop-color="#3D6FE0" stop-opacity=".2"/></radialGradient>
+                <radialGradient id="gLum" cx="50%" cy="82%" r="75%"><stop offset="0" stop-color="#FFF6CF"/><stop offset=".35" stop-color="#FFC94A"/><stop offset=".75" stop-color="#FF8A1E" stop-opacity=".85"/><stop offset="1" stop-color="#E2551B" stop-opacity="0"/></radialGradient>
+                <filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter>
+                <filter id="fGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9"/></filter>
+                <pattern id="pTile" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0v22" fill="none" stroke="#857e72" stroke-width=".8"/></pattern>
+              </defs>
+              <!-- glow on the bench -->
+              <ellipse class="b__glow" cx="130" cy="120" rx="95" ry="110" filter="url(#fGlow)"/>
+              <!-- heat-proof mat -->
+              <path d="M18 318h224l14 30H4z" fill="url(#gMat)"/><path d="M18 318h224l14 30H4z" fill="url(#pTile)" opacity=".55"/>
+              <path d="M4 348h252v6H4z" fill="#6f695e"/>
+              <!-- gas tap tubing -->
+              <path d="M66 305C40 305 30 316 22 334S6 352 0 356" fill="none" stroke="#9a4a1c" stroke-width="11" stroke-linecap="round"/>
+              <path d="M66 305C40 305 30 316 22 334S6 352 0 356" fill="none" stroke="#d9772b" stroke-width="7" stroke-linecap="round"/>
+              <path d="M64 302C42 302 34 311 27 326" fill="none" stroke="#f5b27a" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+              <rect x="60" y="299" width="58" height="11" rx="4" fill="url(#gChrome)"/>
+              <!-- base -->
+              <path d="M72 306h116c9 0 14 5 14 12H58c0-7 5-12 14-12z" fill="url(#gIron)"/>
+              <path d="M76 307h108" stroke="#7a8293" stroke-width="1.4" opacity=".7"/>
+              <!-- barrel -->
+              <rect x="116" y="160" width="28" height="148" rx="3" fill="url(#gChrome)"/>
+              <path d="M123 164v140" stroke="#fff" stroke-width="1.6" opacity=".35"/>
+              <!-- collar + air hole -->
+              <rect x="111" y="254" width="38" height="24" rx="4" fill="url(#gBrass)"/>
+              <rect class="ahole" x="121" y="260" width="18" height="11" rx="2.5" fill="#0a0d14"/>
+              <path d="M111 258h38M111 274h38" stroke="#4d3510" stroke-width="1" opacity=".5"/>
+              <!-- barrel rim -->
+              <rect x="112" y="155" width="36" height="9" rx="2.5" fill="url(#gChrome)"/>
+              <!-- luminous (air hole closed) -->
+              <g class="b__lum"><path d="M130 6C104 48 96 92 101 124c3 22 14 34 29 34s26-12 29-34c5-32-3-76-29-118z" fill="url(#gLum)" filter="url(#fSoft)"/>
+                <path d="M130 70c-10 22-13 44-11 62 2 14 6 22 11 22s9-8 11-22c2-18-1-40-11-62z" fill="#FFF3C4" opacity=".55" filter="url(#fSoft)"/></g>
+              <!-- roaring (air hole open) -->
+              <g class="b__roar">
+                <path class="b__out" d="M130 26C111 66 103 102 105 128c2 20 12 30 25 30s23-10 25-30c2-26-6-62-25-102z" fill="url(#gOuter)" filter="url(#fSoft)"/>
+                <path class="b__in" d="M130 94c-7 18-10 33-9 46 1 11 4.5 18 9 18s8-7 9-18c1-13-2-28-9-46z" fill="url(#gInner)"/>
+              </g>
+              <!-- emission sparks -->
+              <g class="b__sparks"><circle cx="124" cy="104" r="1.6"/><circle cx="137" cy="96" r="1.2"/><circle cx="131" cy="88" r="1.4"/><circle cx="141" cy="110" r="1.1"/><circle cx="120" cy="92" r="1"/><circle cx="134" cy="78" r="1.3"/></g>
+              <!-- hottest point -->
+              <g class="b__note"><circle cx="130" cy="90" r="2.4" fill="none" stroke="#E0A94C" stroke-width="1.2"/><path d="M127.5 90H98" stroke="#E0A94C" stroke-width=".9" stroke-dasharray="3 3"/>
+                <text x="8" y="82" class="b__txt">hottest point</text><text x="8" y="94" class="b__txt b__txt--s">above the blue cone</text></g>
+              <!-- nichrome wire on its holder -->
+              <g class="wire">
+                <path d="M252 28 206 74" stroke="#6b4a2a" stroke-width="9" stroke-linecap="round"/>
+                <path d="M252 28 206 74" stroke="#a0754a" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+                <path d="M207 73 150 116" stroke="#cfd4dc" stroke-width="2" stroke-linecap="round"/>
+                <circle class="wire__loop" cx="146" cy="119" r="4.6" fill="none" stroke-width="2.2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="lab__ctl">
+            <div class="seg" role="group" aria-label="Air hole">
+              <button type="button" aria-pressed="true" data-air="open">Air hole open</button>
+              <button type="button" aria-pressed="false" data-air="closed">Closed</button>
+            </div>
+            <button class="btn btn--line btn--sm" type="button" data-clean>Clean the wire</button>
+          </div>
         </div>
         <div class="bench__side">
           <div class="ions" role="radiogroup" aria-label="Choose an ion"></div>
           <div class="readout">
             <span class="mono">Flame colour</span>
             <b data-fc>Choose an ion</b>
-            <p data-fn>Dip the wire, hold it at the edge of a roaring flame, and the colour names the metal ion.</p>
+            <p data-fn>Dip the clean wire into the sample and hold it at the edge of the roaring blue flame. The colour names the metal ion.</p>
+            <div class="spec" data-spec>
+              <div class="spec__h"><span class="mono">Main emission lines</span><span class="mono" data-specnm>—</span></div>
+              <div class="spec__bar"><div class="spec__lines" data-speclines></div></div>
+              <div class="spec__ax"><span>400 nm</span><span>500</span><span>600</span><span>700 nm</span></div>
+            </div>
           </div>
+          <ol class="steps2">
+            <li><b>Clean</b> the wire in concentrated hydrochloric acid until it gives no colour of its own.</li>
+            <li><b>Dip</b> the loop into the solid sample.</li>
+            <li><b>Hold</b> it at the edge of a roaring flame — air hole open — and name the colour.</li>
+          </ol>
         </div>
       </div>
       <div class="bench__p" data-bp="gas" hidden><div class="gas"></div></div>
@@ -1163,22 +1364,38 @@ button.lec:hover{border-color:var(--gold-400)}
 <section class="sec" id="record">
   <div class="wrap">
     <div class="rec">
-      <div class="rec__ring" data-rv>
-        <svg viewBox="0 0 220 220" aria-hidden="true">
-          <circle class="rr__bg" cx="110" cy="110" r="92"/>
-          <circle class="rr__fg" cx="110" cy="110" r="92" pathLength="100"/>
-          <g class="rr__n"><circle cx="110" cy="18" r="7"/><circle cx="189.7" cy="156" r="7"/><circle cx="30.3" cy="156" r="7"/></g>
-        </svg>
-        <div class="rec__c"><b data-count="3">3</b><span>Cambridge distinctions</span></div>
+      <div class="rec__l" data-rv>
+        <div class="dial">
+          <svg viewBox="0 0 320 320" aria-hidden="true">
+            <defs><radialGradient id="gDial" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#E0A94C" stop-opacity=".16"/><stop offset="1" stop-color="#E0A94C" stop-opacity="0"/></radialGradient></defs>
+            <circle cx="160" cy="160" r="150" fill="url(#gDial)"/>
+            <g class="dial__ticks" data-ticks></g>
+            <g class="dial__labs" data-labs></g>
+            <circle class="rr__bg" cx="160" cy="160" r="108"/>
+            <circle class="rr__fg" cx="160" cy="160" r="108" pathLength="100" transform="rotate(-90 160 160)"/>
+            <g class="dial__orb"><ellipse cx="160" cy="160" rx="84" ry="30"/><circle class="dial__e" cx="244" cy="160" r="3.4"/></g>
+            <g class="rr__n" data-nodes></g>
+          </svg>
+          <div class="rec__c"><b data-count="3">3</b><span>Cambridge distinctions</span><em>on a twenty-year scale</em></div>
+        </div>
+        <p class="dial__key"><span><i class="k1"></i>Outer scale — twenty years in the subject</span><span><i class="k2"></i>Gold markers — three distinctions</span></p>
       </div>
       <div class="rec__t" data-rv>
         <span class="eyebrow">The record</span>
         <h2>Three distinctions, in twenty years of one subject.</h2>
         <p class="lede">A counted figure from his own record — shown as it is, rather than a rounded student headcount.</p>
+        <div class="rec__nums">
+          <div><b>20</b><span>years teaching O Level &amp; IGCSE Chemistry</span></div>
+          <div><b>3</b><span>Cambridge distinctions on his record</span></div>
+        </div>
         <div class="rec__card">
           <span class="chip">What a distinction means</span>
           <h3>Not the same as an A*</h3>
           <p>A Cambridge distinction is an Outstanding Cambridge Learner Award. It goes to the highest-scoring candidates in a country, or in the world — not to every student who gets an A*.</p>
+          <ul class="aw">
+            <li><span class="aw__i">World</span><div><b>Top in the World</b><p>The highest mark worldwide in that syllabus, in that series.</p></div></li>
+            <li><span class="aw__i">PK</span><div><b>Top in Pakistan</b><p>The highest mark in the country in that syllabus, in that series.</p></div></li>
+          </ul>
         </div>
         <div class="res" data-results hidden></div>
       </div>
@@ -1645,6 +1862,40 @@ button.lec:hover{border-color:var(--gold-400)}
 
 </script>
 <script>
+/* the twelve Cambridge 5070 / 0620 topics — names from the 2026–2028 syllabus */
+window.UK_TOPICS = [
+  { n: 1, t: 'States of matter', k: 2 },
+  { n: 2, t: 'Atoms, elements and compounds', k: 7 },
+  { n: 3, t: 'Stoichiometry', k: 3 },
+  { n: 4, t: 'Electrochemistry', k: 2 },
+  { n: 5, t: 'Chemical energetics', k: 1 },
+  { n: 6, t: 'Chemical reactions', k: 4 },
+  { n: 7, t: 'Acids, bases and salts', k: 3 },
+  { n: 8, t: 'The Periodic Table', k: 5 },
+  { n: 9, t: 'Metals', k: 6 },
+  { n: 10, t: 'Chemistry of the environment', k: 3 },
+  { n: 11, t: 'Organic chemistry', k: 8 },
+  { n: 12, t: 'Experimental techniques and chemical analysis', k: 5 }
+];
+/* one line drawing per topic — 48 × 48, stroke = currentColor */
+window.UK_ICONS = {
+  1: '<rect x="4" y="13" width="17" height="22" rx="3"/><circle cx="9.5" cy="19" r="2.2"/><circle cx="15.5" cy="19" r="2.2"/><circle cx="9.5" cy="25" r="2.2"/><circle cx="15.5" cy="25" r="2.2"/><circle cx="9.5" cy="31" r="2.2"/><circle cx="15.5" cy="31" r="2.2"/><rect x="27" y="13" width="17" height="22" rx="3"/><circle cx="31.5" cy="18" r="2.2"/><circle cx="39.5" cy="23" r="2.2"/><circle cx="33" cy="30.5" r="2.2"/><path d="M36 17.5h4M28.5 27h-2" opacity=".55"/>',
+  2: '<circle cx="24" cy="24" r="3.6" fill="currentColor"/><ellipse cx="24" cy="24" rx="19" ry="7.5"/><ellipse cx="24" cy="24" rx="19" ry="7.5" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="19" ry="7.5" transform="rotate(120 24 24)"/>',
+  3: '<path d="M24 7v33M14 41h20M7 14h34"/><circle cx="24" cy="7" r="2"/><path d="M7 14 2.5 25h9zM41 14l-4.5 11h9z"/><path d="M2.5 25a4.5 3 0 0 0 9 0M36.5 25a4.5 3 0 0 0 9 0"/>',
+  4: '<path d="M8 16v22a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16"/><path d="M8 27h32" opacity=".45"/><path d="M17 6v28M31 6v28"/><path d="M13 3.5h8M27 3.5h8M17 1v5" /><circle cx="22" cy="33" r="1.4" fill="currentColor"/><circle cx="27" cy="36" r="1.4" fill="currentColor"/>',
+  5: '<path d="M6 4v38h38"/><path d="M8 32h7c5 0 7-20 13-20s8 23 13 23h3"/><path d="M28 13v19M28 13l-2.5 4M28 13l2.5 4" opacity=".55"/><path d="M10 32h6M36 35h6" stroke-dasharray="2 2"/>',
+  6: '<path d="M6 17h34M34 11l6 6"/><path d="M42 31H8M14 37l-6-6"/>',
+  7: '<path d="M24 5c6 9 13 16 13 24a13 13 0 0 1-26 0c0-8 7-15 13-24z"/><path d="M17 32a7 7 0 0 0 7 6"/>',
+  8: '<path d="M5 9h6v30H5zM11 15h6v24h-6zM17 23h20v16H17zM37 15h6v24h-6zM37 9h6v6h-6z"/><path d="M23 23v16M29 23v16M17 31h20" opacity=".45"/>',
+  9: '<path d="M6 40 10 31h12l4 9zM22 40l4-9h12l4 9zM14 31l4-9h12l4 9z"/><path d="M18 22l3-6h6l3 6" opacity=".55"/>',
+  10: '<circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c5.5 5 5.5 29 0 34M24 7c-5.5 5-5.5 29 0 34" opacity=".7"/><path d="M12 13.5c3.5 2 20.5 2 24 0M12 34.5c3.5-2 20.5-2 24 0" opacity=".45"/>',
+  11: '<path d="M20 9.5 29 4.3l9 5.2v10.4l-9 5.2-9-5.2z"/><circle cx="29" cy="14.7" r="4.3" opacity=".7"/><path d="M20 19.9 11 25v10.4M11 35.4l-7 4M11 35.4l9 5.2M20 40.6l9-5.2"/>',
+  12: '<path d="M19 4h10M21 4v14L9 38a3.2 3.2 0 0 0 2.8 4.8h24.4A3.2 3.2 0 0 0 39 38L27 18V4"/><path d="M13 31h22"/><circle cx="20" cy="36" r="1.5" fill="currentColor"/><circle cx="27" cy="34" r="1.2" fill="currentColor"/>'
+};
+window.UK_ICON = function (n, cls) {
+  return '<svg class="' + (cls || 'tic') + '" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (window.UK_ICONS[n] || '') + '</svg>';
+};
+
 (function () {
   'use strict';
   var C = window.UK_CONFIG, UK = window.UK, d = document;
@@ -1663,41 +1914,94 @@ button.lec:hover{border-color:var(--gold-400)}
     prac:   { label: 'Practical', d: '#B79CEB', l: '#6E4BBE' }
   };
   var TOPICS = [
-    { n: 1, s: 'St', t: 'States of matter', f: 'struct', sub: [['1.1', 'Solids, liquids and gases'], ['1.2', 'Diffusion']],
-      hi: 'Heating and cooling curves explained with kinetic particle theory, and why gases of lower relative molecular mass diffuse faster.' },
-    { n: 2, s: 'At', t: 'Atoms, elements and compounds', f: 'struct',
-      sub: [['2.1', 'Elements, compounds and mixtures'], ['2.2', 'Atomic structure and the Periodic Table'], ['2.3', 'Isotopes'], ['2.4', 'Ions and ionic bonds'], ['2.5', 'Simple molecules and covalent bonds'], ['2.6', 'Giant covalent structures'], ['2.7', 'Metallic bonding']],
-      hi: 'Electronic configurations up to calcium, dot-and-cross diagrams for H₂, Cl₂, H₂O, CH₄, NH₃, HCl, CH₃OH, C₂H₄, O₂, CO₂ and N₂, and why structure decides properties.' },
-    { n: 3, s: 'Mo', t: 'Stoichiometry', f: 'phys',
-      sub: [['3.1', 'Formulae'], ['3.2', 'Relative masses of atoms and molecules'], ['3.3', 'The mole and the Avogadro constant']],
-      hi: 'Moles, limiting reactants, gas volumes at 24 dm³ per mole, titration concentrations, empirical formulae, percentage yield and purity.' },
-    { n: 4, s: 'Ec', t: 'Electrochemistry', f: 'phys', sub: [['4.1', 'Electrolysis'], ['4.2', 'Hydrogen–oxygen fuel cells']],
-      hi: 'Electrolysis of molten lead(II) bromide, concentrated aqueous sodium chloride, dilute sulfuric acid and aqueous copper(II) sulfate — with ionic half-equations.' },
-    { n: 5, s: 'En', t: 'Chemical energetics', f: 'phys', sub: [['5.1', 'Exothermic and endothermic reactions']],
-      hi: 'Reaction pathway diagrams with ΔH and Eₐ, bond breaking against bond making, and enthalpy change from bond energies.' },
-    { n: 6, s: 'Rx', t: 'Chemical reactions', f: 'phys',
-      sub: [['6.1', 'Physical and chemical changes'], ['6.2', 'Rate of reaction'], ['6.3', 'Reversible reactions and equilibrium'], ['6.4', 'Redox']],
-      hi: 'Collision theory, equilibrium, the Haber process (450 °C, 200 atm, iron) and the Contact process (450 °C, 2 atm, vanadium(V) oxide), and redox by oxidation number.' },
-    { n: 7, s: 'Ab', t: 'Acids, bases and salts', f: 'inorg',
-      sub: [['7.1', 'The characteristic properties of acids and bases'], ['7.2', 'Oxides'], ['7.3', 'Preparation of salts']],
-      hi: 'Strong and weak acids, amphoteric oxides, preparing salts by titration, excess solid and precipitation, and the solubility rules.' },
-    { n: 8, s: 'Pt', t: 'The Periodic Table', f: 'inorg',
-      sub: [['8.1', 'Arrangement of elements'], ['8.2', 'Group I properties'], ['8.3', 'Group VII properties'], ['8.4', 'Transition elements'], ['8.5', 'Noble gases']],
-      hi: 'Trends down Group I and Group VII, halogen displacement, the transition elements and why the noble gases do not react.' },
-    { n: 9, s: 'Mt', t: 'Metals', f: 'inorg',
-      sub: [['9.1', 'Properties of metals'], ['9.2', 'Uses of metals'], ['9.3', 'Alloys and their properties'], ['9.4', 'Reactivity series'], ['9.5', 'Corrosion of metals'], ['9.6', 'Extraction of metals']],
-      hi: 'The reactivity series, rusting and sacrificial protection, the blast furnace, and aluminium extraction with cryolite.' },
-    { n: 10, s: 'Ev', t: 'Chemistry of the environment', f: 'inorg',
-      sub: [['10.1', 'Water'], ['10.2', 'Fertilisers'], ['10.3', 'Air quality and climate']],
-      hi: 'Water treatment, NPK fertilisers, where each air pollutant comes from, catalytic converters and photosynthesis.' },
-    { n: 11, s: 'Or', t: 'Organic chemistry', f: 'org',
-      sub: [['11.1', 'Formulae, functional groups and terminology'], ['11.2', 'Naming organic compounds'], ['11.3', 'Fuels'], ['11.4', 'Alkanes'], ['11.5', 'Alkenes'], ['11.6', 'Alcohols'], ['11.7', 'Carboxylic acids'], ['11.8', 'Polymers']],
-      hi: 'Homologous series and isomers, cracking, substitution and addition, ethanol made two ways, esters, nylon and PET.' },
-    { n: 12, s: 'Xa', t: 'Experimental techniques and chemical analysis', f: 'prac',
-      sub: [['12.1', 'Experimental design'], ['12.2', 'Acid–base titrations'], ['12.3', 'Chromatography'], ['12.4', 'Separation and purification'], ['12.5', 'Identification of ions and gases']],
-      hi: 'Titrations, chromatography and Rf values, separation methods, and the tests for anions, cations, gases and flame colours.' }
+    { n: 1, t: 'States of matter', f: 'struct',
+      hi: 'How particles are arranged and how they move — and how that one picture explains melting, boiling, gas pressure and diffusion.',
+      facts: ['Flat line on a heating curve = change of state', 'Lower Mr → faster diffusion'],
+      sub: [['1.1', 'Solids, liquids and gases', ['State the distinguishing properties of solids, liquids and gases', 'Describe their structures by particle separation, arrangement and motion', 'Explain melting, boiling, evaporating, freezing and condensing with kinetic particle theory', 'Interpret and explain heating and cooling curves', 'Explain how temperature and pressure change the volume of a gas']],
+        ['1.2', 'Diffusion', ['Describe and explain diffusion with kinetic particle theory', 'Explain how relative molecular mass affects the rate of diffusion of a gas']]] },
+    { n: 2, t: 'Atoms, elements and compounds', f: 'struct',
+      hi: 'Inside the atom, then the three ways atoms hold together — ionic, covalent and metallic — and why each gives the properties it does.',
+      facts: ['Proton +1 · neutron 0 · electron −1', 'Configuration e.g. 2,8,3', 'Ionic bond = electrostatic attraction'],
+      sub: [['2.1', 'Elements, compounds and mixtures', ['Describe the differences between elements, compounds and mixtures']],
+        ['2.2', 'Atomic structure and the Periodic Table', ['Describe the atom: protons and neutrons in the nucleus, electrons in shells', 'State the relative charges and relative masses of protons, neutrons and electrons', 'Define proton number and mass number', 'Write electronic configurations for elements and their ions, proton number 1 to 20', 'Link outer-shell electrons to group number and occupied shells to period number']],
+        ['2.3', 'Isotopes', ['Define isotopes', 'Explain why isotopes have the same chemical properties', 'Interpret symbols for atoms and ions, e.g. ¹²₆C and ³⁵₁₇Cl⁻', 'Calculate relative atomic mass from isotope masses and abundances']],
+        ['2.4', 'Ions and ionic bonds', ['Describe how cations and anions form', 'Describe the giant lattice of an ionic compound', 'State that an ionic bond is a strong electrostatic attraction between oppositely charged ions', 'Draw dot-and-cross diagrams for ionic bonding', 'Explain high melting points, and conductivity when molten or aqueous but not solid']],
+        ['2.5', 'Simple molecules and covalent bonds', ['State that a covalent bond is a shared pair of electrons', 'Draw dot-and-cross diagrams for H₂, Cl₂, H₂O, CH₄, NH₃, HCl, CH₃OH, C₂H₄, O₂, CO₂ and N₂', 'Explain the low melting points and poor conductivity of simple molecular substances']],
+        ['2.6', 'Giant covalent structures', ['Describe the structures of graphite, diamond and silicon(IV) oxide', 'Relate graphite and diamond to their uses: lubricant, electrode, cutting tools', 'Explain why diamond and silicon(IV) oxide have similar properties']],
+        ['2.7', 'Metallic bonding', ['Describe metallic bonding: positive ions in a sea of delocalised electrons', 'Explain why metals conduct electricity and are malleable and ductile']]] },
+    { n: 3, t: 'Stoichiometry', f: 'phys',
+      hi: 'Formulae and equations, then the mole — the calculation skill that runs through half of every theory paper.',
+      facts: ['n = m ÷ M', '1 mol = 6.02 × 10²³ particles', '24 dm³ per mole of gas at r.t.p.'],
+      sub: [['3.1', 'Formulae', ['State the formulae of the elements and compounds in the syllabus', 'Define molecular formula and empirical formula', 'Deduce formulae from models, diagrams and the charges on ions', 'Write word, symbol and ionic equations with state symbols']],
+        ['3.2', 'Relative masses of atoms and molecules', ['Describe relative atomic mass, Ar, against carbon-12', 'Define relative molecular mass and relative formula mass, Mr']],
+        ['3.3', 'The mole and the Avogadro constant', ['State that one mole contains 6.02 × 10²³ particles', 'Use amount (mol) = mass (g) ÷ molar mass (g/mol)', 'Use the molar gas volume, 24 dm³ at r.t.p.', 'Work with concentrations in g/dm³ and mol/dm³', 'Calculate reacting masses, limiting reactants, gas volumes and solution concentrations', 'Calculate a concentration from titration results', 'Calculate empirical and molecular formulae', 'Calculate percentage yield, percentage composition and percentage purity']]] },
+    { n: 4, t: 'Electrochemistry', f: 'phys',
+      hi: 'What happens at each electrode, why, and how to predict the products for a compound you have never electrolysed.',
+      facts: ['Cathode: reduction (gain of electrons)', 'Anode: oxidation (loss of electrons)', 'Fuel cell product: water only'],
+      sub: [['4.1', 'Electrolysis', ['Define electrolysis', 'Identify the anode, cathode and electrolyte', 'Describe charge transfer: electrons in the circuit, ions in the electrolyte', 'Products and observations for molten lead(II) bromide, concentrated NaCl(aq) and dilute sulfuric acid', 'Products for aqueous copper(II) sulfate with carbon and with copper electrodes', 'Predict products for molten binary compounds and aqueous halides', 'Write ionic half-equations at the anode and cathode', 'Describe electroplating and why it is used']],
+        ['4.2', 'Hydrogen–oxygen fuel cells', ['State that a hydrogen–oxygen fuel cell makes electricity with water as the only product', 'Compare fuel cells with petrol engines in vehicles']]] },
+    { n: 5, t: 'Chemical energetics', f: 'phys',
+      hi: 'Energy in and energy out: reaction pathway diagrams, activation energy, and enthalpy change worked out from bond energies.',
+      facts: ['Exothermic: ΔH negative', 'Bond breaking takes energy in', 'Bond making gives energy out'],
+      sub: [['5.1', 'Exothermic and endothermic reactions', ['Describe exothermic and endothermic reactions by the temperature change of the surroundings', 'State that ΔH is negative for exothermic and positive for endothermic reactions', 'Define activation energy, Eₐ', 'Draw and interpret reaction pathway diagrams with ΔH and Eₐ', 'Explain ΔH through bond breaking and bond making', 'Calculate ΔH from bond energies']]] },
+    { n: 6, t: 'Chemical reactions', f: 'phys',
+      hi: 'How fast, how far, and who gains the electrons — rates, equilibrium with the Haber and Contact processes, and redox.',
+      facts: ['Haber: 450 °C · 200 atm · iron', 'Contact: 450 °C · 2 atm · V₂O₅', 'Oxidation = loss of electrons'],
+      sub: [['6.1', 'Physical and chemical changes', ['Identify physical and chemical changes and how they differ']],
+        ['6.2', 'Rate of reaction', ['Describe collision theory', 'State how a catalyst changes the rate and the activation energy', 'Explain the effect of concentration, pressure, surface area, temperature and catalysts', 'Describe and evaluate practical methods for measuring rate', 'Interpret rate data and graphs']],
+        ['6.3', 'Reversible reactions and equilibrium', ['Use the ⇌ symbol for reversible reactions', 'Hydrated and anhydrous copper(II) sulfate and cobalt(II) chloride', 'State the conditions for equilibrium in a closed system', 'Predict how temperature, pressure, concentration and catalysts move the equilibrium', 'Haber process: equation, raw materials and conditions', 'Contact process: equation, raw materials and conditions', 'Explain the chosen conditions by rate, yield, safety and cost']],
+        ['6.4', 'Redox', ['Use Roman numerals for oxidation numbers', 'Define oxidation and reduction by oxygen, electrons and oxidation number', 'Identify redox from changes in oxidation number', 'Identify redox using acidified potassium manganate(VII) or potassium iodide', 'Define and identify oxidising and reducing agents']]] },
+    { n: 7, t: 'Acids, bases and salts', f: 'inorg',
+      hi: 'What makes an acid an acid, the reactions you must know by heart, and how to make a pure dry salt by the right method.',
+      facts: ['H⁺ + OH⁻ → H₂O', 'Acid = proton donor', 'Sodium, potassium, ammonium salts: all soluble'],
+      sub: [['7.1', 'The characteristic properties of acids and bases', ['State that acids give H⁺ and alkalis give OH⁻ in water', 'Define acids as proton donors and bases as proton acceptors', 'Describe the reactions of acids with metals, bases and carbonates', 'Describe the reactions of bases with acids and ammonium salts', 'Write the neutralisation equation H⁺ + OH⁻ → H₂O', 'Give indicator colours for litmus, thymolphthalein and methyl orange', 'Define strong and weak acids, with their dissociation equations', 'Use universal indicator and the pH scale']],
+        ['7.2', 'Oxides', ['Describe amphoteric oxides', 'Classify oxides as acidic, basic or amphoteric']],
+        ['7.3', 'Preparation of salts', ['Prepare soluble salts by titration, or with an excess of metal, base or carbonate', 'Prepare insoluble salts by precipitation', 'Apply the general solubility rules', 'Define hydrated, anhydrous and water of crystallisation']]] },
+    { n: 8, t: 'The Periodic Table', f: 'inorg',
+      hi: 'Why position predicts behaviour: the trends down Group I and Group VII, transition elements, and the noble gases.',
+      facts: ['Group I: more reactive going down', 'Group VII: less reactive going down', 'Cl₂ pale yellow-green · Br₂ red-brown · I₂ grey-black'],
+      sub: [['8.1', 'Arrangement of elements', ['Describe the table by periods, groups and proton number', 'Describe the change from metallic to non-metallic across a period', 'Relate group number to the charge on the ion', 'Explain similarities within a group from electronic configuration', 'Predict properties from position and from given data']],
+        ['8.2', 'Group I properties', ['Trends down Group I: melting point, density and reactivity', 'Predict the properties of other Group I elements']],
+        ['8.3', 'Group VII properties', ['Trends down Group VII: density and reactivity', 'State the appearance of chlorine, bromine and iodine at r.t.p.', 'Describe and explain halogen displacement reactions', 'Predict the properties of other Group VII elements']],
+        ['8.4', 'Transition elements', ['High densities and melting points, variable oxidation numbers, coloured compounds, catalysts']],
+        ['8.5', 'Noble gases', ['Explain why the noble gases are unreactive and monatomic']]] },
+    { n: 9, t: 'Metals', f: 'inorg',
+      hi: 'Properties and uses, alloys, the reactivity series, rusting and its prevention, and how iron and aluminium are extracted.',
+      facts: ['K Na Ca Mg Al C Zn Fe H Cu Ag Au', 'Rusting needs water and oxygen', 'Iron: blast furnace · aluminium: electrolysis'],
+      sub: [['9.1', 'Properties of metals', ['Compare the physical properties of metals and non-metals', 'Describe how metals react with dilute acids, water or steam, and oxygen']],
+        ['9.2', 'Uses of metals', ['Link the uses of aluminium and copper to their properties']],
+        ['9.3', 'Alloys and their properties', ['Describe alloys, including brass and stainless steel', 'Explain why alloys are harder and stronger than pure metals', 'Use alloys, such as stainless steel in cutlery, by their properties', 'Identify an alloy from a diagram of its structure']],
+        ['9.4', 'Reactivity series', ['State the reactivity series from potassium to gold', 'Compare reactivity by displacement reactions', 'Describe reactions with cold water, steam and dilute hydrochloric acid', 'Explain the apparent unreactivity of aluminium', 'Deduce an order of reactivity from results']],
+        ['9.5', 'Corrosion of metals', ['State the conditions needed for rusting', 'Describe barrier methods: painting, greasing, coating with plastic', 'Explain sacrificial protection, and galvanising with zinc']],
+        ['9.6', 'Extraction of metals', ['Link ease of extraction to the reactivity series', 'Write the blast-furnace equations for extracting iron from hematite', 'Describe aluminium extraction: cryolite, anode replacement, half-equations']]] },
+    { n: 10, t: 'Chemistry of the environment', f: 'inorg',
+      hi: 'Water and its treatment, fertilisers, and the air: where each pollutant comes from, what it does, and how it is reduced.',
+      facts: ['Clean air: ≈78% N₂, 21% O₂', '2CO + 2NO → 2CO₂ + N₂', 'NPK: nitrogen, phosphorus, potassium'],
+      sub: [['10.1', 'Water', ['Test for water with anhydrous cobalt(II) chloride and copper(II) sulfate', 'Test the purity of water by its melting and boiling points', 'State what natural water can contain — and which substances help or harm', 'Describe how the domestic water supply is treated']],
+        ['10.2', 'Fertilisers', ['State that ammonium salts and nitrates are used as fertilisers', 'Describe NPK fertilisers and why plants need each element']],
+        ['10.3', 'Air quality and climate', ['State the composition of clean, dry air', 'Sources and effects of CO₂, CO, particulates, methane, oxides of nitrogen and SO₂', 'Describe how greenhouse gases cause global warming', 'Strategies against climate change and acid rain', 'Explain catalytic converters and how they remove oxides of nitrogen', 'Describe photosynthesis with its word and symbol equations']]] },
+    { n: 11, t: 'Organic chemistry', f: 'org',
+      hi: 'Homologous series from alkanes to carboxylic acids, the reactions that link them, fuels, and the polymers made from them.',
+      facts: ['Alkanes CₙH₂ₙ₊₂ · alkenes CₙH₂ₙ', 'Alkenes decolourise bromine water', 'Acid + alcohol → ester + water'],
+      sub: [['11.1', 'Formulae, functional groups and terminology', ['Use structural and displayed formulae', 'Write the general formulae of alkanes, alkenes, alcohols and carboxylic acids', 'Define structural isomers', 'Describe functional groups and homologous series', 'Define saturated and unsaturated compounds']],
+        ['11.2', 'Naming organic compounds', ['Name and draw unbranched compounds with up to four carbon atoms', 'Identify the type of compound from its name or formula', 'Name and draw the esters made from those alcohols and acids']],
+        ['11.3', 'Fuels', ['Name the fossil fuels, and methane as the main part of natural gas', 'Describe fractional distillation of petroleum and how the fractions change', 'State the use of each fraction']],
+        ['11.4', 'Alkanes', ['Describe alkanes as saturated and generally unreactive', 'Describe photochemical substitution with chlorine']],
+        ['11.5', 'Alkenes', ['Describe cracking and why it is done', 'Use aqueous bromine to tell saturated from unsaturated', 'Describe addition of bromine, hydrogen and steam']],
+        ['11.6', 'Alcohols', ['Compare making ethanol by fermentation and from ethene', 'Describe the combustion and uses of ethanol']],
+        ['11.7', 'Carboxylic acids', ['Describe their reactions with metals, bases and carbonates', 'Describe making ethanoic acid by oxidising ethanol', 'Describe esterification']],
+        ['11.8', 'Polymers', ['Identify monomers, repeat units and linkages', 'Tell addition from condensation polymerisation', 'Draw nylon and PET; state that PET can be recycled to monomers', 'Describe the environmental problems of plastics', 'Describe proteins as natural polyamides']]] },
+    { n: 12, t: 'Experimental techniques and chemical analysis', f: 'prac',
+      hi: 'The practical paper in one topic: apparatus, titration, chromatography, separation methods, and every identification test.',
+      facts: ['Rf = distance of substance ÷ distance of solvent', 'Pure substance: sharp melting point', 'Na⁺ flame: yellow'],
+      sub: [['12.1', 'Experimental design', ['Name apparatus for time, temperature, mass and volume', 'Suggest advantages and disadvantages of methods and apparatus', 'Define solvent, solute, solution, saturated solution, residue and filtrate']],
+        ['12.2', 'Acid–base titrations', ['Describe a titration with burette, volumetric pipette and indicator', 'Identify the end-point using an indicator']],
+        ['12.3', 'Chromatography', ['Describe paper chromatography and the use of locating agents', 'Interpret chromatograms to identify substances and check purity', 'Calculate and use Rf values']],
+        ['12.4', 'Separation and purification', ['Describe filtration, crystallisation and simple and fractional distillation', 'Choose a suitable method from given information', 'Assess purity from melting and boiling points']],
+        ['12.5', 'Identification of ions and gases', ['Tests for the anions', 'Tests for the aqueous cations with NaOH and NH₃', 'Tests for the gases', 'Flame tests for the metal ions']]] }
   ];
   UK.TOPICS = TOPICS;
+  var ICON = window.UK_ICON;
   function famStyle(f) { return '--fam-d:' + FAM[f].d + ';--fam-l:' + FAM[f].l; }
 
   var METHOD = [
@@ -1712,13 +2016,14 @@ button.lec:hover{border-color:var(--gold-400)}
       e: 'Asked for the products of electrolysing a halide solution they have never met, students reason from which ions are discharged — they do not need to have seen that solution before.' }
   ];
 
+  /* flame colours as printed by Cambridge; emission lines are the standard approximate wavelengths */
   var FLAME = [
-    { id: 'li', f: 'Li<sup>+</sup>', n: 'Lithium', c: '#E3263F', name: 'Red', note: 'A deep red — darker than the orange-red calcium gives.' },
-    { id: 'na', f: 'Na<sup>+</sup>', n: 'Sodium', c: '#FFC23A', name: 'Yellow', note: 'Strong enough to drown out fainter colours, which is why a clean wire matters.' },
-    { id: 'k', f: 'K<sup>+</sup>', n: 'Potassium', c: '#BE93F2', name: 'Lilac', note: 'Faint, and easily hidden by a trace of sodium.' },
-    { id: 'ca', f: 'Ca<sup>2+</sup>', n: 'Calcium', c: '#FF6A2B', name: 'Orange-red', note: 'Orange-red — not the deep red of lithium.' },
-    { id: 'ba', f: 'Ba<sup>2+</sup>', n: 'Barium', c: '#A6E36F', name: 'Light green', note: 'Light green. Copper gives blue-green — the pair students most often swap.' },
-    { id: 'cu', f: 'Cu<sup>2+</sup>', n: 'Copper(II)', c: '#22C7A9', name: 'Blue-green', note: 'Blue-green. Compare barium’s lighter, yellower green.' }
+    { id: 'li', f: 'Li<sup>+</sup>', n: 'Lithium', c: '#E3263F', name: 'Red', lines: [[671, 1], [610, .35]], note: 'A deep crimson red — darker than the orange-red calcium gives.' },
+    { id: 'na', f: 'Na<sup>+</sup>', n: 'Sodium', c: '#FFC23A', name: 'Yellow', lines: [[589, 1]], note: 'An intense yellow strong enough to drown out fainter colours — the reason the wire must be clean.' },
+    { id: 'k', f: 'K<sup>+</sup>', n: 'Potassium', c: '#BE93F2', name: 'Lilac', lines: [[767, 1], [404, .55]], note: 'Faint lilac: deep red and violet light together. A trace of sodium hides it easily.' },
+    { id: 'ca', f: 'Ca<sup>2+</sup>', n: 'Calcium', c: '#FF6A2B', name: 'Orange-red', lines: [[622, 1], [554, .4]], note: 'Orange-red — not the deep red of lithium.' },
+    { id: 'ba', f: 'Ba<sup>2+</sup>', n: 'Barium', c: '#A6E36F', name: 'Light green', lines: [[554, 1], [524, .45]], note: 'Light green. Copper gives blue-green — the pair students most often swap.' },
+    { id: 'cu', f: 'Cu<sup>2+</sup>', n: 'Copper(II)', c: '#22C7A9', name: 'Blue-green', lines: [[522, 1], [515, .8], [511, .7]], note: 'Blue-green. Compare barium’s lighter, yellower green.' }
   ];
   var GAS = [
     { f: 'NH<sub>3</sub>', n: 'Ammonia', t: 'Damp red litmus paper', r: 'Turns blue', sw: '#3E6FD8' },
@@ -1877,7 +2182,7 @@ button.lec:hover{border-color:var(--gold-400)}
   /* ticker */
   (function () {
     var tr = $('.tick__track'); if (!tr) return;
-    var one = TOPICS.map(function (t) { return '<span class="tk" style="' + famStyle(t.f) + '"><b><small>' + t.n + '</small>' + t.s + '</b><span>' + esc(t.t) + '</span></span>'; }).join('');
+    var one = TOPICS.map(function (t) { return '<span class="tk" style="' + famStyle(t.f) + '"><b>' + ICON(t.n) + '</b><span><small>' + (t.n < 10 ? '0' : '') + t.n + '</small>' + esc(t.t) + '</span></span>'; }).join('');
     tr.innerHTML = one + one;
   })();
 
@@ -1899,27 +2204,61 @@ button.lec:hover{border-color:var(--gold-400)}
   })();
 
   /* =====================================================================
-     SYLLABUS — periodic tiles
+     SYLLABUS — topic tiles, full outcome checklist, readiness
      ===================================================================== */
+  var CK = {}; try { CK = JSON.parse(localStorage.getItem('uk_ck') || '{}'); } catch (e) {}
+  function ckSave() { try { localStorage.setItem('uk_ck', JSON.stringify(CK)); } catch (e) {} }
+  function tStats(t) {
+    var tot = 0, got = 0;
+    t.sub.forEach(function (s) { s[2].forEach(function (o, i) { tot++; if (CK[s[0] + '.' + i]) got++; }); });
+    return { tot: tot, got: got, pct: tot ? Math.round(got / tot * 100) : 0 };
+  }
+  var where = function (n) { return 'Papers 1 & 2 (5070) · Papers 1–4 (0620)' + (n === 12 ? ' · and the practical paper' : ''); };
   (function () {
     var grid = $('.pt'), det = $('#ptd'); if (!grid) return;
-    grid.innerHTML = TOPICS.map(function (t, i) {
-      return '<button class="el" role="tab" id="el' + t.n + '" aria-controls="ptd" aria-selected="' + (i === 0) + '" data-t="' + i + '" style="' + famStyle(t.f) + '">' +
-        '<span class="el__n">' + t.n + '</span><span class="el__s">' + t.s + '</span><span class="el__t">' + esc(t.t) + '</span>' +
-        '<span class="el__m">' + t.sub.length + ' sub-topic' + (t.sub.length > 1 ? 's' : '') + '</span></button>';
-    }).join('');
-    var lg = d.createElement('div'); lg.className = 'legend';
-    lg.innerHTML = Object.keys(FAM).map(function (k) { return '<span style="' + famStyle(k) + '"><i></i>' + FAM[k].label + '</span>'; }).join('');
-    grid.after(lg);
+    var curT = 0;
+    $('[data-legend]').innerHTML = Object.keys(FAM).map(function (k) { return '<span style="' + famStyle(k) + '"><i></i>' + FAM[k].label + '</span>'; }).join('');
+    function tiles() {
+      grid.innerHTML = TOPICS.map(function (t, i) {
+        var st = tStats(t);
+        return '<button class="el' + (st.pct === 100 ? ' el--done' : '') + '" role="tab" id="el' + t.n + '" aria-controls="ptd" aria-selected="' + (i === curT) + '" tabindex="' + (i === curT ? 0 : -1) + '" data-t="' + i + '" style="' + famStyle(t.f) + '">' +
+          '<span class="el__top"><span class="el__n">' + (t.n < 10 ? '0' : '') + t.n + '</span><span class="el__p">' + (st.got ? st.pct + '%' : '') + '</span></span>' +
+          '<span class="el__i">' + ICON(t.n) + '</span><span class="el__t">' + esc(t.t) + '</span>' +
+          '<span class="el__m">' + t.sub.length + ' sub-topic' + (t.sub.length > 1 ? 's' : '') + ' · ' + st.tot + ' outcomes</span>' +
+          '<span class="el__bar"><i style="width:' + st.pct + '%"></i></span></button>';
+      }).join('');
+    }
+    function ready() {
+      var tot = 0, got = 0;
+      var bar = TOPICS.map(function (t) { var s = tStats(t); tot += s.tot; got += s.got;
+        return '<span style="flex:' + s.tot + ';' + famStyle(t.f) + '" title="' + esc(t.t) + ': ' + s.got + ' of ' + s.tot + '"><i style="width:' + s.pct + '%"></i></span>'; }).join('');
+      var pct = tot ? Math.round(got / tot * 100) : 0;
+      $('[data-rdy-bar]').innerHTML = bar;
+      $('[data-rdy-pct]').textContent = pct + '%';
+      $('.rdy__fg').style.strokeDashoffset = 100 - pct;
+      $('[data-rdy-n]').textContent = got + ' of ' + tot + ' outcomes ticked';
+      $('[data-rdy-tip]').textContent = !got ? 'Tick an outcome once you can do it without looking.' : pct === 100 ? 'Every outcome ticked — time for full past papers.' : 'Keep going — untick anything that slips.';
+      $('[data-rdy-reset]').hidden = !got;
+    }
     function show(i, focus) {
-      var t = TOPICS[i];
-      $$('.el', grid).forEach(function (b) { b.setAttribute('aria-selected', String(+b.getAttribute('data-t') === i)); b.tabIndex = +b.getAttribute('data-t') === i ? 0 : -1; });
+      curT = i; var t = TOPICS[i], st = tStats(t);
+      $$('.el', grid).forEach(function (b) { var on = +b.getAttribute('data-t') === i; b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; });
       det.setAttribute('style', famStyle(t.f)); det.setAttribute('aria-labelledby', 'el' + t.n);
-      det.innerHTML = '<div class="ptd__l"><div class="ptd__big"><b>' + t.s + '</b><span>Topic ' + t.n + ' of 12</span></div>' +
-        '<h3>' + esc(t.t) + '</h3><p>' + esc(t.hi) + '</p><div class="ptd__a">' +
-        '<a class="btn btn--gold btn--sm" href="papers.html?view=topic&t=' + t.n + '">Papers for this topic</a>' +
-        '<a class="btn btn--line btn--sm" href="#lectures" data-golec="' + t.n + '">Lectures</a></div></div>' +
-        '<div class="ptd__r"><ol>' + t.sub.map(function (s) { return '<li><b>' + s[0] + '</b><span>' + esc(s[1]) + '</span></li>'; }).join('') + '</ol></div>';
+      det.innerHTML =
+        '<div class="ptd__l"><div class="ptd__id"><span class="ptd__ic">' + ICON(t.n) + '</span><div><span class="mono">Topic ' + t.n + ' of 12 · ' + FAM[t.f].label + '</span><h3>' + esc(t.t) + '</h3></div></div>' +
+        '<p class="ptd__sum">' + esc(t.hi) + '</p>' +
+        '<div class="ptd__k"><span class="mono">Know these cold</span><div>' + t.facts.map(function (f) { return '<span class="fact">' + esc(f) + '</span>'; }).join('') + '</div></div>' +
+        '<dl class="ptd__s"><div><dt>Sub-topics</dt><dd>' + t.sub.length + '</dd></div><div><dt>Outcomes</dt><dd>' + st.tot + '</dd></div><div><dt>Ticked</dt><dd data-tgot>' + st.got + '</dd></div></dl>' +
+        '<p class="ptd__w"><span class="mono">Examined in</span>' + where(t.n) + '</p>' +
+        '<div class="ptd__a"><a class="btn btn--gold btn--sm" href="papers.html?view=topic&t=' + t.n + '">Papers for this topic</a><a class="btn btn--line btn--sm" href="#lectures" data-golec="' + t.n + '">Lectures</a></div>' +
+        '<div class="ptd__nav"><button type="button" class="btn btn--ghost btn--sm" data-tstep="-1"' + (i === 0 ? ' disabled' : '') + '>← ' + (i ? esc(TOPICS[i - 1].t) : '') + '</button><button type="button" class="btn btn--ghost btn--sm" data-tstep="1"' + (i === 11 ? ' disabled' : '') + '>' + (i < 11 ? esc(TOPICS[i + 1].t) : '') + ' →</button></div></div>' +
+        '<div class="ptd__r">' + t.sub.map(function (s, si) {
+          var g = s[2].filter(function (o, oi) { return CK[s[0] + '.' + oi]; }).length;
+          return '<details class="sub"' + (si === 0 ? ' open' : '') + '><summary><b>' + s[0] + '</b><span class="sub__t">' + esc(s[1]) + '</span><span class="sub__c' + (g === s[2].length ? ' sub__c--ok' : '') + '" data-subc="' + s[0] + '">' + g + ' / ' + s[2].length + '</span></summary><ul>' +
+            s[2].map(function (o, oi) { var id = s[0] + '.' + oi;
+              return '<li><label class="ck"><input type="checkbox" data-ck="' + id + '"' + (CK[id] ? ' checked' : '') + '><span class="ck__b" aria-hidden="true"></span><span class="ck__t">' + esc(o) + '</span></label></li>'; }).join('') +
+            '</ul></details>';
+        }).join('') + '</div>';
       det.classList.remove('swap'); void det.offsetWidth; det.classList.add('swap');
       if (focus) $('#el' + t.n).focus();
     }
@@ -1930,8 +2269,24 @@ button.lec:hover{border-color:var(--gold-400)}
       else if (e.key === 'Home') n = 0; else if (e.key === 'End') n = 11;
       if (n !== null) { e.preventDefault(); show(n, true); }
     });
-    det.addEventListener('click', function (e) { var a = e.target.closest('[data-golec]'); if (a) openLectureTopic(+a.getAttribute('data-golec')); });
-    show(0);
+    det.addEventListener('click', function (e) {
+      var a = e.target.closest('[data-golec]'); if (a) openLectureTopic(+a.getAttribute('data-golec'));
+      var s = e.target.closest('[data-tstep]'); if (s) { show(curT + (+s.getAttribute('data-tstep'))); det.scrollIntoView({ behavior: UK.reduce ? 'auto' : 'smooth', block: 'start' }); }
+    });
+    det.addEventListener('change', function (e) {
+      var c = e.target.closest('[data-ck]'); if (!c) return;
+      var id = c.getAttribute('data-ck'); if (c.checked) CK[id] = 1; else delete CK[id]; ckSave();
+      var t = TOPICS[curT], st = tStats(t), sc = id.split('.').slice(0, 2).join('.');
+      var sub = t.sub.filter(function (s) { return s[0] === sc; })[0], g = sub[2].filter(function (o, oi) { return CK[sc + '.' + oi]; }).length;
+      var el = $('[data-subc="' + sc + '"]', det); el.textContent = g + ' / ' + sub[2].length; el.classList.toggle('sub__c--ok', g === sub[2].length);
+      $('[data-tgot]', det).textContent = st.got;
+      tiles(); ready();
+    });
+    $('[data-rdy-reset]').addEventListener('click', function () {
+      if (!confirm('Clear every tick on this device?')) return;
+      CK = {}; ckSave(); tiles(); ready(); show(curT);
+    });
+    tiles(); ready(); show(0);
   })();
 
   /* =====================================================================
@@ -1966,25 +2321,65 @@ button.lec:hover{border-color:var(--gold-400)}
         $$('.bench__p', bench).forEach(function (p) { p.hidden = p.getAttribute('data-bp') !== k; });
       });
     });
-    /* flame */
-    var ions = $('.ions', bench), burner = $('.burner', bench), svg = $('.burner__svg', bench);
+    /* flame — a working Bunsen: air hole, clean wire, emission lines */
+    var ions = $('.ions', bench), lab = $('.lab', bench), svg = $('.burner', bench);
+    var ion = null, air = 'open';
     ions.innerHTML = FLAME.map(function (f) {
-      return '<button class="ion" role="radio" aria-checked="false" data-ion="' + f.id + '" style="--c:' + f.c + '"><b>' + f.f + '</b><span>' + f.n + '</span></button>';
+      return '<button class="ion" role="radio" aria-checked="false" data-ion="' + f.id + '" style="--c:' + f.c + '"><i aria-hidden="true"></i><b>' + f.f + '</b><span>' + f.n + '</span></button>';
     }).join('');
-    function setFlame(f) {
-      $$('.ion', ions).forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-ion') === f.id)); });
-      $$('#fOut stop', svg).forEach(function (s) { s.style.stopColor = f.c; });
-      $('.fl__glow', svg).style.fill = f.c;
-      burner.style.setProperty('--flc', f.c); burner.classList.add('on');
-      var b = $('[data-fc]', bench); b.textContent = f.name; b.style.color = f.c;
-      $('[data-fn]', bench).textContent = f.n + ' ion: ' + f.note;
+    $('.spec__ax', bench).innerHTML = [400, 500, 600, 700].map(function (nm) { return '<span style="left:' + ((nm - 380) / 4) + '%">' + nm + (nm === 400 || nm === 700 ? ' nm' : '') + '</span>'; }).join('');
+    /* wavelength (nm) to an approximate display colour */
+    function wl(n) {
+      var r = 0, g = 0, b = 0;
+      if (n < 440) { r = -(n - 440) / 60; b = 1; } else if (n < 490) { g = (n - 440) / 50; b = 1; }
+      else if (n < 510) { g = 1; b = -(n - 510) / 20; } else if (n < 580) { r = (n - 510) / 70; g = 1; }
+      else if (n < 645) { r = 1; g = -(n - 645) / 65; } else { r = 1; }
+      var f = n < 420 ? .3 + .7 * (n - 380) / 40 : n > 700 ? .3 + .7 * (780 - n) / 80 : 1;
+      return 'rgb(' + [r, g, b].map(function (c) { return Math.round(255 * Math.pow(c * f, .8)); }).join(',') + ')';
     }
-    ions.addEventListener('click', function (e) { var b = e.target.closest('.ion'); if (b) setFlame(FLAME.filter(function (f) { return f.id === b.getAttribute('data-ion'); })[0]); });
+    function paint() {
+      var lit = ion && air === 'open';
+      lab.classList.toggle('air-closed', air === 'closed');
+      lab.classList.toggle('lit', !!lit);
+      if (lit) { svg.style.setProperty('--fl', ion.c); lab.style.setProperty('--flc', ion.c); }
+      else { svg.style.removeProperty('--fl'); lab.style.setProperty('--flc', air === 'closed' ? '#FFB23A' : '#7FA8E8'); }
+      $('.wire', svg).classList.toggle('on', !!ion);
+      $$('.ion', ions).forEach(function (b) { b.setAttribute('aria-checked', String(!!ion && b.getAttribute('data-ion') === ion.id)); });
+      $$('[data-air]', bench).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-air') === air)); });
+      var fc = $('[data-fc]', bench), fn = $('[data-fn]', bench), spec = $('[data-spec]', bench);
+      if (!ion) {
+        fc.textContent = air === 'open' ? 'Choose an ion' : 'Yellow safety flame'; fc.style.color = '';
+        fn.textContent = air === 'open'
+          ? 'Dip the clean wire into the sample and hold it at the edge of the roaring blue flame. The colour names the metal ion.'
+          : 'With the air hole closed the flame is yellow, cooler and sooty. Flame tests use the roaring flame — open the air hole.';
+        spec.classList.remove('on'); $('[data-specnm]', bench).textContent = '—'; $('[data-speclines]', bench).innerHTML = '';
+        return;
+      }
+      if (air === 'closed') {
+        fc.textContent = 'Hidden by the yellow flame'; fc.style.color = '#FFB23A';
+        fn.textContent = 'The luminous flame drowns out the ' + ion.n.toLowerCase() + ' colour. Open the air hole to see it.';
+      } else {
+        fc.textContent = ion.name; fc.style.color = ion.c;
+        fn.textContent = ion.n + ' ion: ' + ion.note;
+      }
+      spec.classList.add('on');
+      $('[data-specnm]', bench).textContent = ion.lines.filter(function (l) { return l[1] === 1; }).map(function (l) { return '≈ ' + l[0] + ' nm'; }).join(' · ');
+      $('[data-speclines]', bench).innerHTML = ion.lines.map(function (l) {
+        return '<i style="left:' + ((l[0] - 380) / 4).toFixed(2) + '%;opacity:' + l[1] + ';--lc:' + wl(l[0]) + '"></i>';
+      }).join('');
+    }
+    ions.addEventListener('click', function (e) {
+      var b = e.target.closest('.ion'); if (!b) return;
+      ion = FLAME.filter(function (f) { return f.id === b.getAttribute('data-ion'); })[0]; paint();
+    });
     ions.addEventListener('keydown', function (e) {
       var bs = $$('.ion', ions), i = bs.indexOf(d.activeElement); if (i < 0) return;
       var n = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? (i + 1) % bs.length : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? (i - 1 + bs.length) % bs.length : -1;
       if (n >= 0) { e.preventDefault(); bs[n].focus(); bs[n].click(); }
     });
+    $$('[data-air]', bench).forEach(function (b) { b.addEventListener('click', function () { air = b.getAttribute('data-air'); paint(); }); });
+    $('[data-clean]', bench).addEventListener('click', function () { ion = null; paint(); UK.toast('Wire cleaned in acid — no colour left on it.'); });
+    paint();
     /* gases — self-test cards */
     var gas = $('.gas', bench);
     gas.insertAdjacentHTML('beforebegin', '<div class="bench__bar"><p>Read the test, say the result out loud, then tap the card.</p><button class="btn btn--line btn--sm" type="button" data-gall>Show every result</button></div>');
@@ -2012,6 +2407,27 @@ button.lec:hover{border-color:var(--gold-400)}
     $('.ani', bench).innerHTML = ANIONS.map(function (a) {
       return '<div class="ar"><b>' + a.f + '<small>' + a.n + '</small></b><span>' + esc(a.t) + '</span>' +
         '<div class="res2"><span class="tube" style="' + (a.sw ? (a.sw.indexOf('gradient') > -1 ? '--sol:#7B2C9E' : '--pc:' + a.sw + ';--ph:35%') : '--ph:0%') + '"></span><span>' + esc(a.r) + '</span></div></div>';
+    }).join('');
+  })();
+
+  /* =====================================================================
+     RECORD — a twenty-year dial with three markers
+     ===================================================================== */
+  (function () {
+    var tk = $('[data-ticks]'), lb = $('[data-labs]'), nd = $('[data-nodes]'); if (!tk) return;
+    var cx = 160, cy = 160, h = '';
+    for (var i = 0; i < 20; i++) {
+      var a = (i / 20) * Math.PI * 2 - Math.PI / 2, major = i % 5 === 0, r1 = 124, r2 = major ? 140 : 133;
+      h += '<line x1="' + (cx + r1 * Math.cos(a)).toFixed(1) + '" y1="' + (cy + r1 * Math.sin(a)).toFixed(1) + '" x2="' + (cx + r2 * Math.cos(a)).toFixed(1) + '" y2="' + (cy + r2 * Math.sin(a)).toFixed(1) + '" class="' + (major ? 'mj' : '') + '" style="--i:' + i + '"/>';
+    }
+    tk.innerHTML = h;
+    lb.innerHTML = [[0, '0 · 20 yrs'], [5, '5'], [10, '10'], [15, '15']].map(function (p) {
+      var a = (p[0] / 20) * Math.PI * 2 - Math.PI / 2, r = 153;
+      return '<text x="' + (cx + r * Math.cos(a)).toFixed(1) + '" y="' + (cy + r * Math.sin(a) + 3.5).toFixed(1) + '" text-anchor="middle">' + p[1] + '</text>';
+    }).join('');
+    nd.innerHTML = [0, 1, 2].map(function (k) {
+      var a = (k / 3) * Math.PI * 2 - Math.PI / 2 + .35, r = 108;
+      return '<g class="nd" style="--k:' + k + '"><circle class="nd__h" cx="' + (cx + r * Math.cos(a)).toFixed(1) + '" cy="' + (cy + r * Math.sin(a)).toFixed(1) + '" r="13"/><circle class="nd__c" cx="' + (cx + r * Math.cos(a)).toFixed(1) + '" cy="' + (cy + r * Math.sin(a)).toFixed(1) + '" r="7"/></g>';
     }).join('');
   })();
 
