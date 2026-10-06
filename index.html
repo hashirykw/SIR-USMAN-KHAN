@@ -1,0 +1,2235 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sir Usman Khan — O Level & IGCSE Chemistry (5070 · 0620)</title>
+<meta name="description" content="Cambridge O Level 5070 and IGCSE 0620 Chemistry with Sir Usman Khan — taught from the electrons up. Twenty years in the subject, three Cambridge distinctions, recorded lectures and past papers.">
+
+<meta name="theme-color" content="#050B18">
+<link rel="canonical" href="https://sirusmankhan.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sir Usman Khan — O Level & IGCSE Chemistry (5070 · 0620)">
+<meta property="og:description" content="Cambridge O Level 5070 and IGCSE 0620 Chemistry with Sir Usman Khan — taught from the electrons up. Twenty years in the subject, three Cambridge distinctions, recorded lectures and past papers.">
+<meta property="og:url" content="https://sirusmankhan.vercel.app/">
+<meta property="og:image" content="https://sirusmankhan.vercel.app/share-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050B18'/%3E%3Cpath d='M32 10 51 21v22L32 54 13 43V21z' fill='none' stroke='%23E0A94C' stroke-width='3.4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='32' r='9' fill='none' stroke='%23E0A94C' stroke-width='2.6'/%3E%3Ccircle cx='51' cy='21' r='3.6' fill='%23F2DDB4'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>(function(){var t;try{t=localStorage.getItem('uk_theme')}catch(e){}document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark')})();</script>
+<script src="config.js"></script>
+<style>
+/* ==========================================================================
+   SIR USMAN KHAN — Cambridge Chemistry
+   Design system carried over from physicswithsmk.com:
+   Newsreader (display) · Plus Jakarta Sans (UI) · JetBrains Mono (labels)
+   Navy and gold, angled gold buttons, hairline panels.
+   ========================================================================== */
+:root{
+  --navy-950:#050B18; --navy-900:#081226; --navy-800:#0E1B36;
+  --navy-700:#16294B; --navy-600:#1F3A66;
+  --gold-600:#A8752A; --gold-500:#C08A34; --gold-400:#D49C42;
+  --gold-300:#E0A94C; --gold-100:#F2DDB4;
+  --ice:#7FA8E8; --paper:#F4EBE0; --ink:#F3EEE3; --dim:#98A2B8;
+  --ok:#42B07C; --bad:#D0574B; --on-gold:#150F04;
+
+  --bg:var(--navy-950);
+  --bg-2:var(--navy-900);
+  --card:var(--navy-800);
+  --panel:rgba(255,255,255,.032);
+  --panel-2:rgba(255,255,255,.058);
+  --line:rgba(224,169,76,.18);
+  --line-soft:rgba(255,255,255,.09);
+  --text:var(--ink); --muted:var(--dim);
+  --shadow:0 26px 70px rgba(0,0,0,.5);
+
+  --display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --r:14px; --r-lg:22px; --max:1280px;
+  --ease:cubic-bezier(.22,.8,.32,1);
+  --spring:cubic-bezier(.34,1.4,.64,1);
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:var(--paper); --bg-2:#EADFD1; --card:#FBF6EF;
+  --panel:rgba(8,18,38,.04); --panel-2:rgba(8,18,38,.075);
+  --line:rgba(168,117,42,.32); --line-soft:rgba(8,18,38,.11);
+  --text:#0B1730; --muted:#54607A;
+  --shadow:0 26px 60px rgba(8,18,38,.14);
+  --gold-300:#B57F2E; --gold-400:#B07A2C;
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:92px;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+  font-size:16.5px;line-height:1.62;letter-spacing:-.006em;-webkit-font-smoothing:antialiased;
+  overflow-x:clip;transition:background-color .5s var(--ease),color .5s var(--ease)}
+body.lock{overflow:hidden}
+img,svg,video,iframe{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:-.014em;
+  margin:0 0 .5em;font-optical-sizing:auto;overflow-wrap:anywhere;min-width:0}
+h1{font-size:clamp(2.55rem,6.4vw,5.3rem);font-weight:400}
+h2{font-size:clamp(2rem,4.1vw,3.15rem)}
+h3{font-size:clamp(1.2rem,2vw,1.5rem)}
+p{margin:0 0 1rem;max-width:64ch}
+:focus-visible{outline:2px solid var(--gold-300);outline-offset:3px;border-radius:6px}
+::selection{background:var(--gold-500);color:var(--on-gold)}
+[hidden]{display:none!important}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--bg-2)}
+::-webkit-scrollbar-thumb{border-radius:99px;border:3px solid transparent;background-clip:content-box;background-color:var(--gold-600)}
+::-webkit-scrollbar-thumb:hover{background-color:var(--gold-400)}
+html{scrollbar-width:thin;scrollbar-color:var(--gold-600) var(--bg-2)}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(18px,4vw,40px)}
+.sec{padding-block:clamp(64px,8vw,120px);position:relative}
+.muted{color:var(--muted)}
+.mono{font-family:var(--mono)}
+.gold{color:var(--gold-300)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.7rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold-400);margin-bottom:20px}
+.eyebrow::before{content:"";width:6px;height:6px;background:var(--gold-500);transform:rotate(45deg);flex:none}
+.lede{font-size:clamp(1.02rem,1.4vw,1.16rem);color:var(--muted);max-width:56ch}
+.head{display:grid;gap:4px;margin-bottom:clamp(30px,4vw,52px)}
+.head--split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:end;gap:40px}
+.head--split .lede{margin:0 0 .4em}
+.head--c{text-align:center;justify-items:center}
+.head--c .lede{margin-inline:auto}
+@media (max-width:860px){.head--split{grid-template-columns:minmax(0,1fr);gap:8px}}
+
+/* ================= preloader — an atom filling its shells ================= */
+#pre{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;
+  transition:opacity .7s var(--ease),visibility .7s}
+#pre.gone{opacity:0;visibility:hidden;pointer-events:none}
+.pl{display:grid;justify-items:center}
+.pl__atom{width:min(170px,42vw);aspect-ratio:1;position:relative}
+.pl__atom svg{width:100%;height:100%;overflow:visible}
+.pl__shell{fill:none;stroke:color-mix(in srgb,var(--gold-500) 38%,transparent);stroke-width:1}
+.pl__nuc{fill:url(#plNuc)}
+.pl__spin{transform-origin:50px 50px;animation:plspin linear infinite}
+.pl__spin--1{animation-duration:2.6s}.pl__spin--2{animation-duration:4.2s;animation-direction:reverse}
+.pl__spin--3{animation-duration:6.4s}
+@keyframes plspin{to{transform:rotate(360deg)}}
+.pl__e{fill:var(--gold-300);filter:drop-shadow(0 0 3px var(--gold-400))}
+.pl__e--ice{fill:var(--ice);filter:drop-shadow(0 0 3px var(--ice))}
+.pl__t{width:min(240px,56vw);height:2px;background:var(--line-soft);margin-top:34px;border-radius:9px;overflow:hidden}
+.pl__b{height:100%;width:0;background:linear-gradient(90deg,var(--gold-600),var(--gold-300));transition:width .3s linear}
+.pl__x{margin-top:14px;font-family:var(--mono);font-size:.64rem;letter-spacing:.26em;color:var(--gold-400);
+  text-transform:uppercase;min-height:1em}
+
+/* ================= scroll progress + cursor ================= */
+.sprog{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);z-index:700;
+  background:linear-gradient(90deg,var(--gold-600),var(--gold-300));pointer-events:none}
+.cur,.cur-d{position:fixed;top:0;left:0;pointer-events:none;z-index:9000;border-radius:50%;
+  translate:-50% -50%;display:none}
+.cur{width:32px;height:32px;border:1px solid var(--gold-400);
+  transition:width .25s var(--ease),height .25s var(--ease),background-color .25s,opacity .3s}
+.cur-d{width:5px;height:5px;background:var(--gold-300)}
+.cur.big{width:56px;height:56px;background:color-mix(in srgb,var(--gold-500) 12%,transparent)}
+@media (hover:hover) and (pointer:fine){ .cur,.cur-d{display:block} }
+
+/* ================= header ================= */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;border-bottom:1px solid transparent;
+  transition:transform .45s var(--ease),background-color .35s,backdrop-filter .35s,border-color .35s}
+.hdr.stuck{background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom-color:var(--line-soft)}
+.hdr.hide{transform:translateY(-105%)}
+.hdr__in{display:flex;align-items:center;gap:24px;min-height:76px;max-width:var(--max);margin-inline:auto;
+  padding-inline:clamp(18px,4vw,40px)}
+.logo{display:flex;align-items:center;gap:11px;flex:none}
+.logo svg{width:38px;height:38px}
+.logo b{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.06em;line-height:1.1;white-space:nowrap;text-transform:uppercase}
+.logo b i{color:var(--gold-400);font-style:normal}
+.mk-hex{fill:none;stroke:var(--gold-300);stroke-width:2.6;stroke-linejoin:round}
+.mk-ring{fill:none;stroke:var(--gold-300);stroke-width:2}
+.mk-e{fill:var(--gold-100)}
+.nav{display:flex;gap:24px;margin-left:auto;align-items:center}
+.nav a{font-size:.86rem;font-weight:500;position:relative;padding:5px 0;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold-400);transition:width .3s var(--ease)}
+.nav a:hover::after,.nav a.on::after{width:100%}
+.nav a.on{color:var(--gold-300)}
+.hdr__cta{display:flex;gap:10px;align-items:center;margin-left:14px}
+.burger{display:none;width:46px;height:46px;flex:0 0 46px;margin-left:auto;flex-direction:column;align-items:center;
+  justify-content:center;gap:5px;border:1px solid var(--line-soft);border-radius:12px;background:var(--panel)}
+.burger i{width:19px;height:1.6px;background:var(--text);transition:.35s var(--ease);display:block}
+.burger.x i:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.burger.x i:nth-child(2){opacity:0}
+.burger.x i:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+.mob{position:fixed;top:72px;left:12px;right:12px;z-index:490;display:none;
+  background:color-mix(in srgb,var(--card) 97%,transparent);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:var(--shadow);
+  max-height:calc(100svh - 100px);overflow-y:auto;opacity:0;transform:translateY(-12px) scale(.98);
+  transform-origin:top center;transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s;visibility:hidden}
+.mob.open{opacity:1;transform:none;visibility:visible}
+.mob a{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.98rem;font-weight:500;
+  padding:13px 15px;border-radius:12px;transition:background-color .2s;min-height:48px}
+.mob a:hover,.mob a:focus-visible{background:var(--panel-2)}
+.mob a span{font-family:var(--mono);font-size:.64rem;color:var(--muted);letter-spacing:.08em}
+.mob__sep{height:1px;background:var(--line-soft);margin:8px 6px}
+.mob__row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px}
+.mob__row .btn{width:100%}
+@media (max-width:1100px){
+  .nav,.hdr__cta{display:none}
+  .burger{display:flex}
+  .mob{display:block}
+}
+
+/* ================= buttons ================= */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:.95em 1.7em;border-radius:11px;
+  font-size:.88rem;font-weight:600;position:relative;overflow:hidden;white-space:nowrap;min-height:46px;
+  transition:transform .18s var(--spring),box-shadow .3s var(--ease),border-color .3s var(--ease),background-color .3s}
+.btn:active{transform:scale(.96)}
+.btn svg{width:17px;height:17px;flex:none}
+.btn--gold{background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold);
+  box-shadow:0 6px 26px rgba(192,138,52,.3);clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,0 100%)}
+.btn--gold:hover{box-shadow:0 12px 42px rgba(192,138,52,.48)}
+.btn--gold::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 32%,rgba(255,248,232,.55) 50%,transparent 68%);
+  transform:translateX(-130%);transition:transform .6s var(--ease)}
+.btn--gold:hover::after{transform:translateX(130%)}
+.btn--line{border:1px solid var(--line);color:var(--text);background:var(--panel)}
+.btn--line:hover{border-color:var(--gold-400);background:var(--panel-2)}
+.btn--ghost{color:var(--gold-300);padding-inline:.4em}
+.btn--ghost:hover{color:var(--text)}
+.btn--sm{padding:.62em 1.1em;font-size:.8rem;min-height:40px}
+.btn--wide{width:100%}
+.btn[disabled]{opacity:.55;pointer-events:none}
+
+/* ================= small parts ================= */
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+  padding:6px 11px;border-radius:8px;border:1px solid var(--line);color:var(--gold-300);background:var(--panel);white-space:nowrap}
+.chip--dim{color:var(--muted);border-color:var(--line-soft)}
+.chip--ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+.note{background:var(--panel);border:1px solid var(--line-soft);border-left:3px solid var(--gold-500);
+  border-radius:12px;padding:16px 20px;font-size:.92rem;color:var(--muted)}
+.note b{color:var(--text)}
+.panel{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-lg)}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line-soft);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{padding:12px 16px;font-size:.88rem;font-weight:600;color:var(--muted);position:relative;white-space:nowrap;min-height:46px}
+.tabs button::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:var(--gold-400);
+  transform:scaleX(0);transition:transform .35s var(--ease)}
+.tabs button[aria-selected="true"]{color:var(--gold-300)}
+.tabs button[aria-selected="true"]::after{transform:none}
+.seg{display:inline-flex;padding:4px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel);gap:2px}
+.seg button{padding:9px 16px;border-radius:9px;font-size:.84rem;font-weight:600;color:var(--muted);min-height:40px;
+  transition:background-color .3s,color .3s}
+.seg button[aria-pressed="true"]{background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold)}
+
+[data-rv]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);
+  transition-delay:calc(var(--d,0)*90ms)}
+[data-rv].in{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:26px;translate:-50% 0;z-index:960;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;padding:12px 20px;font-size:.88rem;opacity:0;pointer-events:none;transition:.4s var(--ease);
+  box-shadow:var(--shadow);max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translateY(-6px)}
+
+/* ================= modal ================= */
+.modal{position:fixed;inset:0;z-index:950;display:grid;place-items:center;padding:16px;
+  background:color-mix(in srgb,var(--navy-950) 72%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
+.modal.open{opacity:1;visibility:visible}
+.modal__in{width:min(440px,100%);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;
+  position:relative;box-shadow:var(--shadow);transform:translateY(14px) scale(.98);transition:transform .35s var(--ease);
+  max-height:calc(100svh - 32px);overflow:auto}
+.modal.open .modal__in{transform:none}
+.modal__x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;color:var(--muted)}
+.modal__x:hover{background:var(--panel-2);color:var(--text)}
+.modal h3{margin-top:14px}
+
+/* ================= footer ================= */
+.ftr{border-top:1px solid var(--line-soft);padding-block:clamp(52px,7vw,84px) 28px;margin-top:40px}
+.ftr__g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}
+.ftr h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-400);margin-bottom:16px;font-weight:500}
+.ftr a{display:flex;align-items:center;font-size:.9rem;color:var(--muted);padding:5px 0;min-height:36px;transition:color .25s,transform .25s}
+.ftr a:hover{color:var(--gold-300);transform:translateX(4px)}
+.ftr__brand p{font-size:.9rem;color:var(--muted);max-width:34ch;margin-top:14px}
+.soc{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.soc a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel);
+  display:grid;place-items:center;padding:0;transform:none!important}
+.soc a:hover{border-color:var(--gold-400)}
+.soc svg{width:18px;height:18px}
+.nxl{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:14px 16px 14px 20px;border-radius:14px;background:linear-gradient(100deg,#03060E,#071226 55%,#04101D);
+  border:1px solid rgba(0,212,255,.16);color:#CFE9F5}
+.nxl__b{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.26em;color:#38D6FF}
+.nxl__b i{width:8px;height:8px;border-radius:50%;background:#38D6FF;box-shadow:0 0 12px #38D6FF}
+.nxl__t{font-size:.82rem;color:#8FB2C4}
+.nxl a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;background:#38D6FF;color:#021018;
+  font-weight:700;font-size:.8rem;min-height:40px;transform:none!important}
+.nxl a:hover{background:#7FE6FF;color:#021018}
+.ftr__b{margin-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+@media (max-width:980px){.ftr__g{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.ftr__g{grid-template-columns:1fr}}
+
+/* ================= floating controls ================= */
+.thm{position:fixed;left:16px;bottom:16px;z-index:600;display:flex;align-items:center;gap:10px;padding:5px 14px 5px 5px;
+  border-radius:14px;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 92%,transparent);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.25);min-height:46px}
+.thm__k{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--panel-2);
+  transition:transform .5s var(--spring)}
+.thm__k svg{width:18px;height:18px}
+.thm span{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.15}
+.thm:hover .thm__k{transform:rotate(-24deg)}
+@media (max-width:560px){.thm{padding:5px}.thm span{display:none}}
+
+/* ================= reduced motion ================= */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  [data-rv]{opacity:1;transform:none}
+  .cur,.cur-d{display:none!important}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .btn{padding:.9em 1.3em}
+  input,select,textarea{font-size:16px}
+}
+
+/* ================= hero ================= */
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+  padding-top:clamp(112px,13vh,150px);padding-bottom:clamp(56px,8vh,90px)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 46% 52% at 76% 46%,color-mix(in srgb,var(--gold-500) 20%,transparent),transparent 70%),
+    radial-gradient(ellipse 40% 40% at 8% 10%,color-mix(in srgb,var(--ice) 12%,transparent),transparent 70%)}
+.hero__fx{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+[data-theme="light"] .hero__fx{opacity:.55}
+.hero__g{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  gap:clamp(24px,4vw,60px);align-items:center}
+.hero__h{font-size:clamp(2.6rem,5.5vw,4.9rem);margin-bottom:.42em;letter-spacing:-.022em}
+.hero__h span{display:block}
+.hero__l{font-size:clamp(1.04rem,1.35vw,1.17rem);max-width:52ch}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 40px}
+.hero__s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;max-width:520px;
+  border-top:1px solid var(--line);padding-top:22px;gap:12px}
+.hero__s div{display:grid;gap:4px}
+.hero__s dt b{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,3.4vw,2.9rem);color:var(--gold-300);line-height:1}
+.hero__s dd{margin:0;font-size:.82rem;color:var(--muted);line-height:1.35}
+[data-hi]{opacity:0;transform:translateY(22px)}
+.ready [data-hi]{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease);
+  transition-delay:calc(var(--hd,0) * 1ms)}
+
+.stage{position:relative;width:100%;max-width:560px;justify-self:end;aspect-ratio:1/1.06;perspective:1200px}
+.stage__in{position:absolute;inset:0;transform-style:preserve-3d;
+  transform:rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transition:transform .6s var(--ease)}
+.stage__plate{position:absolute;left:12%;right:12%;top:8%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--gold-500) 30%,var(--bg)) 0%,
+    color-mix(in srgb,var(--navy-700) 70%,var(--bg)) 46%,var(--bg) 74%);
+  border:1px solid var(--line);overflow:hidden;
+  box-shadow:inset 0 0 80px rgba(0,0,0,.35),0 40px 90px rgba(0,0,0,.35)}
+[data-theme="light"] .stage__plate{background:radial-gradient(circle at 50% 42%,#F7E2BC 0%,#E8D3B6 46%,var(--bg) 76%);box-shadow:inset 0 0 60px rgba(168,117,42,.15)}
+.stage__plate::before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='72.75' viewBox='0 0 42 72.75'%3E%3Cpath d='M21 0 42 12.12v24.25L21 48.5 0 36.37V12.12zM21 48.5V72.75' fill='none' stroke='%23E0A94C' stroke-opacity='.22'/%3E%3C/svg%3E");
+  -webkit-mask:radial-gradient(circle at 50% 45%,#000 30%,transparent 72%);mask:radial-gradient(circle at 50% 45%,#000 30%,transparent 72%)}
+.stage__img{position:absolute;left:50%;bottom:0;width:68%;transform:translateX(-50%) translateZ(30px);
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.4))}
+.stage__orb{position:absolute;inset:0 0 6% 0;width:100%;height:94%;overflow:visible}
+.stage__orb ellipse{fill:none;stroke:var(--gold-400);stroke-opacity:.42;stroke-width:1.2}
+.stage__orb ellipse + ellipse{stroke-opacity:.2}
+.stage__orb .e{fill:var(--gold-300);filter:drop-shadow(0 0 6px var(--gold-400))}
+.stage__orb .e--ice{fill:var(--ice);filter:drop-shadow(0 0 6px var(--ice))}
+.stage::after{content:"";position:absolute;left:14%;right:14%;bottom:-2%;height:8%;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--gold-500) 45%,transparent),transparent);filter:blur(6px);z-index:-1}
+.tile{position:absolute;left:0;top:13%;width:clamp(108px,10vw,128px);aspect-ratio:1/1.1;padding:10px 12px 11px;
+  display:grid;grid-template-rows:auto 1fr auto auto;border-radius:12px;border:1px solid var(--gold-500);
+  background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 18px 40px rgba(0,0,0,.35);transform:translateZ(80px);animation:bob 6.5s var(--ease) infinite}
+.tile__n{font-family:var(--mono);font-size:.78rem;color:var(--gold-300);line-height:1}
+.tile__n small{font-size:.6rem;color:var(--muted);margin-left:3px}
+.tile__s{font-family:var(--display);font-size:clamp(2.3rem,3vw,2.9rem);line-height:1;align-self:center;font-weight:500}
+.tile__name{font-size:.72rem;font-weight:600;line-height:1.2}
+.tile__m{font-family:var(--mono);font-size:.6rem;color:var(--muted);margin-top:3px}
+.stage__tag{position:absolute;right:0;bottom:22%;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;
+  border-radius:12px;font-size:.8rem;font-weight:600;border:1px solid var(--line);
+  background:color-mix(in srgb,var(--card) 84%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 14px 36px rgba(0,0,0,.3);transform:translateZ(60px);animation:bob 7.5s var(--ease) -2s infinite}
+.stage__tag svg{width:15px;height:15px;color:var(--gold-300)}
+@keyframes bob{50%{translate:0 -8px}}
+.cue{position:absolute;left:50%;bottom:22px;translate:-50% 0;z-index:3;display:grid;justify-items:center;gap:8px;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+.cue i{width:1px;height:34px;background:linear-gradient(var(--gold-400),transparent);animation:cue 2.2s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media (max-width:1000px){
+  .hero{min-height:auto}
+  .hero__g{grid-template-columns:minmax(0,1fr)}
+  .stage{justify-self:center;max-width:430px;margin-top:6px}
+  .cue{display:none}
+}
+@media (max-width:520px){
+  .hero__s dd{font-size:.76rem}
+  .hero__cta .btn{flex:1 1 100%}
+  .tile{top:4%}
+  .stage__tag{bottom:16%;font-size:.74rem;padding:8px 11px}
+}
+
+/* ================= ticker ================= */
+.tick{border-block:1px solid var(--line-soft);background:var(--bg-2);overflow:hidden;position:relative;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tick__track{display:flex;gap:10px;width:max-content;padding:14px 0;animation:tick 70s linear infinite}
+.tick:hover .tick__track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+.tk{display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border:1px solid var(--line-soft);border-radius:10px;background:var(--panel);white-space:nowrap}
+.tk b{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-size:1.15rem;font-weight:500;
+  border:1px solid var(--line);color:var(--gold-300);position:relative}
+.tk b small{position:absolute;top:2px;left:4px;font-family:var(--mono);font-size:.5rem;color:var(--muted)}
+.tk span{font-size:.86rem;font-weight:500}
+
+/* ================= meet — the teacher card ================= */
+.meet{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(28px,5vw,70px);align-items:center;
+  padding:clamp(22px,3.4vw,44px);border-radius:28px;border:1px solid var(--line);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--gold-500) 9%,var(--card)),var(--card) 55%);
+  box-shadow:var(--shadow);position:relative;overflow:hidden}
+.meet::after{content:"";position:absolute;right:-60px;top:-60px;width:320px;height:320px;opacity:.07;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 54.5 19v26L32 58 9.5 45V19z' fill='none' stroke='%23E0A94C' stroke-width='1.4'/%3E%3Ccircle cx='32' cy='32' r='11' fill='none' stroke='%23E0A94C' stroke-width='1.2'/%3E%3C/svg%3E") center/contain no-repeat}
+.meet__ph{margin:0}
+.meet__frame{position:relative;aspect-ratio:4/4.6;border-radius:18px;overflow:hidden;border:1px solid var(--line);
+  background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--gold-500) 26%,var(--navy-800)),var(--navy-950) 75%);
+  box-shadow:inset 0 0 0 6px color-mix(in srgb,var(--gold-500) 10%,transparent)}
+[data-theme="light"] .meet__frame{background:radial-gradient(circle at 50% 30%,#F3DDB5,#D9C3A2 80%)}
+.meet__frame::before{content:"";position:absolute;inset:0;opacity:.6;
+  background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+  background-size:22px 22px;-webkit-mask:linear-gradient(transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(transparent,#000 30%,#000 70%,transparent)}
+.meet__frame img{position:absolute;left:50%;bottom:0;width:86%;transform:translateX(-50%)}
+.cnr{position:absolute;width:22px;height:22px;border:2px solid var(--gold-400);z-index:2}
+.cnr--tl{top:12px;left:12px;border-right:0;border-bottom:0}
+.cnr--br{bottom:12px;right:12px;border-left:0;border-top:0}
+.meet__badge{position:absolute;left:50%;bottom:16px;translate:-50% 0;z-index:2;display:inline-flex;align-items:center;gap:7px;
+  padding:7px 13px;border-radius:9px;background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;white-space:nowrap}
+.meet__badge svg{width:13px;height:13px}
+.meet__ph figcaption{margin-top:14px;display:grid;gap:2px}
+.meet__ph figcaption b{font-family:var(--display);font-size:1.3rem;font-weight:500}
+.meet__ph figcaption span{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-400)}
+.meet__t h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+.meet__q{font-family:var(--display);font-size:clamp(1.12rem,1.6vw,1.34rem);line-height:1.5;color:var(--text);max-width:52ch;
+  padding-left:20px;border-left:2px solid var(--gold-500);margin:20px 0 26px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:0 0 28px;background:var(--line-soft);
+  border:1px solid var(--line-soft);border-radius:14px;overflow:hidden}
+.facts div{background:var(--card);padding:14px 16px}
+.facts dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-family:var(--display);font-size:1.15rem}
+.meet__cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+@media (max-width:860px){
+  .meet{grid-template-columns:minmax(0,1fr)}
+  .meet__ph{max-width:360px;width:100%;margin-inline:auto}
+}
+
+/* ================= course deck ================= */
+.deck{position:relative;perspective:1600px;perspective-origin:50% 40%;margin-bottom:clamp(40px,5vw,64px)}
+.deck__rail{display:flex;justify-content:center;align-items:stretch;transform-style:preserve-3d;min-height:440px;
+  padding-left:clamp(0px,3vw,48px)}
+.deck__c{position:relative;width:min(330px,74vw);flex:0 0 auto;min-height:430px;border-radius:20px;text-align:left;
+  transform-style:preserve-3d;cursor:pointer;opacity:0;
+  transform:translateX(calc(var(--i) * -46%)) rotateY(-24deg) scale(.9);
+  transition:transform .9s cubic-bezier(.22,.9,.28,1),opacity .6s var(--ease)}
+.deck.in .deck__c{opacity:1;transform:translateX(calc(var(--i) * -5%)) translateZ(calc(var(--i) * -60px)) rotateY(-20deg);
+  transition-delay:calc(var(--i) * 130ms)}
+.deck.set .deck__c{transition-delay:0s}
+.deck.set .deck__c:hover,.deck.set .deck__c:focus-visible,.deck.set .deck__c.flip{
+  transform:translateX(calc(var(--i) * -5%)) translateZ(60px) rotateY(-6deg);z-index:5}
+.deck__f,.deck__b{position:absolute;inset:0;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);overflow:hidden;
+  transition:transform .75s cubic-bezier(.3,.8,.3,1)}
+.deck__f{background:linear-gradient(150deg,color-mix(in srgb,var(--gold-500) 20%,var(--card)),color-mix(in srgb,var(--navy-700) 30%,var(--card)));
+  box-shadow:var(--shadow)}
+.deck__f::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(112deg,rgba(255,255,255,.14),transparent 38%,transparent 62%,rgba(255,255,255,.05))}
+.deck__b{background:var(--card);transform:rotateY(180deg);box-shadow:var(--shadow)}
+.deck__c.flip .deck__f{transform:rotateY(-180deg)}
+.deck__c.flip .deck__b{transform:rotateY(0)}
+.deck__top{display:flex;justify-content:space-between;align-items:center}
+.deck__no{font-family:var(--display);font-size:2.6rem;line-height:1;color:color-mix(in srgb,var(--gold-300) 70%,transparent)}
+.deck__h{font-family:var(--display);font-size:1.62rem;line-height:1.1;margin-top:8px}
+.deck__p{font-size:.92rem;color:var(--muted);line-height:1.55}
+.deck__ft{margin-top:auto;display:flex;gap:6px;flex-wrap:wrap;position:relative;z-index:1}
+.deck__art{position:absolute;right:-14px;bottom:44px;width:150px;height:150px;fill:none;stroke:var(--gold-400);stroke-width:1.2;opacity:.22}
+.deck__bh{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400);margin-bottom:4px}
+.pp{display:grid;grid-template-columns:62px minmax(0,1fr);gap:2px 12px;padding:12px 0;border-top:1px solid var(--line-soft)}
+.pp b{grid-row:span 2;font-family:var(--display);font-weight:500;font-size:1.05rem;color:var(--gold-300)}
+.pp span{font-size:.9rem;font-weight:600}
+.pp em{font-style:normal;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.pp--or{border-top-style:dashed}
+.ctx{font-size:.92rem;line-height:1.75;color:var(--text)}
+.deck__bn{margin-top:auto;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:12px}
+.deck__hint{max-width:none;text-align:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:22px 0 0}
+@media (max-width:900px){
+  .deck{perspective:1400px}
+  .deck__rail{flex-direction:column;align-items:center;gap:16px;padding-left:0;min-height:0}
+  .deck__c,.deck.in .deck__c,.deck.set .deck__c:hover,.deck.set .deck__c.flip{transform:none;opacity:1;width:min(460px,100%);min-height:400px}
+  .deck__c{opacity:0;transform:translateY(24px)}
+  .deck__c.flip .deck__f{transform:rotateY(-180deg)}
+}
+
+/* stats strip */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);overflow:hidden}
+.strip > div{background:var(--bg);padding:clamp(20px,2.6vw,32px);text-align:center;transition:background-color .4s}
+.strip > div:hover{background:var(--panel-2)}
+.strip b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,3.8vw,3.1rem);color:var(--gold-300);line-height:1}
+.strip span{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:10px;display:block}
+@media (max-width:780px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ================= periodic syllabus ================= */
+.pt{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.el{position:relative;aspect-ratio:1/1.02;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel);
+  padding:12px 13px;text-align:left;display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden;
+  transition:transform .35s var(--spring),border-color .3s,background-color .3s,box-shadow .35s}
+.el::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--fam)}
+.el:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--fam) 60%,transparent)}
+.el[aria-selected="true"]{background:linear-gradient(150deg,color-mix(in srgb,var(--fam) 26%,var(--card)),var(--card));
+  border-color:var(--fam);box-shadow:0 18px 40px rgba(0,0,0,.28);transform:translateY(-4px)}
+.el__n{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.el__s{font-family:var(--display);font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1;align-self:center;color:var(--fam);font-weight:500}
+.el__t{font-size:.8rem;font-weight:600;line-height:1.25}
+.el__m{font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-top:4px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0;font-size:.8rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:3px;background:var(--fam)}
+.ptd{margin-top:22px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);overflow:hidden;
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.ptd__l{padding:clamp(22px,3vw,36px);background:linear-gradient(150deg,color-mix(in srgb,var(--fam) 16%,transparent),transparent 70%);
+  border-right:1px solid var(--line-soft)}
+.ptd__big{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
+.ptd__big b{font-family:var(--display);font-size:4.4rem;line-height:.9;color:var(--fam);font-weight:500}
+.ptd__big span{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.ptd h3{font-size:clamp(1.4rem,2.4vw,1.9rem)}
+.ptd__l p{color:var(--muted);font-size:.95rem}
+.ptd__a{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.ptd__r{padding:clamp(18px,2.6vw,30px)}
+.ptd__r ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.ptd__r li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:baseline;padding:11px 12px;border-radius:10px;
+  transition:background-color .25s}
+.ptd__r li:hover{background:var(--panel-2)}
+.ptd__r li b{font-family:var(--mono);font-size:.78rem;color:var(--gold-300);font-weight:500}
+.ptd__r li span{font-size:.95rem}
+.ptd.swap .ptd__l,.ptd.swap .ptd__r{animation:swap .5s var(--ease)}
+@keyframes swap{from{opacity:0;transform:translateY(10px)}}
+.src{font-size:.8rem;color:var(--muted);margin-top:16px;max-width:80ch}
+@media (max-width:980px){.pt{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){
+  .ptd{grid-template-columns:minmax(0,1fr)}
+  .ptd__l{border-right:0;border-bottom:1px solid var(--line-soft)}
+}
+@media (max-width:560px){
+  .pt{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .el{padding:9px 9px 10px;aspect-ratio:1/1.12}
+  .el__t{font-size:.7rem}
+  .el__m{display:none}
+}
+
+/* ================= method — benzene honeycomb ================= */
+.mth{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(30px,5vw,72px);align-items:center}
+.hexes{--w:132px;--h:calc(var(--w) * 1.1547);--g:8px;position:relative;width:calc(var(--w) * 3 + var(--g) * 2);
+  height:calc(var(--h) * 2.5 + var(--g) * 2)}
+.hx{position:absolute;width:var(--w);height:var(--h);display:grid;place-items:center;align-content:center;gap:4px;text-align:center;
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--line);padding:0 14px;
+  transition:transform .45s var(--spring),background .4s}
+.hx::before{content:"";position:absolute;inset:2px;clip-path:inherit;background:var(--card);z-index:-1;transition:background .4s}
+.hx{isolation:isolate}
+.hx em{font-style:normal;font-family:var(--display);font-size:1.2rem;color:var(--gold-300);line-height:1}
+.hx small{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hx b{font-size:.84rem;line-height:1.2;font-weight:600}
+.hx--d{background:color-mix(in srgb,var(--gold-500) 30%,transparent);color:var(--gold-400)}
+.hx--d::before{background:color-mix(in srgb,var(--gold-500) 12%,var(--bg))}
+.hx--d svg{width:30px;height:30px;opacity:.75}
+button.hx:hover{transform:scale(1.05)}
+button.hx[aria-selected="true"]{background:linear-gradient(135deg,var(--gold-600),#E0A94C)}
+button.hx[aria-selected="true"]::before{background:linear-gradient(160deg,var(--navy-700),var(--navy-900))}
+[data-theme="light"] button.hx[aria-selected="true"] b{color:var(--ink)}
+.hx--a{left:0;top:0}
+.hx--b{left:calc(var(--w) + var(--g));top:0}
+.hx--c{left:calc(var(--w) * 2 + var(--g) * 2);top:0}
+.hx--d2{left:calc(var(--w) / 2 + var(--g) / 2);top:calc(var(--h) * .75 + var(--g))}
+.hx--e{left:calc(var(--w) * 1.5 + var(--g) * 1.5);top:calc(var(--h) * .75 + var(--g))}
+.hx--f{left:calc(var(--w) + var(--g));top:calc(var(--h) * 1.5 + var(--g) * 2)}
+.mth__card{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);padding:clamp(22px,3vw,36px);box-shadow:var(--shadow)}
+.mth__card h3{font-size:clamp(1.5rem,2.6vw,2.1rem);margin:16px 0 12px}
+.mth__card > p{color:var(--muted);font-size:1rem}
+.mth__eg{margin-top:20px;padding:16px 18px;border-radius:12px;background:var(--panel);border:1px dashed var(--line)}
+.mth__eg span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400)}
+.mth__eg p{margin:6px 0 0;font-size:.93rem}
+.mth__card.swap h3,.mth__card.swap p{animation:swap .45s var(--ease)}
+@media (max-width:900px){.mth{grid-template-columns:minmax(0,1fr);justify-items:center}.mth__card{width:100%}}
+@media (max-width:480px){.hexes{--w:100px;--g:6px}.hx b{font-size:.7rem}.hx small{display:none}.hx{padding:0 8px}}
+
+/* ================= the bench ================= */
+.bench{padding:6px clamp(14px,2.4vw,28px) clamp(18px,2.6vw,30px);background:var(--card);border-color:var(--line)}
+.bench__p{padding-top:clamp(20px,2.6vw,30px)}
+.bench__p[data-bp="flame"]{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,50px);align-items:center}
+.bench__p[hidden]{display:none!important}
+.burner{display:grid;place-items:center;border-radius:18px;padding:20px 0 10px;
+  background:radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--flc,#7FA8E8) 14%,transparent),transparent 65%),var(--bg-2);
+  border:1px solid var(--line-soft);transition:background .6s}
+.burner__svg{width:min(240px,62vw);height:auto;overflow:visible}
+.fl{transform-origin:100px 200px;animation:flick 1.6s ease-in-out infinite}
+.fl__i{transform-origin:100px 190px;animation:flick 1.1s ease-in-out infinite reverse}
+@keyframes flick{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(.97,1.04) skewX(1.5deg)}50%{transform:scale(1.02,.97) skewX(-1deg)}75%{transform:scale(.99,1.03) skewX(.8deg)}}
+.fl__glow{filter:blur(20px);transition:fill .6s}
+.burner__svg stop{transition:stop-color .6s}
+.wire{opacity:0;transform:translate(30px,-30px);transition:opacity .4s,transform .5s var(--ease)}
+.burner.on .wire{opacity:1;transform:none}
+.ions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ion{display:grid;gap:2px;padding:12px 14px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel);text-align:left;
+  transition:border-color .3s,background .3s,transform .3s var(--spring);min-height:64px}
+.ion:hover{border-color:var(--line);transform:translateY(-2px)}
+.ion b{font-family:var(--display);font-size:1.3rem;font-weight:500;line-height:1.1}
+.ion b sup{font-size:.6em}
+.ion span{font-size:.76rem;color:var(--muted)}
+.ion[aria-checked="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--panel))}
+.ion[aria-checked="true"] b{color:var(--c)}
+.readout{margin-top:18px;padding:18px 20px;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel)}
+.readout .mono{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-400)}
+.readout b{display:block;font-family:var(--display);font-size:1.7rem;font-weight:500;margin:4px 0 6px;transition:color .5s}
+.readout p{margin:0;color:var(--muted);font-size:.92rem}
+@media (max-width:820px){.bench__p[data-bp="flame"]{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:420px){.ions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.bench__bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.bench__bar p{margin:0;color:var(--muted);font-size:.9rem}
+.gas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gc{position:relative;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel);padding:16px 18px;text-align:left;
+  display:grid;gap:6px;align-content:start;min-height:150px;transition:border-color .3s,background .3s}
+.gc:hover{border-color:var(--line)}
+.gc__f{font-family:var(--display);font-size:1.6rem;line-height:1;color:var(--gold-300)}
+.gc__n{font-size:.86rem;font-weight:600}
+.gc__t{font-size:.86rem;color:var(--muted)}
+.gc__r{margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);font-size:.9rem;display:flex;gap:8px;align-items:flex-start}
+.gc__r i{flex:none;width:14px;height:14px;border-radius:4px;margin-top:3px;background:var(--sw,var(--gold-400))}
+.gc:not(.show) .gc__r{filter:blur(6px);opacity:.5}
+.gc__hint{position:absolute;right:12px;top:12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.gc.show .gc__hint{display:none}
+.gc.show{border-color:var(--line)}
+@media (max-width:900px){.gas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.gas{grid-template-columns:minmax(0,1fr)}}
+.cat{display:grid;gap:6px}
+.cat__h,.cr{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:center}
+.cat__h{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 14px 6px}
+.cr{padding:12px 14px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel)}
+.cr__i b{font-family:var(--display);font-size:1.25rem;font-weight:500}
+.cr__i span{display:block;font-size:.76rem;color:var(--muted)}
+.res2{display:flex;gap:10px;align-items:center;font-size:.88rem;line-height:1.4}
+.tube{flex:none;width:18px;height:40px;border:1.5px solid color-mix(in srgb,var(--text) 40%,transparent);border-top:0;border-radius:0 0 9px 9px;
+  position:relative;overflow:hidden;background:color-mix(in srgb,var(--sol,transparent) 70%,transparent)}
+.tube::after{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--ph,0%);background:var(--pc,transparent);border-radius:0 0 8px 8px}
+@media (max-width:720px){
+  .cat__h{display:none}
+  .cr{grid-template-columns:minmax(0,1fr);gap:8px}
+  .res2::before{content:attr(data-r);font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    width:58px;flex:none}
+}
+.ani{display:grid;gap:6px}
+.ar{display:grid;grid-template-columns:150px minmax(0,1.2fr) minmax(0,1fr);gap:12px;align-items:center;padding:12px 14px;border-radius:12px;
+  border:1px solid var(--line-soft);background:var(--panel)}
+.ar b{font-family:var(--display);font-size:1.15rem;font-weight:500}
+.ar b small{display:block;font-family:var(--sans);font-size:.74rem;color:var(--muted);font-weight:500}
+.ar > span{font-size:.88rem;color:var(--muted)}
+@media (max-width:720px){.ar{grid-template-columns:minmax(0,1fr);gap:6px}}
+
+/* ================= record ================= */
+.rec{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,6vw,90px);align-items:center}
+.rec__ring{position:relative;width:min(340px,80vw);aspect-ratio:1;justify-self:center}
+.rec__ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.rr__bg{fill:none;stroke:var(--line-soft);stroke-width:2}
+.rr__fg{fill:none;stroke:var(--gold-400);stroke-width:3;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;
+  transition:stroke-dashoffset 2.2s cubic-bezier(.6,.1,.2,1) .2s}
+.rec__ring.in .rr__fg{stroke-dashoffset:0}
+.rr__n circle{fill:var(--bg);stroke:var(--gold-400);stroke-width:2;transition:fill .4s}
+.rec__ring.in .rr__n circle{fill:var(--gold-300)}
+.rec__ring.in .rr__n circle:nth-child(1){transition-delay:.6s}
+.rec__ring.in .rr__n circle:nth-child(2){transition-delay:1.3s}
+.rec__ring.in .rr__n circle:nth-child(3){transition-delay:2s}
+.rec__c{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center}
+.rec__c b{font-family:var(--display);font-size:clamp(4.5rem,9vw,6.5rem);line-height:1;color:var(--gold-300);font-weight:500}
+.rec__c span{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.rec__card{margin-top:26px;padding:22px 24px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--card)}
+.rec__card h3{margin:14px 0 8px}
+.rec__card p{color:var(--muted);margin:0;font-size:.95rem}
+.res{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:14px}
+.res div{padding:16px;border-radius:14px;border:1px solid var(--line-soft);background:var(--panel)}
+.res b{font-family:var(--display);font-size:2rem;color:var(--gold-300);display:block;line-height:1}
+.res span{font-size:.86rem;display:block;margin-top:6px}
+.res em{font-style:normal;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+@media (max-width:860px){.rec{grid-template-columns:minmax(0,1fr)}}
+
+/* ================= steps ================= */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.step{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:stretch;margin-left:calc(var(--k) * clamp(0px,3vw,34px))}
+.step__tab{position:relative;width:132px;padding:16px 16px 14px;border-radius:4px 14px 14px 14px;color:var(--on-gold);
+  background:linear-gradient(150deg,color-mix(in srgb,#E0A94C calc(100% - var(--k) * 18%),#7A5418),color-mix(in srgb,#C08A34 calc(100% - var(--k) * 15%),#5E3F10));
+  box-shadow:0 14px 30px rgba(0,0,0,.25);z-index:1;display:grid;gap:2px}
+.step__tab::before{content:"";position:absolute;left:0;top:-9px;width:46%;height:10px;border-radius:8px 8px 0 0;background:inherit}
+.step__tab .mono{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.step__tab b{font-family:var(--display);font-size:2rem;font-weight:500;line-height:1}
+.step__tab i{display:block;height:6px;border-radius:3px;margin-top:8px;background:rgba(0,0,0,.18);position:relative;overflow:hidden}
+.step__tab i::after{content:"";position:absolute;inset:0;width:var(--p);
+  background:repeating-linear-gradient(-45deg,rgba(21,15,4,.7) 0 3px,rgba(21,15,4,.45) 3px 6px)}
+.step__body{display:flex;gap:16px;align-items:center;margin-left:-10px;padding:16px 22px 16px 28px;border-radius:0 16px 16px 0;
+  border:1px solid var(--line-soft);background:var(--panel)}
+.step__ic{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--panel-2);color:var(--gold-300);border:1px solid var(--line)}
+.step__ic svg{width:20px;height:20px}
+.step__body b{display:block;font-size:1rem;margin-bottom:2px}
+.step__body p{margin:0;font-size:.9rem;color:var(--muted)}
+@media (max-width:640px){
+  .step{margin-left:0;grid-template-columns:minmax(0,1fr)}
+  .step__tab{width:auto;display:flex;align-items:center;gap:14px;border-radius:14px 14px 0 0;padding:12px 16px}
+  .step__tab::before{display:none}
+  .step__tab i{flex:1;margin-top:0}
+  .step__body{margin-left:0;border-radius:0 0 16px 16px;padding:16px}
+}
+
+/* ================= lectures ================= */
+.lx__bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.lx__note{margin-bottom:14px}
+.lx{display:grid;gap:8px}
+.tp{border:1px solid var(--line-soft);border-radius:14px;background:var(--panel);overflow:hidden;transition:border-color .3s}
+.tp[open]{border-color:var(--line)}
+.tp summary{list-style:none;display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer;min-height:62px}
+.tp summary::-webkit-details-marker{display:none}
+.tp__n{width:36px;height:36px;flex:none;border-radius:9px;display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;
+  border:1px solid var(--line);color:var(--gold-300)}
+.tp[open] .tp__n{background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold);border-color:transparent}
+.tp__t{flex:1;min-width:0}
+.tp__t b{display:block;font-size:.98rem}
+.tp__t span{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.tp summary::after{content:"";width:9px;height:9px;flex:none;border-right:1.6px solid var(--gold-400);border-bottom:1.6px solid var(--gold-400);
+  transform:rotate(45deg) translateY(-3px);transition:transform .35s var(--ease);margin-right:6px}
+.tp[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.tp__b{padding:0 12px 12px;display:grid;gap:6px}
+.lec{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;border:1px solid var(--line-soft);background:var(--bg);
+  width:100%;text-align:left;min-height:54px;transition:border-color .3s}
+button.lec:hover{border-color:var(--gold-400)}
+.lec__p{width:32px;height:32px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--panel-2);color:var(--gold-300)}
+.lec__p svg{width:14px;height:14px}
+.lec__t{flex:1;min-width:0;font-size:.9rem;font-weight:500}
+.lec__t small{display:block;font-family:var(--mono);font-size:.66rem;color:var(--muted);font-weight:400}
+.lec--lock{opacity:.78}
+.lec--empty{justify-content:center;color:var(--muted);font-size:.86rem;border-style:dashed}
+.showall{width:100%;margin-top:10px;padding:14px;border-radius:12px;border:1px solid var(--line-soft);background:var(--panel);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-300);min-height:48px}
+.showall:hover{border-color:var(--gold-400)}
+
+/* ================= reviews ================= */
+.rv{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.rv article{padding:22px;border-radius:var(--r-lg);border:1px solid var(--line-soft);background:var(--panel);display:grid;gap:12px}
+.rv p{margin:0;font-family:var(--display);font-size:1.08rem;line-height:1.5}
+.rv footer{display:flex;align-items:center;gap:10px}
+.rv footer i{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--display);
+  background:var(--panel-2);color:var(--gold-300);border:1px solid var(--line)}
+.rv footer b{font-size:.9rem;display:block}
+.rv footer span{font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+
+/* ================= faq ================= */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,70px);align-items:start}
+.faq__h{position:sticky;top:110px;margin:0}
+.faq__h .btn{justify-self:start;margin-top:10px}
+.faqs{display:grid;gap:10px}
+.faqs details{border:1px solid var(--line-soft);border-radius:16px;background:var(--panel);overflow:hidden;
+  transition:border-color .3s var(--ease),background .3s var(--ease)}
+.faqs details:hover{border-color:var(--line)}
+.faqs details[open]{border-color:var(--gold-400);background:color-mix(in srgb,var(--gold-500) 6%,var(--panel))}
+.faqs summary{display:flex;align-items:center;gap:16px;padding:16px 18px;cursor:pointer;list-style:none;font-weight:600;font-size:.94rem;line-height:1.35;min-height:60px}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs summary::after{content:"";width:30px;height:30px;flex:0 0 30px;margin-left:auto;border-radius:9px;border:1px solid var(--line);
+  background:linear-gradient(var(--gold-500),var(--gold-500)) center/12px 1.6px no-repeat,linear-gradient(var(--gold-500),var(--gold-500)) center/1.6px 12px no-repeat;
+  transition:transform .4s var(--spring),background-size .35s var(--ease)}
+.faqs details[open] summary::after{background-size:12px 1.6px,1.6px 0;transform:rotate(180deg)}
+.faqs .body{padding:0 18px 18px;font-size:.9rem;line-height:1.65;color:var(--muted);max-width:64ch}
+.faqs .body a{color:var(--gold-300);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){.faq{grid-template-columns:minmax(0,1fr)}.faq__h{position:static}}
+
+/* ================= register ================= */
+.reg{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:16px;align-items:start}
+.form{padding:clamp(20px,3vw,32px);position:relative}
+.form__g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 14px;margin-bottom:18px}
+.fld{display:grid;gap:7px;min-width:0}
+.fld--full{grid-column:1/-1}
+.fld > span{font-size:.8rem;font-weight:600;color:var(--muted)}
+.fld i{color:var(--gold-400);font-style:normal}
+.fld input,.fld select,.fld textarea{width:100%;border:1px solid var(--line-soft);background:var(--bg);border-radius:11px;padding:12px 14px;
+  min-height:48px;outline:0;transition:border-color .25s,box-shadow .25s;color:var(--text)}
+.fld textarea{resize:vertical;min-height:96px}
+.fld select{appearance:none;-webkit-appearance:none;padding-right:40px;
+  background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23D49C42' stroke-width='1.8'/%3E%3C/svg%3E") right 15px center no-repeat}
+.fld select option{background:var(--card);color:var(--text)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--gold-400);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold-400) 18%,transparent)}
+.fld.bad input,.fld.bad select{border-color:var(--bad)}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.form__err{color:var(--bad);font-size:.88rem;margin:-6px 0 12px}
+.form__ok{text-align:center;padding:30px 10px 10px;display:grid;justify-items:center;gap:6px}
+.form__ok svg{width:64px;height:64px;fill:none;stroke:var(--ok);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.form__ok circle{stroke-dasharray:160;stroke-dashoffset:160;animation:draw .8s var(--ease) forwards}
+.form__ok path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s var(--ease) .6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.form__ok p{color:var(--muted);max-width:42ch}
+.form.sent .form__g,.form.sent > .btn,.form.sent .form__err{display:none}
+.reg__side{display:grid;gap:12px}
+.reg__box{padding:22px}
+.reg__box h3{font-size:1.2rem;margin-bottom:14px}
+.dc{display:grid;gap:8px}
+.dc a,.dc div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:11px;
+  border:1px solid var(--line-soft);background:var(--bg);min-height:50px;transition:border-color .25s}
+.dc a:hover{border-color:var(--gold-400)}
+.dc span{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dc b{font-size:.9rem;text-align:right;overflow-wrap:anywhere}
+@media (max-width:900px){.reg{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.form__g{grid-template-columns:minmax(0,1fr)}}
+
+/* ================= promo + video ================= */
+.promo__mk svg{width:48px;height:48px}
+.promo__a{display:grid;gap:8px;margin-top:22px}
+.modal--v .modal__in{width:min(960px,100%);padding:16px}
+.vbox__t{display:flex;align-items:baseline;gap:12px;padding:4px 50px 12px 4px;flex-wrap:wrap}
+.vbox__t b{font-family:var(--display);font-size:1.2rem;font-weight:500}
+.vbox__t .mono{font-size:.7rem;color:var(--muted)}
+.vbox__f{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+.vbox__f iframe{width:100%;height:100%;border:0}
+
+/* ================= assistant ================= */
+.ask{position:fixed;right:16px;bottom:16px;z-index:610;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold);box-shadow:0 14px 34px rgba(192,138,52,.4);
+  transition:transform .3s var(--spring)}
+.ask:hover{transform:translateY(-3px) rotate(-6deg)}
+.ask svg{width:26px;height:26px}
+.ask i{position:absolute;top:-3px;right:-3px;width:12px;height:12px;border-radius:50%;background:var(--ok);border:2px solid var(--bg)}
+.askp{position:fixed;right:16px;bottom:86px;z-index:620;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100svh - 120px));
+  display:flex;flex-direction:column;border-radius:20px;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);overflow:hidden;
+  transform-origin:bottom right;animation:pop .35s var(--spring)}
+.askp[hidden]{display:none}
+@keyframes pop{from{opacity:0;transform:scale(.92) translateY(10px)}}
+.askp__h{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;border-bottom:1px solid var(--line-soft)}
+.askp__mk svg{width:34px;height:34px}
+.askp__h div{flex:1;min-width:0}
+.askp__h b{display:block;font-size:.92rem}
+.askp__h span{font-size:.74rem;color:var(--muted)}
+.askp__x{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:var(--muted)}
+.askp__x:hover{background:var(--panel-2)}
+.askp__log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:11px 14px;border-radius:14px;font-size:.88rem;line-height:1.55}
+.msg--b{background:var(--panel-2);border:1px solid var(--line-soft);border-top-left-radius:4px}
+.msg--u{align-self:flex-end;background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold);border-top-right-radius:4px}
+.msg a{color:var(--gold-300);text-decoration:underline;text-underline-offset:2px}
+.msg b{color:var(--text)}
+.msg--typing{display:flex;gap:4px}
+.msg--typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:typ 1s infinite}
+.msg--typing i:nth-child(2){animation-delay:.15s}.msg--typing i:nth-child(3){animation-delay:.3s}
+@keyframes typ{50%{transform:translateY(-4px);opacity:.5}}
+.askp__q{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+.askp__q button{font-size:.76rem;padding:7px 11px;border-radius:9px;border:1px solid var(--line);color:var(--gold-300);background:var(--panel);min-height:34px}
+.askp__q button:hover{background:var(--panel-2)}
+.askp__f{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line-soft)}
+.askp__f input{flex:1;min-width:0;border:1px solid var(--line-soft);background:var(--bg);border-radius:11px;padding:10px 12px;outline:0;min-height:44px}
+.askp__f input:focus{border-color:var(--gold-400)}
+.askp__f button{width:44px;height:44px;flex:none;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold-600),#E0A94C);color:var(--on-gold)}
+@media (max-width:560px){.ask{width:52px;height:52px;border-radius:16px}.askp{bottom:78px;right:12px;width:calc(100vw - 24px)}}
+
+/* topic families: one colour per family, darker on the light theme */
+[style*="--fam-d"]{--fam:var(--fam-d)}
+[data-theme="light"] [style*="--fam-d"]{--fam:var(--fam-l)}
+.tk b{color:var(--fam);border-color:color-mix(in srgb,var(--fam) 45%,transparent)}
+[data-theme="light"] .deck__f{background:linear-gradient(150deg,color-mix(in srgb,var(--gold-500) 24%,var(--card)),var(--card) 70%)}
+[data-theme="light"] .deck__f::before{background:linear-gradient(112deg,rgba(255,255,255,.5),transparent 40%)}
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","@id":"https://sirusmankhan.vercel.app/#teacher","name":"Sir Usman Khan","jobTitle":"Chemistry Teacher",
+  "description":"Cambridge O Level (5070) and IGCSE (0620) Chemistry teacher with twenty years in the subject and three Cambridge distinctions.",
+  "image":"https://sirusmankhan.vercel.app/usman-khan.webp","knowsAbout":["Chemistry","Cambridge O Level Chemistry 5070","Cambridge IGCSE Chemistry 0620"],
+  "sameAs":["https://facebook.com/Sir-Usman-Khan-Chemistry"]},
+ {"@type":"EducationalOrganization","@id":"https://sirusmankhan.vercel.app/#org","name":"Sir Usman Khan — Cambridge Chemistry","url":"https://sirusmankhan.vercel.app/",
+  "logo":"https://sirusmankhan.vercel.app/icon-512.png","founder":{"@id":"https://sirusmankhan.vercel.app/#teacher"},"areaServed":"Karachi, Pakistan"},
+ {"@type":"Course","name":"Cambridge O Level Chemistry 5070","courseCode":"5070","provider":{"@id":"https://sirusmankhan.vercel.app/#org"},
+  "description":"All twelve Cambridge 5070 topics, taught mechanism first, with recorded lectures and past papers."},
+ {"@type":"Course","name":"Cambridge IGCSE Chemistry 0620","courseCode":"0620","provider":{"@id":"https://sirusmankhan.vercel.app/#org"},
+  "description":"Core and Extended IGCSE Chemistry across the twelve Cambridge topics, with recorded lectures and past papers."}
+]}
+</script>
+</head>
+<body class="pg-index">
+<div id="pre" role="status" aria-label="Loading" data-lines="Filling the shells|Balancing the equations|Lighting the burner">
+  <div class="pl">
+    <div class="pl__atom">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <defs><radialGradient id="plNuc"><stop offset="0" stop-color="#F2DDB4"/><stop offset=".6" stop-color="#C08A34"/><stop offset="1" stop-color="#A8752A"/></radialGradient></defs>
+        <circle class="pl__shell" cx="50" cy="50" r="18"/>
+        <circle class="pl__shell" cx="50" cy="50" r="32"/>
+        <circle class="pl__shell" cx="50" cy="50" r="46"/>
+        <circle class="pl__nuc" cx="50" cy="50" r="8"/>
+        <g class="pl__spin pl__spin--1"><circle class="pl__e" cx="50" cy="32" r="2.6"/><circle class="pl__e" cx="50" cy="68" r="2.6"/></g>
+        <g class="pl__spin pl__spin--2"><circle class="pl__e pl__e--ice" cx="82" cy="50" r="2.4"/><circle class="pl__e" cx="18" cy="50" r="2.4"/><circle class="pl__e" cx="50" cy="18" r="2.4"/><circle class="pl__e pl__e--ice" cx="50" cy="82" r="2.4"/></g>
+        <g class="pl__spin pl__spin--3"><circle class="pl__e" cx="96" cy="50" r="2"/><circle class="pl__e pl__e--ice" cx="4" cy="50" r="2"/></g>
+      </svg>
+    </div>
+    <div class="pl__t"><div class="pl__b"></div></div>
+    <div class="pl__x"></div>
+  </div>
+</div>
+<div class="sprog" aria-hidden="true"></div>
+<div class="cur" aria-hidden="true"></div><div class="cur-d" aria-hidden="true"></div>
+<a class="sr" href="#main">Skip to content</a>
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="logo" href="#top" aria-label="Sir Usman Khan — home"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mk-hex" d="M32 6 54.5 19v26L32 58 9.5 45V19z"/><circle class="mk-ring" cx="32" cy="32" r="11"/><circle class="mk-e" cx="54.5" cy="19" r="3.6"/></svg><b>Sir <i>Usman</i> Khan</b></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#course">Course</a>
+      <a href="#syllabus">Syllabus</a>
+      <a href="#method">Method</a>
+      <a href="#bench">The bench</a>
+      <a href="papers.html">Past papers</a>
+      <a href="#lectures">Lectures</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr__cta">
+      <a class="btn btn--line btn--sm" href="portal.html">Student login</a>
+      <a class="btn btn--gold btn--sm" href="#register">Register</a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mob"><i></i><i></i><i></i></button>
+  </div>
+</header>
+<nav class="mob" id="mob" aria-label="Mobile menu">
+  <a href="#course">Course <span>5070 · 0620</span></a>
+  <a href="#syllabus">Syllabus <span>12 topics</span></a>
+  <a href="#method">Method</a>
+  <a href="#bench">The bench <span>flame &amp; gas tests</span></a>
+  <a href="papers.html">Past papers <span>with mark schemes</span></a>
+  <a href="#lectures">Lectures</a>
+  <a href="#faq">FAQ</a>
+  <div class="mob__sep"></div>
+  <div class="mob__row">
+    <a class="btn btn--line" href="portal.html">Student login</a>
+    <a class="btn btn--gold" href="#register">Register</a>
+  </div>
+</nav>
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <canvas class="hero__fx" aria-hidden="true"></canvas>
+  <div class="wrap hero__g">
+    <div class="hero__t">
+      <span class="eyebrow" data-hi="1">O Level 5070 · IGCSE 0620 · Cambridge Chemistry</span>
+      <h1 class="hero__h" data-hi="2"><span>Follow the electrons.</span><span class="gold">The answer follows.</span></h1>
+      <p class="lede hero__l" data-hi="3">Sir Usman Khan teaches Cambridge Chemistry from the mechanism up — what the electrons do, and why they do it. Learn the movement once and you can work out a reaction you have never seen. Memorise the products and you can't.</p>
+      <div class="hero__cta" data-hi="4">
+        <a class="btn btn--gold" href="#register"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"/></svg>Register for classes</a>
+        <button class="btn btn--line" type="button" data-intro hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></svg>Watch the introduction</button>
+        <a class="btn btn--line" href="#syllabus" data-nointro>Explore the syllabus</a>
+      </div>
+      <dl class="hero__s" data-hi="5">
+        <div><dt><b data-count="20">20</b></dt><dd>Years in the subject</dd></div>
+        <div><dt><b data-count="3">3</b></dt><dd>Cambridge distinctions</dd></div>
+        <div><dt><b data-count="12">12</b></dt><dd>Syllabus topics</dd></div>
+      </dl>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="stage__in">
+        <div class="stage__plate"></div>
+        <svg class="stage__orb stage__orb--back" viewBox="0 0 520 520">
+          <g transform="rotate(-24 260 250)"><ellipse cx="260" cy="250" rx="236" ry="74"/></g>
+          <g transform="rotate(36 260 250)"><ellipse cx="260" cy="250" rx="236" ry="74"/></g>
+          <g transform="rotate(96 260 250)"><ellipse cx="260" cy="250" rx="236" ry="74"/></g>
+        </svg>
+        <img class="stage__img" src="usman-khan.webp" alt="" width="936" height="1128" fetchpriority="high">
+        <svg class="stage__orb stage__orb--front" viewBox="0 0 520 520">
+          <defs>
+            <path id="o1" d="M24 250a236 74 0 1 0 472 0a236 74 0 1 0-472 0"/>
+          </defs>
+          <g transform="rotate(-24 260 250)"><circle class="e" r="6"><animateMotion dur="7s" repeatCount="indefinite" rotate="0"><mpath href="#o1"/></animateMotion></circle></g>
+          <g transform="rotate(36 260 250)"><circle class="e e--ice" r="5"><animateMotion dur="9.5s" repeatCount="indefinite" begin="-3s"><mpath href="#o1"/></animateMotion></circle></g>
+          <g transform="rotate(96 260 250)"><circle class="e" r="5.5"><animateMotion dur="8.2s" repeatCount="indefinite" begin="-5s"><mpath href="#o1"/></animateMotion></circle></g>
+        </svg>
+        <div class="tile">
+          <span class="tile__n">20<small>yrs</small></span>
+          <span class="tile__s">Uk</span>
+          <span class="tile__name">Usman Khan</span>
+          <span class="tile__m">5070 · 0620</span>
+        </div>
+        <div class="stage__tag"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.9 7.1.6-5.4 4.7 1.6 7.3L12 17.8 5.8 21.5l1.6-7.3L2 9.5l7.1-.6z"/></svg>3 Cambridge distinctions</div>
+      </div>
+    </div>
+  </div>
+  <a class="cue" href="#about" aria-label="Scroll to the next section"><span>Scroll</span><i></i></a>
+</section>
+
+<!-- ================= TOPIC TICKER ================= -->
+<div class="tick" aria-hidden="true"><div class="tick__track"></div></div>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <article class="meet" data-rv>
+      <figure class="meet__ph">
+        <div class="meet__frame">
+          <img src="usman-khan.webp" alt="Sir Usman Khan" loading="lazy" width="936" height="1128">
+          <i class="cnr cnr--tl"></i><i class="cnr cnr--br"></i>
+          <span class="meet__badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.9 7.1.6-5.4 4.7 1.6 7.3L12 17.8 5.8 21.5l1.6-7.3L2 9.5l7.1-.6z"/></svg>3 distinctions</span>
+        </div>
+        <figcaption><b>Sir Usman Khan</b><span>Chemistry · O Level &amp; IGCSE</span></figcaption>
+      </figure>
+      <div class="meet__t">
+        <span class="eyebrow">Your teacher</span>
+        <h2>He starts with the mechanism, not the equation.</h2>
+        <p class="meet__q">Twenty years in O Level and IGCSE Chemistry, with three Cambridge distinctions on his record. What the electrons do, and why they do it — that is where every one of his topics begins.</p>
+        <dl class="facts">
+          <div><dt>Subject</dt><dd>Chemistry</dd></div>
+          <div><dt>Levels</dt><dd>O Level &amp; IGCSE</dd></div>
+          <div><dt>Syllabus</dt><dd>5070 · 0620</dd></div>
+          <div><dt>In the subject</dt><dd>Twenty years</dd></div>
+        </dl>
+        <div class="meet__cta">
+          <a class="btn btn--gold" href="#register">Study with Sir Usman</a>
+          <button class="btn btn--line" type="button" data-intro hidden>Watch the introduction</button>
+          <a class="btn btn--ghost" href="#method" data-nointro>How he teaches</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= COURSE ================= -->
+<section class="sec" id="course">
+  <div class="wrap">
+    <div class="head" data-rv>
+      <span class="eyebrow">The course</span>
+      <h2>Two syllabuses. One way of teaching them.</h2>
+      <p class="lede">O Level and IGCSE share the same twelve topics; what changes is the paper you sit. Tap a card to see exactly how each one is examined.</p>
+    </div>
+    <div class="deck" data-deck>
+      <div class="deck__rail">
+        <button class="deck__c" style="--i:0" type="button" aria-label="O Level Chemistry 5070 — show the papers">
+          <span class="deck__f">
+            <span class="deck__top"><span class="chip">5070</span><span class="deck__no">01</span></span>
+            <span class="deck__h">O Level Chemistry</span>
+            <span class="deck__p">Twelve topics, three papers: multiple choice, theory, and one practical paper of your school's choosing.</span>
+            <span class="deck__ft"><span class="chip chip--dim">June · November</span><span class="chip chip--dim">A* – E</span></span>
+            <svg class="deck__art" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 12 101.6 36v48L60 108 18.4 84V36z"/><circle cx="60" cy="60" r="20"/></svg>
+          </span>
+          <span class="deck__b">
+            <span class="deck__bh">How 5070 is examined</span>
+            <span class="pp"><b>Paper 1</b><span>Multiple choice</span><em>1 h · 40 marks · 30%</em></span>
+            <span class="pp"><b>Paper 2</b><span>Theory</span><em>1 h 45 · 80 marks · 50%</em></span>
+            <span class="pp"><b>Paper 3</b><span>Practical test</span><em>1 h 30 · 40 marks · 20%</em></span>
+            <span class="pp pp--or"><b>or 4</b><span>Alternative to practical</span><em>1 h · 40 marks · 20%</em></span>
+          </span>
+        </button>
+        <button class="deck__c" style="--i:1" type="button" aria-label="IGCSE Chemistry 0620 — show the papers">
+          <span class="deck__f">
+            <span class="deck__top"><span class="chip">0620</span><span class="deck__no">02</span></span>
+            <span class="deck__h">IGCSE Chemistry</span>
+            <span class="deck__p">The same twelve topics in two tiers. Extended opens the full A* range; Core is graded C to G.</span>
+            <span class="deck__ft"><span class="chip chip--dim">March · June · November</span></span>
+            <svg class="deck__art" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="12"/><ellipse cx="60" cy="60" rx="46" ry="16"/><ellipse cx="60" cy="60" rx="46" ry="16" transform="rotate(60 60 60)"/><ellipse cx="60" cy="60" rx="46" ry="16" transform="rotate(120 60 60)"/></svg>
+          </span>
+          <span class="deck__b">
+            <span class="deck__bh">How 0620 is examined</span>
+            <span class="pp"><b>P1 / P2</b><span>Multiple choice · Core / Extended</span><em>45 min · 40 marks · 30%</em></span>
+            <span class="pp"><b>P3 / P4</b><span>Theory · Core / Extended</span><em>1 h 15 · 80 marks · 50%</em></span>
+            <span class="pp"><b>P5</b><span>Practical test</span><em>1 h 15 · 40 marks · 20%</em></span>
+            <span class="pp pp--or"><b>or P6</b><span>Alternative to practical</span><em>1 h · 40 marks · 20%</em></span>
+          </span>
+        </button>
+        <button class="deck__c" style="--i:2" type="button" aria-label="The practical paper — show what it tests">
+          <span class="deck__f">
+            <span class="deck__top"><span class="chip">P4 · P6</span><span class="deck__no">03</span></span>
+            <span class="deck__h">The practical paper</span>
+            <span class="deck__p">A fifth of the grade, built on the same experimental skills every series. It is taught as part of each topic, not crammed at the end.</span>
+            <span class="deck__ft"><span class="chip chip--dim">20% of the grade</span></span>
+            <svg class="deck__art" viewBox="0 0 120 120" aria-hidden="true"><path d="M48 14h24M52 14v34L26 96a8 8 0 0 0 7 12h54a8 8 0 0 0 7-12L68 48V14"/><path d="M36 80h48"/></svg>
+          </span>
+          <span class="deck__b">
+            <span class="deck__bh">What the practical paper asks about</span>
+            <span class="ctx">Titrations · rates of reaction · salt preparation · filtration, crystallisation and distillation · chromatography · electrolysis · identifying ions and gases · tests for water · heating and cooling curves · displacement reactions · temperature changes · rusting</span>
+            <span class="deck__bn">Same skills, same contexts, every series.</span>
+          </span>
+        </button>
+      </div>
+      <p class="deck__hint">Tap a card to turn it over</p>
+    </div>
+
+    <div class="strip" data-rv>
+      <div><b data-count="20">20</b><span>Years in the subject</span></div>
+      <div><b data-count="3">3</b><span>Cambridge distinctions</span></div>
+      <div><b data-count="12">12</b><span>Syllabus topics</span></div>
+      <div><b data-count="2">2</b><span>Syllabus codes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SYLLABUS ================= -->
+<section class="sec" id="syllabus">
+  <div class="wrap">
+    <div class="head head--split" data-rv>
+      <div><span class="eyebrow">Syllabus</span><h2>Twelve topics, laid out like the table they end with.</h2></div>
+      <p class="lede">The same twelve topics run through 5070 and 0620. Open any one to see every sub-topic Cambridge lists for it, and the papers that test it.</p>
+    </div>
+    <div class="pt" role="tablist" aria-label="Syllabus topics"></div>
+    <div class="ptd" id="ptd" role="tabpanel" aria-live="polite"></div>
+    <p class="src">Topic and sub-topic names are taken from the Cambridge O Level Chemistry 5070 syllabus for 2026–2028. IGCSE 0620 covers the same twelve topics, with extra Supplement content for Extended candidates.</p>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="sec" id="method">
+  <div class="wrap">
+    <div class="head" data-rv>
+      <span class="eyebrow">The method</span>
+      <h2>Electrons, then the mechanism, then the question you haven't seen.</h2>
+    </div>
+    <div class="mth">
+      <div class="hexes" role="tablist" aria-label="Teaching method">
+        <span class="hx hx--d hx--a" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2.4"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg></span>
+        <button class="hx hx--b" role="tab" aria-selected="true" data-m="0"><em>01</em><small>Bonding</small><b>Electrons first</b></button>
+        <span class="hx hx--d hx--c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h12M12 8l4 4-4 4M20 6v12"/></svg></span>
+        <button class="hx hx--d2" role="tab" aria-selected="false" data-m="1"><em>02</em><small>Reactions</small><b>Then the mechanism</b></button>
+        <button class="hx hx--e" role="tab" aria-selected="false" data-m="2"><em>03</em><small>The exam</small><b>Then the unseen question</b></button>
+        <span class="hx hx--d hx--f" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg></span>
+      </div>
+      <div class="mth__card" aria-live="polite">
+        <span class="chip" data-mk>Bonding</span>
+        <h3 data-mt>Electrons first</h3>
+        <p data-mp></p>
+        <div class="mth__eg"><span class="mono">For example</span><p data-me></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE BENCH ================= -->
+<section class="sec" id="bench">
+  <div class="wrap">
+    <div class="head head--split" data-rv>
+      <div><span class="eyebrow">The bench</span><h2>Every test in the qualitative analysis notes, ready to try.</h2></div>
+      <p class="lede">Pick an ion and watch the flame. These are the exact results Cambridge prints in the notes for Papers 3, 4, 5 and 6 — the ones worth knowing without looking.</p>
+    </div>
+    <div class="bench panel" data-rv>
+      <div class="tabs" role="tablist" aria-label="Tests">
+        <button role="tab" aria-selected="true" data-b="flame">Flame tests</button>
+        <button role="tab" aria-selected="false" data-b="gas">Tests for gases</button>
+        <button role="tab" aria-selected="false" data-b="cation">Aqueous cations</button>
+        <button role="tab" aria-selected="false" data-b="anion">Anions</button>
+      </div>
+      <div class="bench__p" data-bp="flame">
+        <div class="burner">
+          <svg viewBox="0 0 200 300" class="burner__svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="fCore" cx="50%" cy="75%" r="60%"><stop offset="0" stop-color="#E8F1FF"/><stop offset=".55" stop-color="#8FB4FF" stop-opacity=".9"/><stop offset="1" stop-color="#3D6FE0" stop-opacity="0"/></radialGradient>
+              <radialGradient id="fOut" cx="50%" cy="80%" r="70%"><stop offset="0" stop-color="var(--fl,#7FA8E8)" stop-opacity=".95"/><stop offset=".7" stop-color="var(--fl,#7FA8E8)" stop-opacity=".55"/><stop offset="1" stop-color="var(--fl,#7FA8E8)" stop-opacity="0"/></radialGradient>
+              <linearGradient id="fBrass" x1="0" x2="1"><stop offset="0" stop-color="#7C5A22"/><stop offset=".45" stop-color="#E0A94C"/><stop offset="1" stop-color="#6E4E1C"/></linearGradient>
+            </defs>
+            <g class="fl">
+              <path class="fl__o" d="M100 30C72 80 66 120 70 160c3 26 15 40 30 40s27-14 30-40c4-40-2-80-30-130z" fill="url(#fOut)"/>
+              <path class="fl__i" d="M100 110c-12 22-15 40-13 56 2 14 7 22 13 22s11-8 13-22c2-16-1-34-13-56z" fill="url(#fCore)"/>
+            </g>
+            <circle class="fl__glow" cx="100" cy="150" r="80" fill="var(--fl,#7FA8E8)" opacity=".14"/>
+            <path d="M74 200h52l-6 54H80z" fill="url(#fBrass)"/>
+            <rect x="86" y="214" width="28" height="9" rx="2" fill="#2A1C08" opacity=".55"/>
+            <path d="M46 258h108a8 8 0 0 1 8 8v10H38v-10a8 8 0 0 1 8-8z" fill="url(#fBrass)"/>
+            <g class="wire"><path d="M168 64 112 132" stroke="#C9CED8" stroke-width="2.4" stroke-linecap="round"/><circle cx="111" cy="133" r="3.4" fill="none" stroke="#C9CED8" stroke-width="2"/></g>
+          </svg>
+        </div>
+        <div class="bench__side">
+          <div class="ions" role="radiogroup" aria-label="Choose an ion"></div>
+          <div class="readout">
+            <span class="mono">Flame colour</span>
+            <b data-fc>Choose an ion</b>
+            <p data-fn>Dip the wire, hold it at the edge of a roaring flame, and the colour names the metal ion.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bench__p" data-bp="gas" hidden><div class="gas"></div></div>
+      <div class="bench__p" data-bp="cation" hidden>
+        <div class="cat" role="table" aria-label="Tests for aqueous cations">
+          <div class="cat__h" role="row"><span role="columnheader">Cation</span><span role="columnheader">Aqueous sodium hydroxide</span><span role="columnheader">Aqueous ammonia</span></div>
+        </div>
+      </div>
+      <div class="bench__p" data-bp="anion" hidden><div class="ani"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECORD ================= -->
+<section class="sec" id="record">
+  <div class="wrap">
+    <div class="rec">
+      <div class="rec__ring" data-rv>
+        <svg viewBox="0 0 220 220" aria-hidden="true">
+          <circle class="rr__bg" cx="110" cy="110" r="92"/>
+          <circle class="rr__fg" cx="110" cy="110" r="92" pathLength="100"/>
+          <g class="rr__n"><circle cx="110" cy="18" r="7"/><circle cx="189.7" cy="156" r="7"/><circle cx="30.3" cy="156" r="7"/></g>
+        </svg>
+        <div class="rec__c"><b data-count="3">3</b><span>Cambridge distinctions</span></div>
+      </div>
+      <div class="rec__t" data-rv>
+        <span class="eyebrow">The record</span>
+        <h2>Three distinctions, in twenty years of one subject.</h2>
+        <p class="lede">A counted figure from his own record — shown as it is, rather than a rounded student headcount.</p>
+        <div class="rec__card">
+          <span class="chip">What a distinction means</span>
+          <h3>Not the same as an A*</h3>
+          <p>A Cambridge distinction is an Outstanding Cambridge Learner Award. It goes to the highest-scoring candidates in a country, or in the world — not to every student who gets an A*.</p>
+        </div>
+        <div class="res" data-results hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GETTING STARTED ================= -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="head" data-rv>
+      <span class="eyebrow">Getting started</span>
+      <h2>From first message to first class</h2>
+      <p class="lede">Four steps. You choose the syllabus and the session; the team does the rest.</p>
+    </div>
+    <ol class="steps">
+      <li class="step" style="--k:0" data-rv>
+        <div class="step__tab"><span class="mono">Step</span><b>01</b><i style="--p:25%"></i></div>
+        <div class="step__body"><span class="step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M9 4h6v3H9zM6 6H5a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1M8 13l3 3 5-6"/></svg></span><div><b>Register</b><p>Send the form below, or a message on <span data-msglabel>Facebook</span>, with your syllabus and exam session.</p></div></div>
+      </li>
+      <li class="step" style="--k:1" data-rv>
+        <div class="step__tab"><span class="mono">Step</span><b>02</b><i style="--p:50%"></i></div>
+        <div class="step__body"><span class="step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>Your batch is confirmed</b><p>The team replies with the timings for the batch that fits your session.</p></div></div>
+      </li>
+      <li class="step" style="--k:2" data-rv>
+        <div class="step__tab"><span class="mono">Step</span><b>03</b><i style="--p:75%"></i></div>
+        <div class="step__body"><span class="step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.4"/><path d="M14 10h4M14 14h3"/></svg></span><div><b>Get your student ID</b><p>Your ID and access code open the student portal on up to <span data-maxdev>two</span> devices.</p></div></div>
+      </li>
+      <li class="step" style="--k:3" data-rv>
+        <div class="step__tab"><span class="mono">Step</span><b>04</b><i style="--p:100%"></i></div>
+        <div class="step__body"><span class="step__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3zM8 21h8"/></svg></span><div><b>Start learning</b><p>Class, then the recorded lecture, notes and past papers — topic by topic, in order.</p></div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= LECTURES ================= -->
+<section class="sec" id="lectures">
+  <div class="wrap">
+    <div class="head head--split" data-rv>
+      <div><span class="eyebrow">Lectures</span><h2>Recorded, topic by topic</h2></div>
+      <p class="lede">Every lecture sits under its syllabus topic. Lectures marked free play for anyone; the rest open with your student ID.</p>
+    </div>
+    <div class="lx__bar" data-rv>
+      <div class="seg" role="group" aria-label="Syllabus">
+        <button type="button" aria-pressed="true" data-ls="5070">O Level 5070</button>
+        <button type="button" aria-pressed="false" data-ls="0620">IGCSE 0620</button>
+      </div>
+      <a class="btn btn--line btn--sm" href="portal.html">Sign in to the portal</a>
+    </div>
+    <div class="note lx__note" data-lnote></div>
+    <div class="lx" data-lx></div>
+    <button class="showall" type="button" data-lmore>Show every topic</button>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec" id="reviews" hidden>
+  <div class="wrap">
+    <div class="head" data-rv><span class="eyebrow">Student reviews</span><h2>What students say</h2></div>
+    <div class="rv" data-reviews></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div class="head faq__h" data-rv>
+      <span class="eyebrow">Questions</span>
+      <h2>Before you enrol</h2>
+      <p class="lede">The questions students and parents actually ask. Anything not here — ask the assistant in the corner, or send a message.</p>
+      <a class="btn btn--line" data-msg="Assalam o Alaikum, I have a question about Chemistry classes with Sir Usman Khan." href="#register">Ask on <span data-msglabel>Facebook</span></a>
+    </div>
+    <div class="faqs" data-faqs></div>
+  </div>
+</section>
+
+<!-- ================= REGISTER ================= -->
+<section class="sec" id="register">
+  <div class="wrap">
+    <div class="head" data-rv>
+      <span class="eyebrow">Registration</span>
+      <h2>Register for Chemistry</h2>
+      <p class="lede">Fill this in and the team replies with timings and the next step. It takes under a minute.</p>
+    </div>
+    <div class="reg">
+      <form class="form panel" id="regForm" novalidate data-rv>
+        <div class="form__g">
+          <label class="fld"><span>Student name <i>*</i></span><input name="name" required autocomplete="name" maxlength="80"></label>
+          <label class="fld"><span>WhatsApp number <i>*</i></span><input name="phone" required inputmode="tel" autocomplete="tel" placeholder="03xx xxxxxxx" maxlength="20"></label>
+          <label class="fld fld--full"><span>Email</span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
+          <label class="fld"><span>Syllabus <i>*</i></span>
+            <select name="syllabus" required>
+              <option value="">Select one…</option>
+              <option value="5070">O Level Chemistry 5070</option>
+              <option value="0620-extended">IGCSE Chemistry 0620 — Extended</option>
+              <option value="0620-core">IGCSE Chemistry 0620 — Core</option>
+              <option value="unsure">Not sure yet</option>
+            </select></label>
+          <label class="fld"><span>Exam session</span><select name="session" data-sessions></select></label>
+          <label class="fld fld--full" data-modefld hidden><span>Class mode</span>
+            <select name="mode"><option value="online">Online</option><option value="campus">On campus</option></select></label>
+          <label class="fld fld--full"><span>Anything to add</span><textarea name="message" rows="3" maxlength="600" placeholder="Current grade, school, or the topic you find hardest"></textarea></label>
+          <label class="hp" aria-hidden="true">Leave empty<input name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <p class="form__err" role="alert" hidden></p>
+        <button class="btn btn--gold btn--wide" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Send my details</span></button>
+        <div class="form__ok" hidden>
+          <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="m15 27 7 7 15-16"/></svg>
+          <h3>Details received</h3>
+          <p data-okmsg>The team will reply with timings and the next step.</p>
+          <a class="btn btn--line" data-okfollow target="_blank" rel="noopener" href="#">Also send it on <span data-msglabel>Facebook</span></a>
+        </div>
+      </form>
+      <aside class="reg__side" data-rv style="--d:1">
+        <div class="panel reg__box">
+          <h3>Direct contact</h3>
+          <div class="dc" data-direct></div>
+        </div>
+        <div class="panel reg__box" data-campusbox hidden>
+          <h3>Where classes run</h3>
+          <div class="dc" data-campuses></div>
+        </div>
+        <div class="panel reg__box">
+          <h3>Already enrolled?</h3>
+          <p class="muted" style="font-size:.9rem;margin-bottom:14px">Your student ID opens the recorded lectures, notes and progress for your syllabus.</p>
+          <a class="btn btn--line btn--wide" href="portal.html">Open the student portal</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__g">
+      <div class="ftr__brand">
+        <a class="logo" href="#top" aria-label="Sir Usman Khan — home" style="padding:0;min-height:0"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mk-hex" d="M32 6 54.5 19v26L32 58 9.5 45V19z"/><circle class="mk-ring" cx="32" cy="32" r="11"/><circle class="mk-e" cx="54.5" cy="19" r="3.6"/></svg><b>Sir <i>Usman</i> Khan</b></a>
+        <p>Cambridge O Level and IGCSE Chemistry, taught from the electrons up.</p>
+        <div class="soc" data-soc></div>
+      </div>
+      <div>
+        <h4>Study</h4>
+        <a href="#course">The course</a>
+        <a href="#syllabus">Syllabus</a>
+        <a href="papers.html">Past papers</a>
+        <a href="#bench">The bench</a>
+      </div>
+      <div>
+        <h4>Students</h4>
+        <a href="portal.html">Student portal</a>
+        <a href="#lectures">Lectures</a>
+        <a href="#register">Register</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div data-contactlist></div>
+      </div>
+    </div>
+    <div class="nxl">
+      <span class="nxl__b"><i></i>NEXLYR</span>
+      <span class="nxl__t">Website, portal and design by Nexlyr Solutions</span>
+      <a href="https://nexlyr.solutions" target="_blank" rel="noopener">Connect</a>
+    </div>
+    <div class="ftr__b">
+      <span>© <span data-year>2026</span> Sir Usman Khan</span>
+      <span>Cambridge O Level 5070 · IGCSE 0620 Chemistry</span>
+    </div>
+  </div>
+</footer>
+<button class="thm" type="button"><span class="thm__k"></span><span></span></button>
+<div class="modal" id="promo" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="promoT">
+  <div class="modal__in">
+    <button class="modal__x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <span class="promo__mk"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mk-hex" d="M32 6 54.5 19v26L32 58 9.5 45V19z"/><circle class="mk-ring" cx="32" cy="32" r="11"/><circle class="mk-e" cx="54.5" cy="19" r="3.6"/></svg></span>
+    <h3 id="promoT">Register for Chemistry</h3>
+    <p class="muted">Fill in the short form and the team replies with timings for your syllabus and session.</p>
+    <div class="promo__a">
+      <a class="btn btn--gold btn--wide" href="#register" data-close data-promogo>Fill in the form</a>
+      <a class="btn btn--line btn--wide" href="portal.html">I have a student ID</a>
+      <button class="btn btn--ghost btn--wide" type="button" data-close data-promono>Not now</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal--v" id="vid" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video">
+  <div class="modal__in vbox">
+    <button class="modal__x" type="button" data-close aria-label="Close video"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="vbox__t"><b data-vt>Introduction</b><span class="mono" data-vs></span></div>
+    <div class="vbox__f" data-vf></div>
+  </div>
+</div>
+
+<button class="ask" type="button" aria-label="Ask the assistant" aria-expanded="false" aria-controls="askP">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="2.6" stroke-linecap="round"/></svg>
+  <i aria-hidden="true"></i>
+</button>
+<section class="askp" id="askP" aria-label="Assistant" hidden>
+  <header class="askp__h">
+    <span class="askp__mk"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mk-hex" d="M32 6 54.5 19v26L32 58 9.5 45V19z"/><circle class="mk-ring" cx="32" cy="32" r="11"/><circle class="mk-e" cx="54.5" cy="19" r="3.6"/></svg></span>
+    <div><b>Chemistry assistant</b><span>Answers about the course, papers and portal</span></div>
+    <button type="button" class="askp__x" aria-label="Close assistant"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </header>
+  <div class="askp__log" aria-live="polite"></div>
+  <div class="askp__q"></div>
+  <form class="askp__f" autocomplete="off">
+    <input name="q" placeholder="Ask about fees, papers, the portal…" aria-label="Your question" maxlength="200">
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+  </form>
+</section>
+
+<script>
+/* ---------- shared: runs on every page ---------- */
+(function () {
+  'use strict';
+  var C = window.UK_CONFIG || {};
+  var d = document, root = d.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var UK = window.UK = window.UK || {};
+
+  UK.esc = function (s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  UK.$ = function (s, el) { return (el || d).querySelector(s); };
+  UK.$$ = function (s, el) { return [].slice.call((el || d).querySelectorAll(s)); };
+  UK.reduce = reduce;
+
+  /* ---------- icons ---------- */
+  UK.ico = {
+    wa: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>',
+    fb: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21.9v-7.7h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V5.1c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6v7.7A10 10 0 1 1 13.5 21.9z"/></svg>',
+    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>',
+    yt: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>',
+    tel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>'
+  };
+
+  /* ---------- theme ---------- */
+  var thm = UK.$('.thm');
+  function paintTheme() {
+    if (!thm) return;
+    var dark = root.getAttribute('data-theme') !== 'light';
+    UK.$('.thm__k', thm).innerHTML = dark ? UK.ico.moon : UK.ico.sun;
+    UK.$('span', thm).innerHTML = dark ? 'Dark<br>mode' : 'Light<br>mode';
+    thm.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  if (thm) {
+    paintTheme();
+    thm.addEventListener('click', function () {
+      var t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', t);
+      try { localStorage.setItem('uk_theme', t); } catch (e) {}
+      paintTheme();
+      d.dispatchEvent(new CustomEvent('uk:theme', { detail: t }));
+    });
+  }
+
+  /* ---------- preloader ---------- */
+  var pre = UK.$('#pre');
+  if (pre) {
+    var bar = UK.$('.pl__b', pre), txt = UK.$('.pl__x', pre);
+    var lines = (pre.getAttribute('data-lines') || 'Filling the shells').split('|');
+    var p = 0, li = 0, done = false;
+    var tick = setInterval(function () {
+      p = Math.min(p + Math.random() * 14, done ? 100 : 88);
+      bar.style.width = p + '%';
+      if (Math.random() > .55 && li < lines.length) txt.textContent = lines[li++];
+    }, 170);
+    txt.textContent = lines[li++];
+    var finish = function () {
+      done = true; bar.style.width = '100%';
+      setTimeout(function () { clearInterval(tick); pre.classList.add('gone'); d.dispatchEvent(new Event('uk:ready')); }, reduce ? 0 : 380);
+    };
+    if (d.readyState === 'complete') setTimeout(finish, 350); else window.addEventListener('load', function () { setTimeout(finish, 250); });
+    setTimeout(finish, 4500);          // never hold the page hostage
+  } else {
+    setTimeout(function () { d.dispatchEvent(new Event('uk:ready')); }, 0);
+  }
+
+  /* ---------- header: stick, hide on scroll down ---------- */
+  var hdr = UK.$('.hdr'), sp = UK.$('.sprog'), lastY = 0;
+  function onScroll() {
+    var y = window.scrollY;
+    if (hdr) {
+      hdr.classList.toggle('stuck', y > 20);
+      var menuOpen = mob && mob.classList.contains('open');
+      hdr.classList.toggle('hide', y > 420 && y > lastY + 4 && !menuOpen);
+      if (y < lastY - 4) hdr.classList.remove('hide');
+    }
+    if (sp) {
+      var h = d.documentElement.scrollHeight - window.innerHeight;
+      sp.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+    }
+    lastY = y;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- mobile menu ---------- */
+  var burger = UK.$('.burger'), mob = UK.$('.mob');
+  function closeMenu() {
+    if (!mob) return;
+    mob.classList.remove('open'); burger.classList.remove('x'); burger.setAttribute('aria-expanded', 'false');
+  }
+  if (burger && mob) {
+    burger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !mob.classList.contains('open');
+      mob.classList.toggle('open', open); burger.classList.toggle('x', open);
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    mob.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+    d.addEventListener('click', function (e) { if (!e.target.closest('.mob')) closeMenu(); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  }
+  onScroll();
+
+  /* ---------- active nav link for in-page sections ---------- */
+  var navLinks = UK.$$('.nav a[href^="#"]');
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var map = {};
+    navLinks.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var io0 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && map[e.target.id]) {
+          navLinks.forEach(function (a) { a.classList.remove('on'); });
+          map[e.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) { var s = d.getElementById(id); if (s) io0.observe(s); });
+    var top = d.getElementById('top');
+    if (top) new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) navLinks.forEach(function (a) { a.classList.remove('on'); });
+    }, { rootMargin: '-45% 0px -50% 0px' }).observe(top);
+  }
+
+  /* ---------- reveal ---------- */
+  UK.reveal = function (scope) {
+    var els = UK.$$('[data-rv]:not(.in)', scope);
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    els.forEach(function (e) { io.observe(e); });
+  };
+  UK.reveal();
+
+  /* ---------- cursor (desktop, fine pointer only) ---------- */
+  var cur = UK.$('.cur'), dot = UK.$('.cur-d');
+  if (cur && dot && !reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    var mx = -100, my = -100, cx = -100, cy = -100;
+    d.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)'; }, { passive: true });
+    (function loop() {
+      cx += (mx - cx) * .2; cy += (my - cy) * .2;
+      cur.style.transform = 'translate(' + cx + 'px,' + cy + 'px)';
+      requestAnimationFrame(loop);
+    })();
+    d.addEventListener('mouseover', function (e) {
+      cur.classList.toggle('big', !!e.target.closest('a,button,summary,[data-hover],input,select,textarea,label'));
+    });
+    d.addEventListener('mouseleave', function () { cur.style.opacity = 0; dot.style.opacity = 0; });
+    d.addEventListener('mouseenter', function () { cur.style.opacity = 1; dot.style.opacity = 1; });
+  }
+
+  /* ---------- toast ---------- */
+  var toastEl;
+  UK.toast = function (msg, ms) {
+    if (!toastEl) { toastEl = d.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); d.body.appendChild(toastEl); }
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.remove('show'); }, ms || 3200);
+  };
+
+  /* ---------- modals ---------- */
+  UK.openModal = function (m) {
+    if (typeof m === 'string') m = UK.$(m);
+    if (!m) return;
+    m._back = d.activeElement;
+    m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); d.body.classList.add('lock');
+    var f = m.querySelector('[autofocus],input,button:not(.modal__x),a'); if (f) setTimeout(function () { f.focus(); }, 60);
+  };
+  UK.closeModal = function (m) {
+    if (typeof m === 'string') m = UK.$(m);
+    if (!m) return;
+    m.classList.remove('open'); m.setAttribute('aria-hidden', 'true');
+    if (!UK.$('.modal.open')) d.body.classList.remove('lock');
+    if (m._back && m._back.focus) m._back.focus();
+  };
+  d.addEventListener('click', function (e) {
+    var m = e.target.classList && e.target.classList.contains('modal') ? e.target : null;
+    if (m) UK.closeModal(m);
+    var x = e.target.closest('[data-close]'); if (x) UK.closeModal(x.closest('.modal'));
+  });
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape') { var m = UK.$('.modal.open'); if (m) UK.closeModal(m); } });
+
+  /* ---------- contact details everywhere, straight from config ---------- */
+  UK.contactLinks = function () {
+    var out = [];
+    if (C.whatsapp) out.push({ k: 'wa', label: 'WhatsApp', value: C.phoneDisplay || ('+' + C.whatsapp), href: 'https://wa.me/' + C.whatsapp });
+    if (C.phoneDisplay) out.push({ k: 'tel', label: 'Call', value: C.phoneDisplay, href: 'tel:' + C.phoneDisplay.replace(/[^\d+]/g, '') });
+    if (C.email) out.push({ k: 'mail', label: 'Email', value: C.email, href: 'mailto:' + C.email });
+    if (C.facebook) out.push({ k: 'fb', label: 'Facebook', value: 'Sir Usman Khan — Chemistry', href: C.facebook });
+    if (C.instagram) out.push({ k: 'ig', label: 'Instagram', value: C.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, '@').replace(/\/$/, ''), href: C.instagram });
+    if (C.youtube) out.push({ k: 'yt', label: 'YouTube', value: 'Lectures channel', href: C.youtube });
+    return out;
+  };
+  UK.$$('[data-soc]').forEach(function (el) {
+    var html = UK.contactLinks().filter(function (c) { return c.k !== 'tel'; }).map(function (c) {
+      return '<a href="' + UK.esc(c.href) + '" target="_blank" rel="noopener" aria-label="' + c.label + '">' + UK.ico[c.k] + '</a>';
+    }).join('');
+    el.innerHTML = html; if (!html) el.hidden = true;
+  });
+  UK.$$('[data-contactlist]').forEach(function (el) {
+    var html = UK.contactLinks().map(function (c) {
+      return '<a href="' + UK.esc(c.href) + '"' + (/^http/.test(c.href) ? ' target="_blank" rel="noopener"' : '') + '>' + UK.esc(c.label === 'Facebook' ? 'Facebook page' : c.label + ' ' + c.value) + '</a>';
+    }).join('');
+    el.innerHTML = html;
+  });
+  UK.$$('[data-msg]').forEach(function (a) {
+    a.href = C.contactUrl(a.getAttribute('data-msg'));
+    if (/^http/.test(a.href)) { a.target = '_blank'; a.rel = 'noopener'; }
+    var lab = a.querySelector('[data-msglabel]'); if (lab) lab.textContent = C.contactLabel;
+  });
+  UK.$$('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); });
+
+  /* ---------- Supabase over plain fetch — no SDK ---------- */
+  UK.sb = function (path, opts) {
+    opts = opts || {};
+    if (!C.live) return Promise.reject(new Error('offline'));
+    var headers = { apikey: C.SUPABASE_ANON_KEY, 'Content-Type': 'application/json' };
+    headers.Authorization = 'Bearer ' + (opts.token || C.SUPABASE_ANON_KEY);
+    if (opts.prefer) headers.Prefer = opts.prefer;
+    var ctl = new AbortController(); var to = setTimeout(function () { ctl.abort(); }, opts.timeout || 12000);
+    return fetch(C.SUPABASE_URL + path, {
+      method: opts.method || (opts.body ? 'POST' : 'GET'), headers: headers,
+      body: opts.body ? JSON.stringify(opts.body) : undefined, signal: ctl.signal
+    }).then(function (r) {
+      clearTimeout(to);
+      return r.text().then(function (t) {
+        var j = null; try { j = t ? JSON.parse(t) : null; } catch (e) { j = t; }
+        if (!r.ok) { var err = new Error((j && (j.message || j.error_description || j.msg)) || ('HTTP ' + r.status)); err.status = r.status; err.body = j; throw err; }
+        return j;
+      });
+    });
+  };
+  UK.rpc = function (fn, args, token) { return UK.sb('/rest/v1/rpc/' + fn, { body: args || {}, token: token }); };
+
+  /* device key: lets the database count devices without fingerprinting */
+  UK.deviceKey = function () {
+    var k; try { k = localStorage.getItem('uk_device'); } catch (e) {}
+    if (!k) {
+      k = (crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2)));
+      try { localStorage.setItem('uk_device', k); } catch (e) {}
+    }
+    return k;
+  };
+})();
+
+</script>
+<script>
+(function () {
+  'use strict';
+  var C = window.UK_CONFIG, UK = window.UK, d = document;
+  var $ = UK.$, $$ = UK.$$, esc = UK.esc;
+
+  /* =====================================================================
+     DATA — topic and sub-topic names from the Cambridge O Level Chemistry
+     5070 syllabus (2026–2028). Results in the bench are the exact wording
+     of Cambridge's "Notes for use in qualitative analysis".
+     ===================================================================== */
+  var FAM = {
+    struct: { label: 'Particles & structure', d: '#7FA8E8', l: '#3B68B8' },
+    phys:   { label: 'Physical & quantitative', d: '#E0A94C', l: '#9A6A22' },
+    inorg:  { label: 'Inorganic', d: '#4FB7A8', l: '#1F7A6E' },
+    org:    { label: 'Organic', d: '#9CC97B', l: '#47802A' },
+    prac:   { label: 'Practical', d: '#B79CEB', l: '#6E4BBE' }
+  };
+  var TOPICS = [
+    { n: 1, s: 'St', t: 'States of matter', f: 'struct', sub: [['1.1', 'Solids, liquids and gases'], ['1.2', 'Diffusion']],
+      hi: 'Heating and cooling curves explained with kinetic particle theory, and why gases of lower relative molecular mass diffuse faster.' },
+    { n: 2, s: 'At', t: 'Atoms, elements and compounds', f: 'struct',
+      sub: [['2.1', 'Elements, compounds and mixtures'], ['2.2', 'Atomic structure and the Periodic Table'], ['2.3', 'Isotopes'], ['2.4', 'Ions and ionic bonds'], ['2.5', 'Simple molecules and covalent bonds'], ['2.6', 'Giant covalent structures'], ['2.7', 'Metallic bonding']],
+      hi: 'Electronic configurations up to calcium, dot-and-cross diagrams for H₂, Cl₂, H₂O, CH₄, NH₃, HCl, CH₃OH, C₂H₄, O₂, CO₂ and N₂, and why structure decides properties.' },
+    { n: 3, s: 'Mo', t: 'Stoichiometry', f: 'phys',
+      sub: [['3.1', 'Formulae'], ['3.2', 'Relative masses of atoms and molecules'], ['3.3', 'The mole and the Avogadro constant']],
+      hi: 'Moles, limiting reactants, gas volumes at 24 dm³ per mole, titration concentrations, empirical formulae, percentage yield and purity.' },
+    { n: 4, s: 'Ec', t: 'Electrochemistry', f: 'phys', sub: [['4.1', 'Electrolysis'], ['4.2', 'Hydrogen–oxygen fuel cells']],
+      hi: 'Electrolysis of molten lead(II) bromide, concentrated aqueous sodium chloride, dilute sulfuric acid and aqueous copper(II) sulfate — with ionic half-equations.' },
+    { n: 5, s: 'En', t: 'Chemical energetics', f: 'phys', sub: [['5.1', 'Exothermic and endothermic reactions']],
+      hi: 'Reaction pathway diagrams with ΔH and Eₐ, bond breaking against bond making, and enthalpy change from bond energies.' },
+    { n: 6, s: 'Rx', t: 'Chemical reactions', f: 'phys',
+      sub: [['6.1', 'Physical and chemical changes'], ['6.2', 'Rate of reaction'], ['6.3', 'Reversible reactions and equilibrium'], ['6.4', 'Redox']],
+      hi: 'Collision theory, equilibrium, the Haber process (450 °C, 200 atm, iron) and the Contact process (450 °C, 2 atm, vanadium(V) oxide), and redox by oxidation number.' },
+    { n: 7, s: 'Ab', t: 'Acids, bases and salts', f: 'inorg',
+      sub: [['7.1', 'The characteristic properties of acids and bases'], ['7.2', 'Oxides'], ['7.3', 'Preparation of salts']],
+      hi: 'Strong and weak acids, amphoteric oxides, preparing salts by titration, excess solid and precipitation, and the solubility rules.' },
+    { n: 8, s: 'Pt', t: 'The Periodic Table', f: 'inorg',
+      sub: [['8.1', 'Arrangement of elements'], ['8.2', 'Group I properties'], ['8.3', 'Group VII properties'], ['8.4', 'Transition elements'], ['8.5', 'Noble gases']],
+      hi: 'Trends down Group I and Group VII, halogen displacement, the transition elements and why the noble gases do not react.' },
+    { n: 9, s: 'Mt', t: 'Metals', f: 'inorg',
+      sub: [['9.1', 'Properties of metals'], ['9.2', 'Uses of metals'], ['9.3', 'Alloys and their properties'], ['9.4', 'Reactivity series'], ['9.5', 'Corrosion of metals'], ['9.6', 'Extraction of metals']],
+      hi: 'The reactivity series, rusting and sacrificial protection, the blast furnace, and aluminium extraction with cryolite.' },
+    { n: 10, s: 'Ev', t: 'Chemistry of the environment', f: 'inorg',
+      sub: [['10.1', 'Water'], ['10.2', 'Fertilisers'], ['10.3', 'Air quality and climate']],
+      hi: 'Water treatment, NPK fertilisers, where each air pollutant comes from, catalytic converters and photosynthesis.' },
+    { n: 11, s: 'Or', t: 'Organic chemistry', f: 'org',
+      sub: [['11.1', 'Formulae, functional groups and terminology'], ['11.2', 'Naming organic compounds'], ['11.3', 'Fuels'], ['11.4', 'Alkanes'], ['11.5', 'Alkenes'], ['11.6', 'Alcohols'], ['11.7', 'Carboxylic acids'], ['11.8', 'Polymers']],
+      hi: 'Homologous series and isomers, cracking, substitution and addition, ethanol made two ways, esters, nylon and PET.' },
+    { n: 12, s: 'Xa', t: 'Experimental techniques and chemical analysis', f: 'prac',
+      sub: [['12.1', 'Experimental design'], ['12.2', 'Acid–base titrations'], ['12.3', 'Chromatography'], ['12.4', 'Separation and purification'], ['12.5', 'Identification of ions and gases']],
+      hi: 'Titrations, chromatography and Rf values, separation methods, and the tests for anions, cations, gases and flame colours.' }
+  ];
+  UK.TOPICS = TOPICS;
+  function famStyle(f) { return '--fam-d:' + FAM[f].d + ';--fam-l:' + FAM[f].l; }
+
+  var METHOD = [
+    { k: 'Bonding', t: 'Electrons first',
+      p: 'Every topic opens with where the electrons are, and where they need to be. Ionic and covalent bonding, redox and electrolysis all start from that one picture — so nothing has to be learned twice.',
+      e: 'Why sodium chloride conducts when molten but not as a solid: the ions are there all along. They only carry charge once they are free to move.' },
+    { k: 'Reactions', t: 'Then the mechanism',
+      p: 'Why a reaction goes the way it does comes before the equation that records it. Once the movement makes sense, the equation is a summary of something already understood — not a line to memorise.',
+      e: 'At the cathode ions gain electrons; at the anode they lose them. The two half-equations stop being two facts and become one event, seen from both ends.' },
+    { k: 'The exam', t: 'Then the unseen question',
+      p: 'Cambridge rephrases, swaps the compound, and asks about reactions the textbook never showed. A student who follows the movement can work them out. A student who memorised the products cannot.',
+      e: 'Asked for the products of electrolysing a halide solution they have never met, students reason from which ions are discharged — they do not need to have seen that solution before.' }
+  ];
+
+  var FLAME = [
+    { id: 'li', f: 'Li<sup>+</sup>', n: 'Lithium', c: '#E3263F', name: 'Red', note: 'A deep red — darker than the orange-red calcium gives.' },
+    { id: 'na', f: 'Na<sup>+</sup>', n: 'Sodium', c: '#FFC23A', name: 'Yellow', note: 'Strong enough to drown out fainter colours, which is why a clean wire matters.' },
+    { id: 'k', f: 'K<sup>+</sup>', n: 'Potassium', c: '#BE93F2', name: 'Lilac', note: 'Faint, and easily hidden by a trace of sodium.' },
+    { id: 'ca', f: 'Ca<sup>2+</sup>', n: 'Calcium', c: '#FF6A2B', name: 'Orange-red', note: 'Orange-red — not the deep red of lithium.' },
+    { id: 'ba', f: 'Ba<sup>2+</sup>', n: 'Barium', c: '#A6E36F', name: 'Light green', note: 'Light green. Copper gives blue-green — the pair students most often swap.' },
+    { id: 'cu', f: 'Cu<sup>2+</sup>', n: 'Copper(II)', c: '#22C7A9', name: 'Blue-green', note: 'Blue-green. Compare barium’s lighter, yellower green.' }
+  ];
+  var GAS = [
+    { f: 'NH<sub>3</sub>', n: 'Ammonia', t: 'Damp red litmus paper', r: 'Turns blue', sw: '#3E6FD8' },
+    { f: 'CO<sub>2</sub>', n: 'Carbon dioxide', t: 'Bubble through limewater', r: 'Limewater turns milky', sw: '#E9E6DC' },
+    { f: 'Cl<sub>2</sub>', n: 'Chlorine', t: 'Damp litmus paper', r: 'Bleaches the litmus paper', sw: '#F4F1E8' },
+    { f: 'H<sub>2</sub>', n: 'Hydrogen', t: 'Lighted splint', r: '“Pops” with a lighted splint', sw: '#FF8A3D' },
+    { f: 'O<sub>2</sub>', n: 'Oxygen', t: 'Glowing splint', r: 'Relights a glowing splint', sw: '#FFB23A' },
+    { f: 'SO<sub>2</sub>', n: 'Sulfur dioxide', t: 'Acidified aqueous potassium manganate(VII)', r: 'Purple to colourless', sw: 'linear-gradient(90deg,#7B2C9E,#F1EEF6)' }
+  ];
+  var W = '#F2F0EA';
+  var CATIONS = [
+    { f: 'Al<sup>3+</sup>', n: 'Aluminium', a: ['White ppt., soluble in excess, giving a colourless solution', W, 30], b: ['White ppt., insoluble in excess', W, 40] },
+    { f: 'NH<sub>4</sub><sup>+</sup>', n: 'Ammonium', a: ['Ammonia produced on warming', '', 0, 'gas'], b: ['—', '', 0] },
+    { f: 'Ca<sup>2+</sup>', n: 'Calcium', a: ['White ppt., insoluble in excess', W, 40], b: ['No ppt. or very slight white ppt.', W, 8] },
+    { f: 'Cr<sup>3+</sup>', n: 'Chromium(III)', a: ['Green ppt., soluble in excess', '#5E8F5A', 30], b: ['Green ppt., insoluble in excess', '#5E8F5A', 40] },
+    { f: 'Cu<sup>2+</sup>', n: 'Copper(II)', a: ['Light blue ppt., insoluble in excess', '#8CC8F0', 40], b: ['Light blue ppt., soluble in excess, giving a dark blue solution', '', 0, '', '#2440B0'] },
+    { f: 'Fe<sup>2+</sup>', n: 'Iron(II)', a: ['Green ppt., insoluble in excess; turns brown near the surface on standing', '#5B7F4E', 40], b: ['Green ppt., insoluble in excess; turns brown near the surface on standing', '#5B7F4E', 40] },
+    { f: 'Fe<sup>3+</sup>', n: 'Iron(III)', a: ['Red-brown ppt., insoluble in excess', '#9A4A22', 40], b: ['Red-brown ppt., insoluble in excess', '#9A4A22', 40] },
+    { f: 'Zn<sup>2+</sup>', n: 'Zinc', a: ['White ppt., soluble in excess, giving a colourless solution', W, 30], b: ['White ppt., soluble in excess, giving a colourless solution', W, 30] }
+  ];
+  var ANIONS = [
+    { f: 'CO<sub>3</sub><sup>2−</sup>', n: 'Carbonate', t: 'Add dilute acid, then test for carbon dioxide gas', r: 'Effervescence; carbon dioxide produced', sw: '' },
+    { f: 'Cl<sup>−</sup>', n: 'Chloride', t: 'Acidify with dilute nitric acid, then add aqueous silver nitrate', r: 'White ppt.', sw: W },
+    { f: 'Br<sup>−</sup>', n: 'Bromide', t: 'Acidify with dilute nitric acid, then add aqueous silver nitrate', r: 'Cream ppt.', sw: '#EADBB0' },
+    { f: 'I<sup>−</sup>', n: 'Iodide', t: 'Acidify with dilute nitric acid, then add aqueous silver nitrate', r: 'Yellow ppt.', sw: '#EDD34A' },
+    { f: 'NO<sub>3</sub><sup>−</sup>', n: 'Nitrate', t: 'Add aqueous sodium hydroxide, then aluminium foil; warm carefully', r: 'Ammonia produced', sw: '' },
+    { f: 'SO<sub>4</sub><sup>2−</sup>', n: 'Sulfate', t: 'Acidify with dilute nitric acid, then add aqueous barium nitrate', r: 'White ppt.', sw: W },
+    { f: 'SO<sub>3</sub><sup>2−</sup>', n: 'Sulfite', t: 'Add a small volume of acidified aqueous potassium manganate(VII)', r: 'Purple to colourless', sw: 'linear-gradient(90deg,#7B2C9E,#F1EEF6)' }
+  ];
+
+  var where = C.campuses && C.campuses.length
+    ? 'On campus at ' + C.campuses.map(function (c) { return esc(c.name); }).join(', ') + (C.online ? ', and live online.' : '.')
+    : 'Classes run live, and the recorded lectures sit in the student portal.';
+  var ask = C.whatsapp ? 'WhatsApp' : (C.facebook ? 'Facebook' : 'email');
+  var askLink = '<a href="' + esc(C.contactUrl('Assalam o Alaikum, I have a question about Chemistry classes.')) + '" target="_blank" rel="noopener">message on ' + ask + '</a>';
+  var FAQ = [
+    ['Which syllabuses does Sir Usman Khan teach?', 'Cambridge O Level Chemistry (5070) and Cambridge IGCSE Chemistry (0620), including both the Core and Extended tiers of 0620.'],
+    ['Is O Level 5070 different from IGCSE 0620?', 'Both cover the same twelve topics. The difference is the papers: 5070 is one route of three papers sat in June or November, while 0620 has a Core and an Extended tier and is also sat in March. The <a href="#course">course cards</a> show each paper’s length, marks and weighting.'],
+    ['How much are the fees?', 'Fees depend on the batch and the syllabus, so they are shared directly rather than printed here — ' + askLink + ' and the team will tell you the current fee.'],
+    ['Are classes online or on campus?', where + ' For the current batch timings, ' + askLink + '.'],
+    ['How do I register?', 'Fill in the <a href="#register">registration form</a> — it takes under a minute — or ' + askLink + ' with your name, syllabus and exam session.'],
+    ['What is in the student portal?', 'Recorded lectures arranged by syllabus topic, notes where they are attached to a lecture, and your own progress through the course. Your student ID and access code open it on up to ' + (C.MAX_DEVICES || 2) + ' devices.'],
+    ['I lost my access code. What do I do?', 'Message the team. A new code can be issued from the admin panel in a minute, and the old one stops working at once.'],
+    ['Where do the past papers come from?', 'They are Cambridge’s own question papers and mark schemes, listed by year and session on the <a href="papers.html">past papers page</a>, with the mark scheme opening beside the question paper.'],
+    ['Is the practical paper covered?', 'Yes. Paper 3 or 4 (O Level) and Paper 5 or 6 (IGCSE) carry a fifth of the grade and test a fixed set of experimental skills, so they are taught alongside each topic rather than left to the end.'],
+    ['What is a Cambridge distinction?', 'An Outstanding Cambridge Learner Award — given to the highest-scoring candidates in a country or worldwide. It is a separate, rarer thing than an A*.'],
+    ['When are the exams?', 'O Level 5070 is sat in May/June and October/November. IGCSE 0620 is also available in February/March.']
+  ];
+
+  /* ---------- assistant knowledge base ---------- */
+  var KB = [
+    { k: ['fee', 'fees', 'cost', 'price', 'charges', 'charge', 'kitni', 'paise', 'payment', 'monthly', 'afford'], a: FAQ[2][1] },
+    { k: ['5070', 'o level', 'olevel', 'igcse', '0620', 'syllabus', 'syllabuses', 'which level', 'levels', 'core', 'extended', 'difference'], a: FAQ[0][1] + ' ' + FAQ[1][1] },
+    { k: ['online', 'campus', 'physical', 'location', 'where', 'address', 'centre', 'center', 'academy', 'timing', 'timings', 'time', 'batch'], a: FAQ[3][1] },
+    { k: ['register', 'registration', 'enrol', 'enroll', 'admission', 'admissions', 'join', 'apply', 'sign up', 'signup'], a: FAQ[4][1] },
+    { k: ['portal', 'login', 'log in', 'sign in', 'student id', 'access code', 'password', 'lecture', 'lectures', 'recorded', 'recording', 'video', 'videos'], a: FAQ[5][1] + ' <a href="portal.html">Open the portal</a>.' },
+    { k: ['lost', 'forgot', 'reset', 'new code', 'locked', 'device', 'devices', 'phone and laptop'], a: FAQ[6][1] },
+    { k: ['past paper', 'past papers', 'papers', 'paper', 'mark scheme', 'marking scheme', 'ms', 'yearly', 'topical', 'examiner report', 'threshold', 'grade threshold'], a: FAQ[7][1] },
+    { k: ['practical', 'atp', 'alternative to practical', 'paper 4', 'paper 6', 'paper 3', 'paper 5', 'lab', 'experiment'], a: FAQ[8][1] },
+    { k: ['distinction', 'distinctions', 'result', 'results', 'record', 'award', 'top in', 'experience', 'years', 'how long', 'teacher', 'about'], a: 'Sir Usman Khan has twenty years in O Level and IGCSE Chemistry and three Cambridge distinctions on his record. ' + FAQ[9][1] },
+    { k: ['exam', 'exams', 'when', 'session', 'june', 'november', 'march', 'may june', 'oct nov', 'series', 'date'], a: FAQ[10][1] },
+    { k: ['topic', 'topics', 'chapter', 'chapters', 'content', 'organic', 'stoichiometry', 'mole', 'electrolysis', 'periodic', 'metals', 'acids', 'rate', 'equilibrium', 'redox', 'bonding'], a: 'The course follows the twelve Cambridge topics in order, from states of matter to chemical analysis. <a href="#syllabus">Open the syllabus</a> to see every sub-topic.' },
+    { k: ['flame', 'flame test', 'gas test', 'tests', 'cation', 'anion', 'precipitate', 'ppt', 'qualitative'], a: 'Try <a href="#bench">the bench</a> — every flame test, gas test and ion test from Cambridge’s qualitative analysis notes, with the exact expected results.' },
+    { k: ['contact', 'number', 'whatsapp', 'call', 'phone', 'facebook', 'instagram', 'email', 'reach'], a: 'The quickest way is to ' + askLink + '. All contact details are in the <a href="#register">registration section</a>.' },
+    { k: ['method', 'teach', 'teaching', 'style', 'approach', 'mechanism', 'electrons', 'how does he'], a: 'He teaches mechanism first: where the electrons are, why the reaction goes that way, then the unseen exam question. <a href="#method">See the method</a>.' },
+    { k: ['notes', 'pdf', 'book', 'books', 'material', 'worksheet'], a: 'Notes attached to a lecture open from the student portal, beside the video. Past papers and mark schemes are on the <a href="papers.html">papers page</a>.' },
+    { k: ['hello', 'hi', 'salam', 'assalam', 'aoa', 'hey'], a: 'Wa alaikum assalam! Ask about fees, the syllabus, past papers, the portal or registration.' },
+    { k: ['thanks', 'thank you', 'shukriya', 'jazakallah'], a: 'Happy to help. Good luck with Chemistry!' }
+  ];
+
+  /* =====================================================================
+     HERO
+     ===================================================================== */
+  $$('[data-hi]').forEach(function (e) { e.style.setProperty('--hd', (+e.getAttribute('data-hi')) * 110); });
+  d.addEventListener('uk:ready', function () { d.body.classList.add('ready'); });
+
+  if (C.INTRO_VIDEO) {
+    $$('[data-intro]').forEach(function (b) { b.hidden = false; b.addEventListener('click', function () { playVideo(C.INTRO_VIDEO, 'Introduction to Chemistry', 'Sir Usman Khan'); }); });
+    $$('[data-nointro]').forEach(function (b) { b.hidden = true; });
+  }
+  function ytId(u) {
+    if (!u) return '';
+    var m = String(u).match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/);
+    return m ? m[1] : (/^[\w-]{11}$/.test(u) ? u : '');
+  }
+  function playVideo(src, title, sub) {
+    var id = ytId(src), f = $('[data-vf]');
+    $('[data-vt]').textContent = title || ''; $('[data-vs]').textContent = sub || '';
+    f.innerHTML = id
+      ? '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1" title="' + esc(title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'
+      : '<video src="' + esc(src) + '" controls autoplay playsinline style="width:100%;height:100%"></video>';
+    UK.openModal('#vid');
+  }
+  UK.$('#vid').addEventListener('click', function (e) {
+    if (e.target.id === 'vid' || e.target.closest('[data-close]')) setTimeout(function () { $('[data-vf]').innerHTML = ''; }, 300);
+  });
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape') setTimeout(function () { if (!$('#vid').classList.contains('open')) $('[data-vf]').innerHTML = ''; }, 300); });
+
+  /* counters */
+  function countUp(el) {
+    var to = +el.getAttribute('data-count'), t0 = null, dur = 1300;
+    if (UK.reduce) { el.textContent = to; return; }
+    function f(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); }
+    requestAnimationFrame(f);
+  }
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } }); }, { threshold: .6 });
+    $$('[data-count]').forEach(function (e) { e.textContent = '0'; cio.observe(e); });
+  }
+
+  /* kinetic particles behind the hero */
+  (function particles() {
+    var cv = $('.hero__fx'); if (!cv) return;
+    var ctx = cv.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, 2), P = [], w, h, run = true, raf;
+    function size() {
+      w = cv.clientWidth; h = cv.clientHeight; cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.min(70, Math.round(w / 22));
+      P = []; for (var i = 0; i < n; i++) P.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5, r: Math.random() * 1.6 + .7, ice: Math.random() < .3 });
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      var light = d.documentElement.getAttribute('data-theme') === 'light';
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i];
+        if (!UK.reduce) {
+          p.vx += (Math.random() - .5) * .06; p.vy += (Math.random() - .5) * .06;
+          var sp = Math.hypot(p.vx, p.vy); if (sp > .6) { p.vx *= .6 / sp; p.vy *= .6 / sp; }
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1; if (p.y < 0 || p.y > h) p.vy *= -1;
+        }
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
+        ctx.fillStyle = p.ice ? (light ? 'rgba(59,104,184,.35)' : 'rgba(127,168,232,.55)') : (light ? 'rgba(168,117,42,.35)' : 'rgba(224,169,76,.5)');
+        ctx.fill();
+      }
+      if (run && !UK.reduce) raf = requestAnimationFrame(draw);
+    }
+    size(); draw();
+    var rs; window.addEventListener('resize', function () { clearTimeout(rs); rs = setTimeout(function () { size(); if (UK.reduce) draw(); }, 200); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) {
+      var v = es[0].isIntersecting; if (v && !run) { run = true; draw(); } else if (!v) { run = false; cancelAnimationFrame(raf); }
+    }).observe(cv);
+    d.addEventListener('uk:theme', function () { if (UK.reduce) draw(); });
+  })();
+
+  /* stage tilt */
+  (function tilt() {
+    var hero = $('.hero'), st = $('.stage__in');
+    if (!hero || !st || UK.reduce || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      st.style.setProperty('--rx', (x * 8).toFixed(2) + 'deg'); st.style.setProperty('--ry', (-y * 6).toFixed(2) + 'deg');
+    });
+    hero.addEventListener('pointerleave', function () { st.style.setProperty('--rx', '0deg'); st.style.setProperty('--ry', '0deg'); });
+  })();
+
+  /* ticker */
+  (function () {
+    var tr = $('.tick__track'); if (!tr) return;
+    var one = TOPICS.map(function (t) { return '<span class="tk" style="' + famStyle(t.f) + '"><b><small>' + t.n + '</small>' + t.s + '</b><span>' + esc(t.t) + '</span></span>'; }).join('');
+    tr.innerHTML = one + one;
+  })();
+
+  /* =====================================================================
+     COURSE DECK
+     ===================================================================== */
+  (function () {
+    var deck = $('[data-deck]'); if (!deck) return;
+    function go() { deck.classList.add('in'); setTimeout(function () { deck.classList.add('set'); }, 1300); }
+    if ('IntersectionObserver' in window && !UK.reduce) {
+      var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { go(); io.disconnect(); } }, { threshold: .25 }); io.observe(deck);
+    } else go();
+    $$('.deck__c', deck).forEach(function (c) {
+      c.addEventListener('click', function () {
+        var on = !c.classList.contains('flip');
+        c.classList.toggle('flip', on); c.setAttribute('aria-pressed', String(on));
+      });
+    });
+  })();
+
+  /* =====================================================================
+     SYLLABUS — periodic tiles
+     ===================================================================== */
+  (function () {
+    var grid = $('.pt'), det = $('#ptd'); if (!grid) return;
+    grid.innerHTML = TOPICS.map(function (t, i) {
+      return '<button class="el" role="tab" id="el' + t.n + '" aria-controls="ptd" aria-selected="' + (i === 0) + '" data-t="' + i + '" style="' + famStyle(t.f) + '">' +
+        '<span class="el__n">' + t.n + '</span><span class="el__s">' + t.s + '</span><span class="el__t">' + esc(t.t) + '</span>' +
+        '<span class="el__m">' + t.sub.length + ' sub-topic' + (t.sub.length > 1 ? 's' : '') + '</span></button>';
+    }).join('');
+    var lg = d.createElement('div'); lg.className = 'legend';
+    lg.innerHTML = Object.keys(FAM).map(function (k) { return '<span style="' + famStyle(k) + '"><i></i>' + FAM[k].label + '</span>'; }).join('');
+    grid.after(lg);
+    function show(i, focus) {
+      var t = TOPICS[i];
+      $$('.el', grid).forEach(function (b) { b.setAttribute('aria-selected', String(+b.getAttribute('data-t') === i)); b.tabIndex = +b.getAttribute('data-t') === i ? 0 : -1; });
+      det.setAttribute('style', famStyle(t.f)); det.setAttribute('aria-labelledby', 'el' + t.n);
+      det.innerHTML = '<div class="ptd__l"><div class="ptd__big"><b>' + t.s + '</b><span>Topic ' + t.n + ' of 12</span></div>' +
+        '<h3>' + esc(t.t) + '</h3><p>' + esc(t.hi) + '</p><div class="ptd__a">' +
+        '<a class="btn btn--gold btn--sm" href="papers.html?view=topic&t=' + t.n + '">Papers for this topic</a>' +
+        '<a class="btn btn--line btn--sm" href="#lectures" data-golec="' + t.n + '">Lectures</a></div></div>' +
+        '<div class="ptd__r"><ol>' + t.sub.map(function (s) { return '<li><b>' + s[0] + '</b><span>' + esc(s[1]) + '</span></li>'; }).join('') + '</ol></div>';
+      det.classList.remove('swap'); void det.offsetWidth; det.classList.add('swap');
+      if (focus) $('#el' + t.n).focus();
+    }
+    grid.addEventListener('click', function (e) { var b = e.target.closest('.el'); if (b) show(+b.getAttribute('data-t')); });
+    grid.addEventListener('keydown', function (e) {
+      var cur = +(d.activeElement.getAttribute('data-t') || 0), n = null;
+      if (e.key === 'ArrowRight') n = (cur + 1) % 12; else if (e.key === 'ArrowLeft') n = (cur + 11) % 12;
+      else if (e.key === 'Home') n = 0; else if (e.key === 'End') n = 11;
+      if (n !== null) { e.preventDefault(); show(n, true); }
+    });
+    det.addEventListener('click', function (e) { var a = e.target.closest('[data-golec]'); if (a) openLectureTopic(+a.getAttribute('data-golec')); });
+    show(0);
+  })();
+
+  /* =====================================================================
+     METHOD
+     ===================================================================== */
+  (function () {
+    var box = $('.hexes'); if (!box) return;
+    var card = $('.mth__card');
+    function show(i) {
+      var m = METHOD[i];
+      $$('button.hx', box).forEach(function (b) { b.setAttribute('aria-selected', String(+b.getAttribute('data-m') === i)); });
+      $('[data-mk]', card).textContent = m.k; $('[data-mt]', card).textContent = m.t;
+      $('[data-mp]', card).textContent = m.p; $('[data-me]', card).textContent = m.e;
+      card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
+    }
+    $$('button.hx', box).forEach(function (b) {
+      b.addEventListener('click', function () { show(+b.getAttribute('data-m')); });
+      b.addEventListener('mouseenter', function () { if (window.matchMedia('(hover:hover)').matches) show(+b.getAttribute('data-m')); });
+    });
+    show(0);
+  })();
+
+  /* =====================================================================
+     THE BENCH
+     ===================================================================== */
+  (function () {
+    var bench = $('.bench'); if (!bench) return;
+    $$('.tabs button', bench).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var k = b.getAttribute('data-b');
+        $$('.tabs button', bench).forEach(function (x) { x.setAttribute('aria-selected', String(x === b)); });
+        $$('.bench__p', bench).forEach(function (p) { p.hidden = p.getAttribute('data-bp') !== k; });
+      });
+    });
+    /* flame */
+    var ions = $('.ions', bench), burner = $('.burner', bench), svg = $('.burner__svg', bench);
+    ions.innerHTML = FLAME.map(function (f) {
+      return '<button class="ion" role="radio" aria-checked="false" data-ion="' + f.id + '" style="--c:' + f.c + '"><b>' + f.f + '</b><span>' + f.n + '</span></button>';
+    }).join('');
+    function setFlame(f) {
+      $$('.ion', ions).forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-ion') === f.id)); });
+      $$('#fOut stop', svg).forEach(function (s) { s.style.stopColor = f.c; });
+      $('.fl__glow', svg).style.fill = f.c;
+      burner.style.setProperty('--flc', f.c); burner.classList.add('on');
+      var b = $('[data-fc]', bench); b.textContent = f.name; b.style.color = f.c;
+      $('[data-fn]', bench).textContent = f.n + ' ion: ' + f.note;
+    }
+    ions.addEventListener('click', function (e) { var b = e.target.closest('.ion'); if (b) setFlame(FLAME.filter(function (f) { return f.id === b.getAttribute('data-ion'); })[0]); });
+    ions.addEventListener('keydown', function (e) {
+      var bs = $$('.ion', ions), i = bs.indexOf(d.activeElement); if (i < 0) return;
+      var n = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? (i + 1) % bs.length : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? (i - 1 + bs.length) % bs.length : -1;
+      if (n >= 0) { e.preventDefault(); bs[n].focus(); bs[n].click(); }
+    });
+    /* gases — self-test cards */
+    var gas = $('.gas', bench);
+    gas.insertAdjacentHTML('beforebegin', '<div class="bench__bar"><p>Read the test, say the result out loud, then tap the card.</p><button class="btn btn--line btn--sm" type="button" data-gall>Show every result</button></div>');
+    gas.innerHTML = GAS.map(function (g) {
+      return '<button class="gc" type="button" aria-expanded="false"><span class="gc__hint">Tap to check</span><span class="gc__f">' + g.f + '</span><span class="gc__n">' + g.n + '</span>' +
+        '<span class="gc__t">Test: ' + esc(g.t) + '</span><span class="gc__r"><i style="--sw:' + g.sw + ';background:' + g.sw + '"></i>' + esc(g.r) + '</span></button>';
+    }).join('');
+    gas.addEventListener('click', function (e) { var c = e.target.closest('.gc'); if (c) { c.classList.toggle('show'); c.setAttribute('aria-expanded', String(c.classList.contains('show'))); } });
+    $('[data-gall]', bench).addEventListener('click', function () {
+      var all = $$('.gc', gas), on = all.some(function (c) { return !c.classList.contains('show'); });
+      all.forEach(function (c) { c.classList.toggle('show', on); c.setAttribute('aria-expanded', String(on)); });
+      this.textContent = on ? 'Hide the results' : 'Show every result';
+    });
+    /* cations */
+    function tube(r) {
+      if (r[3] === 'gas') return '<span class="tube" style="--ph:0%"></span>';
+      return '<span class="tube" style="--pc:' + (r[1] || 'transparent') + ';--ph:' + (r[2] || 0) + '%;' + (r[4] ? '--sol:' + r[4] : '') + '"></span>';
+    }
+    $('.cat', bench).insertAdjacentHTML('beforeend', CATIONS.map(function (c) {
+      return '<div class="cr" role="row"><div class="cr__i" role="cell"><b>' + c.f + '</b><span>' + c.n + '</span></div>' +
+        '<div class="res2" role="cell" data-r="NaOH">' + tube(c.a) + '<span>' + esc(c.a[0]) + '</span></div>' +
+        '<div class="res2" role="cell" data-r="NH₃">' + tube(c.b) + '<span>' + esc(c.b[0]) + '</span></div></div>';
+    }).join(''));
+    /* anions */
+    $('.ani', bench).innerHTML = ANIONS.map(function (a) {
+      return '<div class="ar"><b>' + a.f + '<small>' + a.n + '</small></b><span>' + esc(a.t) + '</span>' +
+        '<div class="res2"><span class="tube" style="' + (a.sw ? (a.sw.indexOf('gradient') > -1 ? '--sol:#7B2C9E' : '--pc:' + a.sw + ';--ph:35%') : '--ph:0%') + '"></span><span>' + esc(a.r) + '</span></div></div>';
+    }).join('');
+  })();
+
+  /* =====================================================================
+     RESULTS + STEPS + REVIEWS
+     ===================================================================== */
+  (function () {
+    var r = $('[data-results]');
+    if (r && C.RESULTS && C.RESULTS.length) {
+      r.hidden = false;
+      r.innerHTML = C.RESULTS.map(function (x) { return '<div><b>' + esc(x.value) + '</b><span>' + esc(x.label) + (x.name ? ' — ' + esc(x.name) : '') + '</span><em>' + esc(x.note || '') + '</em></div>'; }).join('');
+    }
+    var words = ['zero', 'one', 'two', 'three', 'four', 'five'];
+    $$('[data-maxdev]').forEach(function (e) { e.textContent = words[C.MAX_DEVICES] || C.MAX_DEVICES; });
+    var rv = $('[data-reviews]');
+    if (rv && C.REVIEWS && C.REVIEWS.length) {
+      $('#reviews').hidden = false;
+      rv.innerHTML = C.REVIEWS.map(function (x) {
+        return '<article data-rv><p>“' + esc(x.text) + '”</p><footer><i>' + esc((x.name || '?').charAt(0)) + '</i><div><b>' + esc(x.name) + '</b><span>' + esc(x.meta || '') + '</span></div></footer></article>';
+      }).join('');
+      UK.reveal($('#reviews'));
+    }
+  })();
+
+  /* =====================================================================
+     LECTURES
+     ===================================================================== */
+  var LEC = { syl: '5070', all: null, expanded: false };
+  try { var ss = localStorage.getItem('uk_syl'); if (ss === '0620' || ss === '5070') LEC.syl = ss; } catch (e) {}
+  function renderLectures() {
+    var box = $('[data-lx]'), note = $('[data-lnote]'); if (!box) return;
+    $$('[data-ls]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-ls') === LEC.syl)); });
+    var list = (LEC.all || []).filter(function (l) { return l.syllabus === 'both' || l.syllabus === LEC.syl; });
+    var free = list.filter(function (l) { return l.free; }).length;
+    if (!LEC.all) note.innerHTML = '<b>Lectures appear here as they are published.</b> Each one sits under its topic below; signing in with your student ID opens them in the portal.';
+    else if (!list.length) note.innerHTML = '<b>No lectures are published for ' + (LEC.syl === '5070' ? 'O Level 5070' : 'IGCSE 0620') + ' yet.</b> They appear under their topic the moment they go live.';
+    else note.innerHTML = '<b>' + list.length + ' lecture' + (list.length > 1 ? 's' : '') + ' published' + (free ? ', ' + free + ' free to watch' : '') + '.</b> ' + (free ? 'Free lectures play right here. ' : '') + 'Everything else opens in the <a class="gold" href="portal.html">student portal</a>.';
+    box.innerHTML = TOPICS.map(function (t, i) {
+      var ls = list.filter(function (l) { return +l.topic === t.n; }).sort(function (a, b) { return (a.n || 0) - (b.n || 0); });
+      var body = ls.length ? ls.map(function (l) {
+        var mins = l.minutes ? l.minutes + ' min' : 'Recorded lecture';
+        return l.free
+          ? '<button class="lec" type="button" data-play="' + esc(l.video || '') + '" data-title="' + esc(l.title) + '"><span class="lec__p">' + playIco + '</span><span class="lec__t">' + esc(l.title) + '<small>' + mins + '</small></span><span class="chip chip--ok">Free</span></button>'
+          : '<a class="lec lec--lock" href="portal.html"><span class="lec__p">' + lockIco + '</span><span class="lec__t">' + esc(l.title) + '<small>' + mins + '</small></span><span class="chip chip--dim">Student ID</span></a>';
+      }).join('') : '<div class="lec lec--empty">No lectures published for this topic yet</div>';
+      return '<details class="tp" data-tp="' + t.n + '"' + (i >= 5 && !LEC.expanded ? ' hidden' : '') + (i === 0 && ls.length ? ' open' : '') + '><summary><span class="tp__n">' + t.n + '</span><span class="tp__t"><b>' + esc(t.t) + '</b><span>' +
+        (ls.length ? ls.length + ' lecture' + (ls.length > 1 ? 's' : '') : t.sub.length + ' sub-topics') + '</span></span></summary><div class="tp__b">' + body + '</div></details>';
+    }).join('');
+    var more = $('[data-lmore]'); if (more) more.hidden = LEC.expanded;
+  }
+  var playIco = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>';
+  var lockIco = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+  function openLectureTopic(n) {
+    LEC.expanded = true; renderLectures();
+    var el = $('[data-tp="' + n + '"]'); if (el) { el.open = true; setTimeout(function () { el.scrollIntoView({ behavior: UK.reduce ? 'auto' : 'smooth', block: 'center' }); }, 60); }
+  }
+  $$('[data-ls]').forEach(function (b) { b.addEventListener('click', function () { LEC.syl = b.getAttribute('data-ls'); try { localStorage.setItem('uk_syl', LEC.syl); } catch (e) {} renderLectures(); }); });
+  var lm = $('[data-lmore]'); if (lm) lm.addEventListener('click', function () { LEC.expanded = true; renderLectures(); });
+  d.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-play]'); if (!b) return;
+    var v = b.getAttribute('data-play');
+    if (v) playVideo(v, b.getAttribute('data-title'), 'Free lecture · Sir Usman Khan'); else UK.toast('This lecture is still processing — try again shortly.');
+  });
+  renderLectures();
+  if (C.live) {
+    UK.rpc('public_catalogue', {}).then(function (rows) { LEC.all = Array.isArray(rows) ? rows : []; renderLectures(); })
+      .catch(function () { renderLectures(); });
+  }
+
+  /* =====================================================================
+     FAQ
+     ===================================================================== */
+  (function () {
+    var box = $('[data-faqs]'); if (!box) return;
+    box.innerHTML = FAQ.map(function (f) { return '<details><summary>' + esc(f[0]) + '</summary><div class="body">' + f[1] + '</div></details>'; }).join('');
+    box.addEventListener('toggle', function (e) {
+      if (e.target.open) $$('details', box).forEach(function (x) { if (x !== e.target) x.open = false; });
+    }, true);
+  })();
+
+  /* =====================================================================
+     REGISTER
+     ===================================================================== */
+  (function () {
+    var f = $('#regForm'); if (!f) return;
+    /* upcoming exam sessions, worked out from today's date */
+    var sel = $('[data-sessions]'), now = new Date(), y = now.getFullYear(), m = now.getMonth() + 1, opts = [];
+    var S = [[3, 'Feb/March'], [6, 'May/June'], [11, 'Oct/Nov']];
+    for (var yy = y; yy <= y + 2 && opts.length < 5; yy++) S.forEach(function (s) { if ((yy > y || s[0] > m) && opts.length < 5) opts.push(s[1] + ' ' + yy); });
+    sel.innerHTML = '<option value="">Not decided</option>' + opts.map(function (o) { return '<option>' + o + '</option>'; }).join('');
+    if (C.campuses && C.campuses.length) { $('[data-modefld]').hidden = false; }
+    /* direct contact + campuses */
+    var dc = $('[data-direct]');
+    var cl = UK.contactLinks();
+    dc.innerHTML = cl.length ? cl.map(function (c) {
+      return '<a href="' + esc(c.href) + '"' + (/^http/.test(c.href) ? ' target="_blank" rel="noopener"' : '') + '><span>' + c.label + '</span><b>' + esc(c.value) + '</b></a>';
+    }).join('') : '<div><span>Contact</span><b>Use the form</b></div>';
+    if (C.campuses && C.campuses.length) {
+      $('[data-campusbox]').hidden = false;
+      $('[data-campuses]').innerHTML = C.campuses.map(function (c) { return '<div><span>' + esc(c.note || 'Campus') + '</span><b>' + esc(c.name) + '</b></div>'; }).join('') +
+        (C.online ? '<div><span>Anywhere</span><b>Live online</b></div>' : '');
+    }
+    var err = $('.form__err', f);
+    function fail(msg, el) { err.textContent = msg; err.hidden = false; if (el) { el.closest('.fld').classList.add('bad'); el.focus(); } }
+    f.addEventListener('input', function (e) { var fl = e.target.closest('.fld'); if (fl) fl.classList.remove('bad'); err.hidden = true; });
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = {}; ['name', 'phone', 'email', 'syllabus', 'session', 'mode', 'message', 'website'].forEach(function (k) { var el = f.elements[k]; v[k] = el ? el.value.trim() : ''; });
+      if (!C.campuses || !C.campuses.length) v.mode = 'online';
+      if (v.name.length < 2) return fail('Please enter the student’s name.', f.elements.name);
+      var digits = v.phone.replace(/\D/g, '');
+      if (digits.length < 10 || digits.length > 15) return fail('Please enter a WhatsApp number we can reply on, e.g. 0300 1234567.', f.elements.phone);
+      if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) return fail('That email address does not look right.', f.elements.email);
+      if (!v.syllabus) return fail('Please choose a syllabus.', f.elements.syllabus);
+      var btn = $('button[type=submit]', f); btn.disabled = true; $('span', btn).textContent = 'Sending…';
+      var summary = 'Registration — Chemistry with Sir Usman Khan\nName: ' + v.name + '\nWhatsApp: ' + v.phone + (v.email ? '\nEmail: ' + v.email : '') +
+        '\nSyllabus: ' + $('option:checked', f.elements.syllabus).textContent + (v.session ? '\nSession: ' + v.session : '') + (v.message ? '\nNote: ' + v.message : '');
+      function done(saved) {
+        f.classList.add('sent'); $('.form__ok', f).hidden = false;
+        var fol = $('[data-okfollow]', f);
+        fol.href = C.contactUrl(summary);
+        if (saved) {
+          $('[data-okmsg]', f).textContent = 'Thank you, ' + v.name.split(' ')[0] + '. The team will reply on ' + v.phone + ' with timings and the next step.';
+          fol.hidden = !C.whatsapp;
+        } else {
+          $('[data-okmsg]', f).textContent = C.whatsapp
+            ? 'One last step: tap below to send these details on WhatsApp so they reach the team.'
+            : 'One last step: your details are copied — tap below and paste them into a message so they reach the team.';
+          if (!C.whatsapp && navigator.clipboard) navigator.clipboard.writeText(summary).catch(function () {});
+        }
+        try { localStorage.setItem('uk_registered', '1'); } catch (e2) {}
+        $('.form__ok', f).scrollIntoView({ behavior: UK.reduce ? 'auto' : 'smooth', block: 'center' });
+      }
+      if (v.website) return done(true);              // a bot filled the hidden field
+      if (!C.live) return done(false);
+      UK.sb('/rest/v1/registrations', { body: { name: v.name, phone: v.phone, email: v.email || null, syllabus: v.syllabus, session: v.session || null, mode: v.mode, message: v.message || null, source: 'website' }, prefer: 'return=minimal' })
+        .then(function () { done(true); })
+        .catch(function () { done(false); });
+    });
+  })();
+
+  /* =====================================================================
+     PROMPT TO ENROL
+     ===================================================================== */
+  (function () {
+    var P = C.promo || {}, m = $('#promo'); if (!m || !P.enabled) return;
+    var mobile = window.matchMedia('(max-width:760px)').matches;
+    if (mobile && !P.mobile) return;
+    var st = {}; try { st = JSON.parse(localStorage.getItem('uk_promo') || '{}'); } catch (e) {}
+    try { if (localStorage.getItem('uk_registered')) return; } catch (e) {}
+    if (P.maxDismissals && (st.n || 0) >= P.maxDismissals) return;
+    var wait = Math.max(0, (P.firstDelay || .75) * 60000);
+    if (st.t) wait = Math.max(wait, st.t + (P.reappear || 20) * 60000 - Date.now());
+    setTimeout(function tryOpen() {
+      if ($('.modal.open') || !$('#askP').hidden || $('#regForm').contains(d.activeElement)) return setTimeout(tryOpen, 15000);
+      UK.openModal(m);
+    }, wait);
+    $('[data-promono]', m).addEventListener('click', function () { st.n = (st.n || 0) + 1; st.t = Date.now(); try { localStorage.setItem('uk_promo', JSON.stringify(st)); } catch (e) {} });
+    $('[data-promogo]', m).addEventListener('click', function () { setTimeout(function () { var i = $('#regForm input[name=name]'); if (i) i.focus({ preventScroll: true }); }, 700); });
+  })();
+
+  /* =====================================================================
+     ASSISTANT — free text, typo-tolerant
+     ===================================================================== */
+  (function () {
+    var btn = $('.ask'), pan = $('#askP'); if (!btn || !pan) return;
+    var log = $('.askp__log', pan), form = $('.askp__f', pan), qs = $('.askp__q', pan), opened = false;
+    var QUICK = ['What are the fees?', 'O Level or IGCSE?', 'Past papers', 'How do I sign in?', 'How do I register?'];
+    function add(html, who) { var m = d.createElement('div'); m.className = 'msg msg--' + who; m.innerHTML = html; log.appendChild(m); log.scrollTop = log.scrollHeight; return m; }
+    function open(on) {
+      pan.hidden = !on; btn.setAttribute('aria-expanded', String(on));
+      if (on && !opened) {
+        opened = true;
+        add('Assalam o Alaikum! I can answer questions about Sir Usman Khan’s Chemistry classes — fees, syllabus, past papers, the portal or registration.', 'b');
+        qs.innerHTML = QUICK.map(function (q) { return '<button type="button">' + q + '</button>'; }).join('');
+      }
+      if (on) setTimeout(function () { $('input', form).focus(); }, 50);
+    }
+    btn.addEventListener('click', function () { open(pan.hidden); });
+    $('.askp__x', pan).addEventListener('click', function () { open(false); btn.focus(); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pan.hidden) { open(false); btn.focus(); } });
+    qs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) answer(b.textContent); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); var i = $('input', form); if (i.value.trim()) { answer(i.value.trim()); i.value = ''; } });
+
+    var SHORT = { u: 'you', ur: 'your', r: 'are', wat: 'what', wht: 'what', pls: 'please', plz: 'please', kb: 'when', kab: 'when', fess: 'fees', fee: 'fee', paper: 'paper', regester: 'register', registr: 'register', chem: 'chemistry', olevel: 'o level', 'o-level': 'o level', 'olevels': 'o level', ppr: 'paper', pprs: 'papers' };
+    function norm(s) {
+      return (' ' + s.toLowerCase().replace(/[^\w\s-]/g, ' ').split(/\s+/).map(function (w) { return SHORT[w] || w; }).join(' ') + ' ').replace(/\s+/g, ' ');
+    }
+    function lev(a, b) {
+      if (Math.abs(a.length - b.length) > 1) return 2;
+      var p = [], c, i, j; for (j = 0; j <= b.length; j++) p[j] = j;
+      for (i = 1; i <= a.length; i++) { c = [i]; for (j = 1; j <= b.length; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; }
+      return p[b.length];
+    }
+    function score(q, entry) {
+      var s = 0, words = q.trim().split(' ');
+      entry.k.forEach(function (k) {
+        if (k.indexOf(' ') > -1) { if (q.indexOf(' ' + k + ' ') > -1) s += 3; return; }
+        if (q.indexOf(' ' + k + ' ') > -1) { s += 2; return; }
+        if (k.length >= 5 && words.some(function (w) { return w.length >= 4 && lev(w, k) <= 1; })) s += 1.5;
+      });
+      return s;
+    }
+    function answer(text) {
+      add(esc(text), 'u');
+      var q = norm(text), best = null, bs = 0;
+      KB.forEach(function (e) { var s = score(q, e); if (s > bs) { bs = s; best = e; } });
+      var t = add('<i></i><i></i><i></i>', 'b'); t.classList.add('msg--typing');
+      setTimeout(function () {
+        t.classList.remove('msg--typing');
+        t.innerHTML = best && bs >= 1.5 ? best.a
+          : 'I’m not sure about that one. The team can answer it directly — ' + askLink + ', or use the <a href="#register">registration form</a>.';
+        log.scrollTop = log.scrollHeight;
+      }, UK.reduce ? 0 : 550);
+    }
+  })();
+})();
+
+</script>
+</body>
+</html>

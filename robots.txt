@@ -1,0 +1,12 @@
+# Sir Usman Khan — Cambridge O Level 5070 & IGCSE 0620 Chemistry
+User-agent: *
+Allow: /
+
+# Signed-in areas and plumbing: nothing here belongs in a search index
+Disallow: /portal
+Disallow: /admin
+Disallow: /config.js
+Disallow: /backend.sql
+Disallow: /*.pdf$
+
+Sitemap: https://sirusmankhan.vercel.app/sitemap.xml
