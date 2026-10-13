@@ -721,6 +721,171 @@ html.lenis,html.lenis body{height:auto}
   .nxl a{flex:1 1 100%;justify-content:center}
   .amb::before{opacity:.35}
 }
+
+/* ================================================================ v2 — 3D field, frosted glass, section shades, pop-up motion */
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+:root{
+  /* section shades — gold stays the action colour, the others give each section its own light */
+  --c-gold:#E0A94C; --c-ice:#86AEF0; --c-teal:#4FC9B4; --c-violet:#AE91F4; --c-coral:#F08A72;
+  --acc:var(--c-gold); --acc-2:var(--c-ice);
+  /* frosted glass */
+  --glass:linear-gradient(150deg,rgba(255,255,255,.10),rgba(255,255,255,.035) 55%,rgba(255,255,255,.02));
+  --glass-strong:linear-gradient(150deg,rgba(255,255,255,.14),rgba(255,255,255,.05) 60%);
+  --glass-solid:linear-gradient(150deg,rgba(28,44,78,.72),rgba(10,18,36,.78));
+  --glass-edge:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.035);
+  --frost:blur(18px) saturate(1.55);
+  --line-soft:rgba(255,255,255,.13);
+  --amb-ice:rgba(92,138,222,.2);
+  --amb-deep:rgba(120,84,220,.17);
+  --amb-teal:rgba(56,190,170,.12);
+}
+[data-theme="light"]{
+  --c-gold:#A8752A; --c-ice:#3B68B8; --c-teal:#1F7A6E; --c-violet:#6E4BBE; --c-coral:#B8503A;
+  --glass:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.42) 60%,rgba(255,255,255,.34));
+  --glass-strong:linear-gradient(150deg,rgba(255,255,255,.86),rgba(255,255,255,.58));
+  --glass-solid:linear-gradient(150deg,rgba(255,253,249,.86),rgba(250,244,235,.8));
+  --glass-edge:inset 0 1px 0 rgba(255,255,255,.95),inset 0 0 0 1px rgba(255,255,255,.4);
+  --line-soft:rgba(8,18,38,.1);
+  --amb-teal:rgba(31,122,110,.08);
+}
+
+/* ---------------- 3D canvas ---------------- */
+.bg3d{position:fixed;inset:0;width:100vw;height:100vh;height:100lvh;z-index:-1;pointer-events:none;display:block;
+  opacity:0;animation:bgIn 2.4s var(--ease-o) .6s forwards}
+@keyframes bgIn{to{opacity:.9}}
+.has3d .amb::before{opacity:.28}
+/* molecules stay vivid at the edges and step back behind the reading column */
+.bg3d{-webkit-mask:linear-gradient(90deg,#000 0,rgba(0,0,0,.5) 24%,rgba(0,0,0,.38) 50%,rgba(0,0,0,.5) 76%,#000 100%);
+  mask:linear-gradient(90deg,#000 0,rgba(0,0,0,.5) 24%,rgba(0,0,0,.38) 50%,rgba(0,0,0,.5) 76%,#000 100%)}
+@media (max-width:760px){.bg3d{-webkit-mask:none;mask:none}@keyframes bgIn{to{opacity:.5}}@keyframes bgInL{to{opacity:.45}}}
+.has3d .hero__fx{opacity:.4}
+[data-theme="light"] .bg3d{animation-name:bgInL}
+@keyframes bgInL{to{opacity:.8}}
+/* a fourth, teal light in the ambient field */
+.amb{background:radial-gradient(60vmax 60vmax at 82% 78%,var(--amb-teal),transparent 70%)}
+
+/* ---------------- section shades ---------------- */
+.hero,#about,#record,#register,.pg-portal main{--acc:var(--c-gold);--acc-2:var(--c-ice)}
+#course,#faq,.pg-papers main{--acc:var(--c-ice);--acc-2:var(--c-violet)}
+#syllabus,#how{--acc:var(--c-teal);--acc-2:var(--c-ice)}
+#method,#lectures{--acc:var(--c-violet);--acc-2:var(--c-teal)}
+#bench{--acc:var(--c-ice);--acc-2:var(--c-coral)}
+.sec,.hero,main{--spot:color-mix(in srgb,var(--acc) 17%,transparent)}
+.sec .eyebrow,.ph .eyebrow,.pg-portal .eyebrow{color:var(--acc)}
+.sec .eyebrow::before,.ph .eyebrow::before,.pg-portal .eyebrow::before{background:var(--acc);box-shadow:0 0 10px var(--acc)}
+/* each section carries its own coloured light behind the cards */
+.sec::after{content:"";position:absolute;z-index:-1;pointer-events:none;top:6%;width:min(62vw,820px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 15%,transparent),transparent 72%);
+  right:-18vw}
+.sec:nth-of-type(even)::after{right:auto;left:-18vw;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc-2) 13%,transparent),transparent 72%)}
+.sec::before{background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--acc) 45%,transparent) 30%,color-mix(in srgb,var(--acc-2) 32%,transparent) 70%,transparent)}
+/* stat numbers and counters take the section shade too */
+.strip b{color:var(--acc)}
+.strip > div:nth-child(2) b{color:var(--c-ice)}.strip > div:nth-child(3) b{color:var(--c-teal)}.strip > div:nth-child(4) b{color:var(--c-violet)}
+.strip > div:nth-child(2)::after{background:var(--c-ice)}.strip > div:nth-child(3)::after{background:var(--c-teal)}.strip > div:nth-child(4)::after{background:var(--c-violet)}
+.hero__s div:nth-child(2) dt b{color:var(--c-ice)}.hero__s div:nth-child(3) dt b{color:var(--c-teal)}
+.rec__nums div:nth-child(2) b{color:var(--c-ice)}
+
+/* ---------------- frosted glass ---------------- */
+.panel,.mth__card,.rec__card,.faqs details,.tp,.step__body,.rdy,.el,.meet,.bench,.ptd,.strip,.rec__nums,.gc,.yr,.login,.side,.tile,.stage__tag,.thm,.readout,.ph__stat,.feats li,.note,.sub,.ion,.cr,.ar,.lec{
+  -webkit-backdrop-filter:var(--frost);backdrop-filter:var(--frost)}
+.panel,.mth__card,.rec__card,.faqs details,.tp,.step__body,.ion,.gc,.cr,.ar,.sub,.readout,.note,.rdy,.res div,.rv article,.yr,.el,.meet,.bench,.feats li{
+  border-color:var(--line-soft)}
+.feats li{background:radial-gradient(400px circle at var(--mx,50%) var(--my,-80%),var(--spot),transparent 44%),var(--glass);box-shadow:var(--glass-edge),var(--lift)}
+.faqs details:hover,.tp:hover,.ion:hover,.gc:hover,.step__body:hover,.el:hover,.yr:hover{border-color:color-mix(in srgb,var(--acc) 45%,transparent)}
+.faqs details[open],.tp[open],.yr[open]{border-color:color-mix(in srgb,var(--acc) 60%,transparent);
+  background:radial-gradient(560px circle at var(--mx,50%) var(--my,-80%),var(--spot),transparent 44%),
+    linear-gradient(180deg,color-mix(in srgb,var(--acc) 10%,transparent),transparent 70%),var(--glass)}
+.faqs summary::after{border-color:color-mix(in srgb,var(--acc) 50%,transparent);
+  background:linear-gradient(var(--acc),var(--acc)) center/12px 1.6px no-repeat,linear-gradient(var(--acc),var(--acc)) center/1.6px 12px no-repeat}
+.faqs details[open] summary::after{background-size:12px 1.6px,1.6px 0}
+.tp summary::after{border-color:var(--acc)}
+.tp__n{border-color:color-mix(in srgb,var(--acc) 50%,transparent);color:var(--acc)}
+.ptd,.bench,.meet{background:radial-gradient(700px circle at var(--mx,50%) var(--my,-80%),var(--spot),transparent 45%),var(--glass-strong)}
+.ptd{background:var(--glass-solid)}
+.strip > div,.rec__nums div,.facts div,.ptd__s div{background:rgba(255,255,255,.025)}
+[data-theme="light"] .strip > div,[data-theme="light"] .rec__nums div,[data-theme="light"] .facts div,[data-theme="light"] .ptd__s div{background:rgba(255,255,255,.55)}
+.strip,.rec__nums{background:var(--glass)}
+/* glass edge light — a thin bright line along the top of each big panel */
+.meet,.bench,.mth__card,.rec__card,.form,.ptd{position:relative}
+.mth__card::before,.rec__card::before,.form::before,.bench::before{content:"";position:absolute;left:12%;right:12%;top:-1px;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--acc) 80%,#fff),transparent);opacity:.8}
+.step__ic,.lec__p{color:var(--acc);border-color:color-mix(in srgb,var(--acc) 40%,transparent)}
+.hx em{color:var(--acc)}
+.mth__eg span,.readout > .mono,.deck__bh{color:var(--acc)}
+.mth__eg{border-color:color-mix(in srgb,var(--acc) 40%,transparent)}
+.steps::after{background:linear-gradient(90deg,var(--c-teal),var(--c-ice),var(--c-gold));box-shadow:0 0 16px color-mix(in srgb,var(--c-teal) 60%,transparent)}
+@media (max-width:900px){.steps::after{background:linear-gradient(180deg,var(--c-teal),var(--c-ice),var(--c-gold))}}
+.mob{background:var(--glass-solid);-webkit-backdrop-filter:var(--frost);backdrop-filter:var(--frost)}
+.hdr.stuck .hdr__in{background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),color-mix(in srgb,var(--bg) 55%,transparent)}
+[data-theme="light"] .hdr.stuck .hdr__in{background:rgba(255,253,249,.7)}
+
+/* ---------------- full-screen pop-up: orbit backdrop, light border, staggered entrance ---------------- */
+.modal{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(14,28,60,.55),rgba(2,5,12,.88) 72%);
+  -webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);
+  transition:opacity .5s var(--ease-o),visibility .5s;overflow:hidden}
+[data-theme="light"] .modal{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(255,250,242,.55),rgba(236,224,206,.82) 75%)}
+[data-theme="light"] .modal::after{background:radial-gradient(closest-side,rgba(224,169,76,.3),rgba(134,174,240,.14) 55%,transparent 75%)}
+.modal::before{content:"";position:absolute;left:50%;top:50%;width:min(980px,150vw);aspect-ratio:1;translate:-50% -50%;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='none'%3E%3Cg stroke='%23E0A94C' stroke-opacity='.32'%3E%3Cellipse cx='200' cy='200' rx='190' ry='62'/%3E%3Cellipse cx='200' cy='200' rx='190' ry='62' transform='rotate(60 200 200)'/%3E%3Cellipse cx='200' cy='200' rx='190' ry='62' transform='rotate(120 200 200)'/%3E%3C/g%3E%3Ccircle cx='390' cy='200' r='3.6' fill='%23F6DA9A'/%3E%3Ccircle cx='105' cy='36' r='3' fill='%2386AEF0'/%3E%3Ccircle cx='105' cy='364' r='3' fill='%234FC9B4'/%3E%3Ccircle cx='200' cy='200' r='150' stroke='%2386AEF0' stroke-opacity='.12'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity:0;transform:scale(.7) rotate(-30deg);transition:opacity .9s var(--ease-o),transform 1.4s var(--ease-o)}
+.modal.open::before{opacity:1;transform:scale(1) rotate(0deg);animation:orbitSpin 60s linear 1.4s infinite}
+@keyframes orbitSpin{from{rotate:0deg}to{rotate:360deg}}
+.modal::after{content:"";position:absolute;left:50%;top:50%;width:min(620px,110vw);aspect-ratio:1;translate:-50% -50%;pointer-events:none;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(224,169,76,.28),rgba(134,174,240,.12) 55%,transparent 75%);
+  opacity:0;transform:scale(.6);transition:opacity 1s var(--ease-o),transform 1.2s var(--ease-o)}
+.modal.open::after{opacity:1;transform:scale(1);animation:glowPulse 5s var(--ease-io) 1.2s infinite}
+@keyframes glowPulse{50%{scale:1.08;opacity:.75}}
+.modal--v::before{display:none}
+.modal__in{position:relative;isolation:isolate;z-index:1;border-color:rgba(255,255,255,.14);
+  background:radial-gradient(120% 70% at 50% 0%,rgba(224,169,76,.16),transparent 60%),var(--glass-solid);
+  -webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);
+  opacity:0;transform:translateY(40px) scale(.9) perspective(900px) rotateX(14deg);filter:blur(8px);
+  transition:opacity .6s var(--ease-o),transform .9s cubic-bezier(.2,1.25,.32,1),filter .7s var(--ease-o)}
+.modal.open .modal__in{opacity:1;transform:none;filter:none;transition-delay:.08s}
+/* travelling light around the card edge */
+.modal__in::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:2;
+  background:conic-gradient(from var(--ang),transparent 0 62%,rgba(134,174,240,.9) 74%,#F6DA9A 84%,rgba(79,201,180,.9) 92%,transparent 98%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:edgeSpin 4.5s linear infinite}
+@keyframes edgeSpin{to{--ang:360deg}}
+.modal__in > :not(.modal__x){opacity:0;transform:translateY(16px)}
+.modal.open .modal__in > :not(.modal__x){animation:mIn .8s var(--ease-o) both}
+.modal.open .modal__in > :nth-child(2){animation-delay:.22s}
+.modal.open .modal__in > :nth-child(3){animation-delay:.3s}
+.modal.open .modal__in > :nth-child(4){animation-delay:.38s}
+.modal.open .modal__in > :nth-child(5){animation-delay:.46s}
+.modal.open .modal__in > :nth-child(6){animation-delay:.54s}
+@keyframes mIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.promo__a > *{opacity:0}
+.modal.open .promo__a > *{animation:mIn .7s var(--ease-o) both}
+.modal.open .promo__a > :nth-child(1){animation-delay:.5s}
+.modal.open .promo__a > :nth-child(2){animation-delay:.58s}
+.modal.open .promo__a > :nth-child(3){animation-delay:.66s}
+.promo__mk{position:relative;display:inline-grid;place-items:center;width:64px;height:64px;border-radius:18px;
+  background:radial-gradient(circle,rgba(224,169,76,.22),transparent 70%);border:1px solid rgba(224,169,76,.3)}
+.promo__mk::after{content:"";position:absolute;inset:-6px;border-radius:22px;border:1px solid rgba(224,169,76,.5);opacity:0}
+.modal.open .promo__mk::after{animation:ring 2.8s var(--ease-o) 1s infinite}
+.modal.open .promo__mk svg{animation:mkTurn 1.4s var(--ease-o) .3s both}
+@keyframes mkTurn{from{transform:rotate(-120deg) scale(.6);opacity:0}to{transform:none;opacity:1}}
+#promoT{font-size:clamp(1.5rem,3.4vw,1.9rem)}
+
+/* ---------------- loading screen: iris reveal ---------------- */
+#pre{background:radial-gradient(circle at 50% 46%,rgba(224,169,76,.14),transparent 38%),radial-gradient(circle at 50% 60%,rgba(134,174,240,.1),transparent 50%),var(--bg);
+  clip-path:circle(150% at 50% 46%);transition:clip-path 1.15s cubic-bezier(.76,0,.24,1),visibility 1.15s}
+#pre.gone{clip-path:circle(0% at 50% 46%);opacity:1}
+#pre .pl{transition:transform 1s cubic-bezier(.76,0,.24,1),opacity .6s}
+#pre.gone .pl{transform:scale(1.8);opacity:0}
+
+/* ---------------- perf + motion ---------------- */
+@media (max-width:760px){:root{--frost:blur(12px) saturate(1.4)}}
+@media (prefers-reduced-motion:reduce){
+  .bg3d{animation:none;opacity:1}
+  .modal__in,.modal__in > *,.promo__a > *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}
+  .modal::before,.modal::after,.modal__in::before{animation:none!important}
+  #pre{transition:opacity .3s}
+  #pre.gone{clip-path:none;opacity:0}
+}
 </style>
 <!-- /PREMIUM:CSS -->
 </head>
@@ -1411,7 +1576,7 @@ function t(t,i,e){return Math.max(t,Math.min(i,e))}var i=class{isRunning=!1;valu
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   /* cursor spotlight on glass surfaces */
-  var SPOT = '.yr,.panel,.mth__card,.rec__card,.faqs details,.tp,.step__body,.ion,.gc,.cr,.ar,.sub,.readout,.rdy,.el,.meet,.bench,.res div,.rv article';
+  var SPOT = '.feats li,.yr,.panel,.mth__card,.rec__card,.faqs details,.tp,.step__body,.ion,.gc,.cr,.ar,.sub,.readout,.rdy,.el,.meet,.bench,.res div,.rv article';
   if (fine && !reduce) {
     var last = null;
     d.addEventListener('pointermove', function (e) {
