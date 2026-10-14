@@ -1037,7 +1037,7 @@ html.lenis,html.lenis body{height:auto}
     if (!thm) return;
     var dark = root.getAttribute('data-theme') !== 'light';
     UK.$('.thm__k', thm).innerHTML = dark ? UK.ico.moon : UK.ico.sun;
-    UK.$('span', thm).innerHTML = dark ? 'Dark<br>mode' : 'Light<br>mode';
+    UK.$('span:not(.thm__k)', thm).innerHTML = dark ? 'Dark<br>mode' : 'Light<br>mode';
     thm.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
   }
   if (thm) {
